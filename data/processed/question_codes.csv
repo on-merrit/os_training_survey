@@ -1,0 +1,257 @@
+short_code,question_text,question_specification
+id,Response ID,NA
+submitdate,Date submitted,NA
+lastpage,Last page,NA
+startlanguage,Start language,NA
+seed,Seed,NA
+startdate,Date started,NA
+datestamp,Date last action,NA
+refurl,Referrer URL,NA
+D1[SQ001],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
+D1[SQ002],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
+D1[SQ003],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
+D1[SQ004],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
+A1[SQ001],Please rate the following statements according to your practices regarding Open Science  [I make an effort to make my research open],I make an effort to make my research open
+A1[SQ002],Please rate the following statements according to your practices regarding Open Science  [I make an effort to make my research collaborative],I make an effort to make my research collaborative
+A1[SQ003],Please rate the following statements according to your practices regarding Open Science  [Open science is different from traditional research approaches],Open science is different from traditional research approaches
+A1[SQ004],Please rate the following statements according to your practices regarding Open Science  [Open science consists of different dimensions (e.g,NA
+A1[SQ005],Please rate the following statements according to your practices regarding Open Science  [Open science values transparency in research],Open science values transparency in research
+A2[SQ001],Please rate the following statements according to your own practices regarding Open Access Publishing [I deposit my publications in a repository],I deposit my publications in a repository
+A2[SQ002],Please rate the following statements according to your own practices regarding Open Access Publishing [I publish in open-access journals],I publish in open-access journals
+A2[SQ003],Please rate the following statements according to your own practices regarding Open Access Publishing [I know how to get funding for open access publication fees],I know how to get funding for open access publication fees
+A2[SQ004],Please rate the following statements according to your own practices regarding Open Access Publishing [I publish my publications under an open license],I publish my publications under an open license
+A2[SQ005],Please rate the following statements according to your own practices regarding Open Access Publishing [I deposit my preprints in a disciplinary preprint repository],I deposit my preprints in a disciplinary preprint repository
+A3[SQ005],Please rate the following statements according to your own practices regarding Research Data Management [I develop a data management plan],I develop a data management plan
+A3[SQ001],Please rate the following statements according to your own practices regarding Research Data Management [I share my data in a data repository],I share my data in a data repository
+A3[SQ002],"Please rate the following statements according to your own practices regarding Research Data Management [I publish my data’s description along with its identifier (DOI, handle ,...)]","I publish my data’s description along with its identifier (DOI, handle ,...)"
+A3[SQ003],"Please rate the following statements according to your own practices regarding Research Data Management [When submitting an article, I make sure my data can be accessed by the reviewers]","When submitting an article, I make sure my data can be accessed by the reviewers"
+A3[SQ004],Please rate the following statements according to your own practices regarding Research Data Management [I publish my data under a license],I publish my data under a license
+A4[SQ001],Please rate the following statements according to your practices regarding Reproducible Research [I pre-register my hypothesis],I pre-register my hypothesis
+A4[SQ002],Please rate the following statements according to your practices regarding Reproducible Research [I extensively document and give access to the methodology used for each finding],I extensively document and give access to the methodology used for each finding
+A4[SQ003],Please rate the following statements according to your practices regarding Reproducible Research [I use platforms like open science framework or GitHub to share my research],I use platforms like open science framework or GitHub to share my research
+A4[SQ004],Please rate the following statements according to your practices regarding Reproducible Research [I share my electronic laboratory notebooks],I share my electronic laboratory notebooks
+A4[SQ005],Please rate the following statements according to your practices regarding Reproducible Research [I foster results reproducibility],I foster results reproducibility
+A5[SQ001],Please rate the following statements according to your practices regarding Open Peer Review [Open peer review improves the transparency of the review process],Open peer review improves the transparency of the review process
+A5[SQ002],Please rate the following statements according to your practices regarding Open Peer Review [Reviewers’ comments are attentive in open peer-review],Reviewers’ comments are attentive in open peer-review
+A5[SQ003],Please rate the following statements according to your practices regarding Open Peer Review [Platforms that allow open peer review are easy to use],Platforms that allow open peer review are easy to use
+A5[SQ004],Please rate the following statements according to your practices regarding Open Peer Review [I opt for journals that offer the open peer review option],I opt for journals that offer the open peer review option
+A5[SQ005],Please rate the following statements according to your practices regarding Open Peer Review [I sign my reviews],I sign my reviews
+A6[SQ001],Please rate the following statements according to your practices regarding Research Software in Open Science [I share my software code (e.g,NA
+A6[SQ002],Please rate the following statements according to your practices regarding Research Software in Open Science [I license my software to inform about the conditions under which it can be reused],I license my software to inform about the conditions under which it can be reused
+A6[SQ003],Please rate the following statements according to your practices regarding Research Software in Open Science [I extensively document my software development methodology],I extensively document my software development methodology
+A6[SQ004],Please rate the following statements according to your practices regarding Research Software in Open Science [I develop software collaboratively],I develop software collaboratively
+A6[SQ005],Please rate the following statements according to your practices regarding Research Software in Open Science [I reuse and build upon open-source software],I reuse and build upon open-source software
+A7[SQ001],Please rate the following statements according to your practices regarding Licensing [I license my publications ],I license my publications 
+A7[SQ002],Please rate the following statements according to your practices regarding Licensing [I use Creative Commons licenses],I use Creative Commons licenses
+A7[SQ003],Please rate the following statements according to your practices regarding Licensing [I tend to use licenses that enable some kind of reuse],I tend to use licenses that enable some kind of reuse
+A7[SQ004],"Please rate the following statements according to your practices regarding Licensing [I feel confident that when some scientific output is licensed, people using it will respect the licensing terms]","I feel confident that when some scientific output is licensed, people using it will respect the licensing terms"
+A7[SQ005],Please rate the following statements according to your practices regarding Licensing [Using a license will prevent unauthorised uses of my work],Using a license will prevent unauthorised uses of my work
+A8[SQ001],Please rate the following statements according to your practices regarding Research Integrity [I thoroughly inform my human subjects of all the details concerning their participation in my research],I thoroughly inform my human subjects of all the details concerning their participation in my research
+A8[SQ002],Please rate the following statements according to your practices regarding Research Integrity [I inform subjects and ask for their consent prior to disseminating my research],I inform subjects and ask for their consent prior to disseminating my research
+A8[SQ003],Please rate the following statements according to your practices regarding Research Integrity [I acknowledge all intellectual contributions and cite related work correctly in my publications],I acknowledge all intellectual contributions and cite related work correctly in my publications
+A8[SQ004],Please rate the following statements according to your practices regarding Research Integrity [I comply with codes and regulations relevant to my discipline],I comply with codes and regulations relevant to my discipline
+A8[SQ005],Please rate the following statements according to your practices regarding Research Integrity [I review publications without biases or influences],I review publications without biases or influences
+A9[SQ001],Please rate the following statements according to your practices regarding Citizen Science [I align my research with challenges relevant for society],I align my research with challenges relevant for society
+A9[SQ002],Please rate the following statements according to your practices regarding Citizen Science [I provide the public with the information they need to understand my research],I provide the public with the information they need to understand my research
+A9[SQ003],Please rate the following statements according to your practices regarding Citizen Science [I regularly publish news about my research ],I regularly publish news about my research 
+A9[SQ004],Please rate the following statements according to your practices regarding Citizen Science [I involve citizens in data gathering for my research],I involve citizens in data gathering for my research
+A9[SQ005],Please rate the following statements according to your practices regarding Citizen Science [I ask for the citizen scientist’s feedback during the research process],I ask for the citizen scientist’s feedback during the research process
+A10[SQ001],Please rate the following statements according to your practices regarding Gender issues [Gender equality is a concern in the constitution of my research team],Gender equality is a concern in the constitution of my research team
+A10[SQ002],Please rate the following statements according to your practices regarding Gender issues [I look for gender equality when looking for project partners],I look for gender equality when looking for project partners
+A10[SQ003],Please rate the following statements according to your practices regarding Gender issues [I seek not to have imbalances in the decision-making process],I seek not to have imbalances in the decision-making process
+A10[SQ004],Please rate the following statements according to your practices regarding Gender issues [I guarantee that the groups involved in the project (e.g,NA
+A10[SQ005],Please rate the following statements according to your practices regarding Gender issues [I conduct a gender-blind research],I conduct a gender-blind research
+B1[SQ001],How many training events have you attended in these topics? [Open Science],Open Science
+B1[SQ002],How many training events have you attended in these topics? [Open Access],Open Access
+B1[SQ003],How many training events have you attended in these topics? [Open Data],Open Data
+B1[SQ004],How many training events have you attended in these topics? [Reproducible Research],Reproducible Research
+B1[SQ005],How many training events have you attended in these topics? [Open Peer Review],Open Peer Review
+B1[SQ006],How many training events have you attended in these topics? [Open-Source Software],Open-Source Software
+B1[SQ007],How many training events have you attended in these topics? [Licensing],Licensing
+B1[SQ008],How many training events have you attended in these topics? [Research integrity],Research integrity
+B1[SQ009],How many training events have you attended in these topics? [Citizen science],Citizen science
+B1[SQ010],How many training events have you attended in these topics? [Gender],Gender
+B1[SQ013],How many training events have you attended in these topics? [Other],Other
+B2,Please specify in which other open science related topic(s) have you received training,NA
+B3[SQ001],How often did you attend the following types of training sessions? [Half day workshop],Half day workshop
+B3[SQ002],How often did you attend the following types of training sessions? [Full day workshop],Full day workshop
+B3[SQ003],How often did you attend the following types of training sessions? [Several days workshop],Several days workshop
+B3[SQ004],How often did you attend the following types of training sessions? [Seminar],Seminar
+B3[SQ005],How often did you attend the following types of training sessions? [Summer/ Winter School],Summer/ Winter School
+B3[SQ006],How often did you attend the following types of training sessions? [Webinar],Webinar
+B3[SQ007],How often did you attend the following types of training sessions? [MOOC (Massive Open Online Course)],MOOC (Massive Open Online Course)
+B3[SQ008],How often did you attend the following types of training sessions? [Online course],Online course
+B3[SQ009],How often did you attend the following types of training sessions? [Blended learning course],Blended learning course
+B3[SQ013],How often did you attend the following types of training sessions? [Other],Other
+B4,Please specify which other types of training events have you attended,NA
+B5,How many hours of training in total did you get?,NA
+B5[other],How many hours of training in total did you get? [Other],Other
+B6[SQ001],Did the training you receive fulfill your needs? [Open Science],Open Science
+B6[SQ002],Did the training you receive fulfill your needs? [Open Access],Open Access
+B6[SQ003],Did the training you receive fulfill your needs? [Open Data],Open Data
+B6[SQ004],Did the training you receive fulfill your needs? [Reproducible Research],Reproducible Research
+B6[SQ005],Did the training you receive fulfill your needs? [Open Peer Review],Open Peer Review
+B6[SQ006],Did the training you receive fulfill your needs? [Open-Source Software],Open-Source Software
+B6[SQ007],Did the training you receive fulfill your needs? [Licensing],Licensing
+B6[SQ008],Did the training you receive fulfill your needs? [Research integrity],Research integrity
+B6[SQ009],Did the training you receive fulfill your needs? [Citizen science],Citizen science
+B6[SQ010],Did the training you receive fulfill your needs? [Gender],Gender
+B6[SQ013],Did the training you receive fulfill your needs? [Other],Other
+B7,Please specify if the training events you have attended in other open science related topics fulfilled your needs,NA
+B8,When did you attend your first formal training in any Open Science topic?,NA
+B8[other],When did you attend your first formal training in any Open Science topic? [Other],Other
+B9[SQ001],Who provided the training sessions you attended? [My institution],My institution
+B9[SQ002],Who provided the training sessions you attended? [My professional association],My professional association
+B9[SQ003],Who provided the training sessions you attended? [Library],Library
+B9[SQ004],Who provided the training sessions you attended? [Research school],Research school
+B9[SQ005],Who provided the training sessions you attended? [An external organisation],An external organisation
+B9[SQ006],Who provided the training sessions you attended? [My supervisor],My supervisor
+B9[SQ007],Who provided the training sessions you attended? [Session at a conference],Session at a conference
+B9[other],Who provided the training sessions you attended? [Other],Other
+B10[SQ001],What is your preferred way to learn Open Science topics? [Mandatory training],Mandatory training
+B10[SQ002],What is your preferred way to learn Open Science topics? [Optional training],Optional training
+B10[SQ003],What is your preferred way to learn Open Science topics? [Personal reading],Personal reading
+B10[SQ004],What is your preferred way to learn Open Science topics? [Discussions with peers],Discussions with peers
+B10[SQ005],What is your preferred way to learn Open Science topics? [I haven't learnt about Open Science topics],I haven't learnt about Open Science topics
+B10[other],What is your preferred way to learn Open Science topics? [Other],Other
+B11[SQ001],Has your awareness of open science practices increased after the training you attended? [I am more aware of the opportunities offered by practicing open science],I am more aware of the opportunities offered by practicing open science
+B11[SQ002],Has your awareness of open science practices increased after the training you attended? [I incorporated some open science practices in my daily research work],I incorporated some open science practices in my daily research work
+B11[SQ003],"Has your awareness of open science practices increased after the training you attended? [I am aware of the benefits, but I don’t really practice open science]","I am aware of the benefits, but I don’t really practice open science"
+B11[SQ004],Has your awareness of open science practices increased after the training you attended? [I still don’t understand why I should make an extra effort],I still don’t understand why I should make an extra effort
+B12[SQ001],Would you share your experience with open science practices and tools with colleagues? [I would recommend my colleagues some of the practices I am using],I would recommend my colleagues some of the practices I am using
+B12[SQ002],Would you share your experience with open science practices and tools with colleagues? [My research community already has established open science practices],My research community already has established open science practices
+B12[SQ003],Would you share your experience with open science practices and tools with colleagues? [My research community already has established tools and practices that don’t foresee open science],My research community already has established tools and practices that don’t foresee open science
+B12[SQ004],Would you share your experience with open science practices and tools with colleagues? [My colleagues wouldn’t make the effort],My colleagues wouldn’t make the effort
+B13,Are you aware of available free training materials that can help you learn more about open science?,NA
+B14,Please give examples of free training materials on Open Science,NA
+C1,Does your institution have an open access policy? ,NA
+C2,Could you please briefly describe your institution’s Open Science policy main features?,NA
+C3,Does your institution recommend Open Science/ Open Access practices?,NA
+C4,Could you please briefly describe your institution’s recommendations on Open Science/ Open Access?,NA
+C5,Is there a dedicated helpdesk/ group to support any issues related to the Open Science/ Open Access policy?,NA
+C6,"Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications, such as the European Commission or the European Research Council?",NA
+C7,Does your institution support you financially in paying article processing charges (APCs),NA
+C8[SQ001],To what degree are you supported in practicing Open Science at your institution? [Information on funders’ policies and recommendations regarding Open Science],Information on funders’ policies and recommendations regarding Open Science
+C8[SQ002],"To what degree are you supported in practicing Open Science at your institution? [Access to technical infrastructure (software, storage, databases, publication and/or data repositories, etc.)]","Access to technical infrastructure (software, storage, databases, publication and/or data repositories, etc.)"
+C8[SQ003],To what degree are you supported in practicing Open Science at your institution? [Support by an Ethics committee],Support by an Ethics committee
+C8[SQ004],To what degree are you supported in practicing Open Science at your institution? [Legal support for licensing research outputs and on IPR or GDPR issues],Legal support for licensing research outputs and on IPR or GDPR issues
+C8[SQ005],To what degree are you supported in practicing Open Science at your institution? [Training on different aspects of Open Science],Training on different aspects of Open Science
+C8[SQ006],To what degree are you supported in practicing Open Science at your institution? [Financial support and rewards],Financial support and rewards
+C8[SQ007],To what degree are you supported in practicing Open Science at your institution? [Career perspectives and recognition],Career perspectives and recognition
+C9,Please elaborate on the impact Open Science practices have in your career/ promotion chances,NA
+C10,Are there other initiatives incentivising Open Science practices at your institution (eg,NA
+C11,Which Open Science initiatives does your institution have?,NA
+D2[SQ001],"Overall, if you had to summarise your views, what would you say Open Science is? [An exciting opportunity, mostly with benefits]","An exciting opportunity, mostly with benefits"
+D2[SQ001comment],"Overall, if you had to summarise your views, what would you say Open Science is? [An exciting opportunity, mostly with benefits][Comment]","An exciting opportunity, mostly with benefits"
+D2[SQ002],"Overall, if you had to summarise your views, what would you say Open Science is? [An opportunity, with the benefits outweighing the drawbacks]","An opportunity, with the benefits outweighing the drawbacks"
+D2[SQ002comment],"Overall, if you had to summarise your views, what would you say Open Science is? [An opportunity, with the benefits outweighing the drawbacks][Comment]","An opportunity, with the benefits outweighing the drawbacks"
+D2[SQ003],"Overall, if you had to summarise your views, what would you say Open Science is? [Mostly positive, it has benefits but also important drawbacks]","Mostly positive, it has benefits but also important drawbacks"
+D2[SQ003comment],"Overall, if you had to summarise your views, what would you say Open Science is? [Mostly positive, it has benefits but also important drawbacks][Comment]","Mostly positive, it has benefits but also important drawbacks"
+D2[SQ004],"Overall, if you had to summarise your views, what would you say Open Science is? [An unimportant bureaucratic burden]",An unimportant bureaucratic burden
+D2[SQ004comment],"Overall, if you had to summarise your views, what would you say Open Science is? [An unimportant bureaucratic burden][Comment]",An unimportant bureaucratic burden
+D2[SQ005],"Overall, if you had to summarise your views, what would you say Open Science is? [A worrying new perspective]",A worrying new perspective
+D2[SQ005comment],"Overall, if you had to summarise your views, what would you say Open Science is? [A worrying new perspective][Comment]",A worrying new perspective
+D2[SQ006],"Overall, if you had to summarise your views, what would you say Open Science is? [A real threat to my research]",A real threat to my research
+D2[SQ006comment],"Overall, if you had to summarise your views, what would you say Open Science is? [A real threat to my research][Comment]",A real threat to my research
+D2[SQ007],"Overall, if you had to summarise your views, what would you say Open Science is? [Not relevant for my research]",Not relevant for my research
+D2[SQ007comment],"Overall, if you had to summarise your views, what would you say Open Science is? [Not relevant for my research][Comment]",Not relevant for my research
+D2[other],"Overall, if you had to summarise your views, what would you say Open Science is? [Other]",Other
+D2[othercomment],"Overall, if you had to summarise your views, what would you say Open Science is? [Other comment]",Other comment
+D3[SQ001],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of proper infrastructure],Lack of proper infrastructure
+D3[SQ002],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clear steps to follow,NA
+D3[SQ003],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clarity where to find relevant information],Lack of clarity where to find relevant information
+D3[SQ004],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clarity around where benefits arise],Lack of clarity around where benefits arise
+D3[SQ006],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clarity in which sources/platforms to trust],Lack of clarity in which sources/platforms to trust
+D3[SQ005],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Time constraints],Time constraints
+D3[SQ007],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Extra effort],Extra effort
+D3[SQ008],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Other],Other
+D4,Which other barrier do you identify?,NA
+D5[SQ001],What could be the main drivers for you to practice Open Science? [Support and wide adoption of open science practices in my research community],Support and wide adoption of open science practices in my research community
+D5[SQ002],What could be the main drivers for you to practice Open Science? [The value of sharing my research outputs in relation to societal ideals (e.g,NA
+D5[SQ003],What could be the main drivers for you to practice Open Science? [Funder policy mandating open access to the research outputs],Funder policy mandating open access to the research outputs
+D5[SQ004],What could be the main drivers for you to practice Open Science? [Institutional policy mandating open science practices],Institutional policy mandating open science practices
+D5[SQ006],What could be the main drivers for you to practice Open Science? [Publisher policies and requirements (e.g,NA
+D5[SQ005],What could be the main drivers for you to practice Open Science? [Career progression policies based on the adoption of open science practices],Career progression policies based on the adoption of open science practices
+D5[SQ007],What could be the main drivers for you to practice Open Science? [Ethics principles],Ethics principles
+D5[SQ008],What could be the main drivers for you to practice Open Science? [Other],Other
+D6,Which other driver do you identify?,NA
+D7[SQ001],Would you say the following factors are drivers or barriers for you to practice Open Science? [Article processing charges (APCs)],Article processing charges (APCs)
+D7[SQ002],Would you say the following factors are drivers or barriers for you to practice Open Science? [Publisher’s policies on the sharing of publications/manuscripts],Publisher’s policies on the sharing of publications/manuscripts
+D7[SQ003],Would you say the following factors are drivers or barriers for you to practice Open Science? [Difficulties of applying licenses to publications/ data],Difficulties of applying licenses to publications/ data
+D7[SQ004],Would you say the following factors are drivers or barriers for you to practice Open Science? [Plagiarism or theft of ideas],Plagiarism or theft of ideas
+D7[SQ006],Would you say the following factors are drivers or barriers for you to practice Open Science? [Collaboration and communication among researchers],Collaboration and communication among researchers
+D7[SQ005],"Would you say the following factors are drivers or barriers for you to practice Open Science? [Societal needs, values, interests and expectations]","Societal needs, values, interests and expectations"
+D7[SQ007],Would you say the following factors are drivers or barriers for you to practice Open Science? [Researcher evaluation based on citation metrics (e.g,NA
+D7[SQ008],Would you say the following factors are drivers or barriers for you to practice Open Science? [Availability of high-quality open access publication choices in my research area],Availability of high-quality open access publication choices in my research area
+E1,In which country do you work?,NA
+E2,Please select the gender category that best describes you,NA
+E2[other],Please select the gender category that best describes you [Other],Other
+E3,What is your age?,NA
+E3b,"When did you publish your first academic publication (journal article, book, chapter, conference proceeding, or similar)? Please tell us the year.",NA
+E4,What is the highest education level you completed?,NA
+E4[other],What is the highest education level you completed? [Other],Other
+E5,In what type of institution do you work? ,NA
+E5[other],In what type of institution do you work?  [Other],Other
+E6,What is your position?,NA
+E6[other],What is your position? [Other],Other
+E7,In which general area of knowledge do you work?,NA
+E7[other],In which general area of knowledge do you work? [Other],Other
+E8,"Would you like to stay informed about this survey and the ON-MERRIT project? If so, please provide us your email",NA
+interviewtime,Total time,NA
+groupTime27,Group time: Consent Form,NA
+D1Time,Question time: D1,NA
+groupTime26,Group time: Part A - Researcher's Practices,NA
+A1Time,Question time: A1,NA
+A2Time,Question time: A2,NA
+A3Time,Question time: A3,NA
+A4Time,Question time: A4,NA
+A5Time,Question time: A5,NA
+A6Time,Question time: A6,NA
+A7Time,Question time: A7,NA
+A8Time,Question time: A8,NA
+A9Time,Question time: A9,NA
+A10Time,Question time: A10,NA
+groupTime25,Group time: Part B - Training,NA
+B1Time,Question time: B1,NA
+B2Time,Question time: B2,NA
+B3Time,Question time: B3,NA
+B4Time,Question time: B4,NA
+B5Time,Question time: B5,NA
+B6Time,Question time: B6,NA
+B7Time,Question time: B7,NA
+B8Time,Question time: B8,NA
+B9Time,Question time: B9,NA
+B10Time,Question time: B10,NA
+B11Time,Question time: B11,NA
+B12Time,Question time: B12,NA
+B13Time,Question time: B13,NA
+B14Time,Question time: B14,NA
+groupTime28,Group time: Part C - Institutional support,NA
+C1Time,Question time: C1,NA
+C2Time,Question time: C2,NA
+C3Time,Question time: C3,NA
+C4Time,Question time: C4,NA
+C5Time,Question time: C5,NA
+C6Time,Question time: C6,NA
+C7Time,Question time: C7,NA
+C8Time,Question time: C8,NA
+C9Time,Question time: C9,NA
+C10Time,Question time: C10,NA
+C11Time,Question time: C11,NA
+groupTime29,Group time: Part D - Drivers and barriers to practicing Open Science,NA
+D2Time,Question time: D2,NA
+D3Time,Question time: D3,NA
+D4Time,Question time: D4,NA
+D5Time,Question time: D5,NA
+D6Time,Question time: D6,NA
+D7Time,Question time: D7,NA
+groupTime24,Group time: Part E - Demographics,NA
+E1Time,Question time: E1,NA
+E2Time,Question time: E2,NA
+E3Time,Question time: E3,NA
+E3bTime,Question time: E3b,NA
+E4Time,Question time: E4,NA
+E5Time,Question time: E5,NA
+E6Time,Question time: E6,NA
+E7Time,Question time: E7,NA
+E8Time,Question time: E8,NA
