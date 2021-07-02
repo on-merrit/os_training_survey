@@ -7,14 +7,14 @@ seed,Seed,NA
 startdate,Date started,NA
 datestamp,Date last action,NA
 refurl,Referrer URL,NA
-D1[SQ001],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
-D1[SQ002],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
-D1[SQ003],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
-D1[SQ004],Consent form  I hereby consent to the processing of my given data for the selected purposes,NA
+D1[SQ001],"Consent form  I hereby consent to the processing of my given data for the selected purposes. {if(((D1_SQ001== ""2"") or (D1_SQ002== ""2"") or (D1_SQ003== ""2"") or (D1_SQ004== ""2"")), ""WARNING: You need to agree to all four statements, otherwise you will not be able to continue with the survey."")}  [I confirm that I have read the participant information.]",I confirm that I have read the participant information.
+D1[SQ002],"Consent form  I hereby consent to the processing of my given data for the selected purposes. {if(((D1_SQ001== ""2"") or (D1_SQ002== ""2"") or (D1_SQ003== ""2"") or (D1_SQ004== ""2"")), ""WARNING: You need to agree to all four statements, otherwise you will not be able to continue with the survey."")}  [I understand that my participation in this study is voluntary and that I am free to withdraw at any time. I understand that it will not be possible to remove my data from the project once it has been anonymised and forms part of the data set. I agree to take part on this basis.]",I understand that my participation in this study is voluntary and that I am free to withdraw at any time. I understand that it will not be possible to remove my data from the project once it has been anonymised and forms part of the data set. I agree to take part on this basis.
+D1[SQ003],"Consent form  I hereby consent to the processing of my given data for the selected purposes. {if(((D1_SQ001== ""2"") or (D1_SQ002== ""2"") or (D1_SQ003== ""2"") or (D1_SQ004== ""2"")), ""WARNING: You need to agree to all four statements, otherwise you will not be able to continue with the survey."")}  [I agree that any data collected may be published in anonymous form in books, reports or journals and shared in presentations.]","I agree that any data collected may be published in anonymous form in books, reports or journals and shared in presentations."
+D1[SQ004],"Consent form  I hereby consent to the processing of my given data for the selected purposes. {if(((D1_SQ001== ""2"") or (D1_SQ002== ""2"") or (D1_SQ003== ""2"") or (D1_SQ004== ""2"")), ""WARNING: You need to agree to all four statements, otherwise you will not be able to continue with the survey."")}  [I agree to take part in this study.]",I agree to take part in this study.
 A1[SQ001],Please rate the following statements according to your practices regarding Open Science  [I make an effort to make my research open],I make an effort to make my research open
 A1[SQ002],Please rate the following statements according to your practices regarding Open Science  [I make an effort to make my research collaborative],I make an effort to make my research collaborative
 A1[SQ003],Please rate the following statements according to your practices regarding Open Science  [Open science is different from traditional research approaches],Open science is different from traditional research approaches
-A1[SQ004],Please rate the following statements according to your practices regarding Open Science  [Open science consists of different dimensions (e.g,NA
+A1[SQ004],"Please rate the following statements according to your practices regarding Open Science  [Open science consists of different dimensions (e.g. publications, data, code, methods)]","Open science consists of different dimensions (e.g. publications, data, code, methods)"
 A1[SQ005],Please rate the following statements according to your practices regarding Open Science  [Open science values transparency in research],Open science values transparency in research
 A2[SQ001],Please rate the following statements according to your own practices regarding Open Access Publishing [I deposit my publications in a repository],I deposit my publications in a repository
 A2[SQ002],Please rate the following statements according to your own practices regarding Open Access Publishing [I publish in open-access journals],I publish in open-access journals
@@ -36,7 +36,7 @@ A5[SQ002],Please rate the following statements according to your practices regar
 A5[SQ003],Please rate the following statements according to your practices regarding Open Peer Review [Platforms that allow open peer review are easy to use],Platforms that allow open peer review are easy to use
 A5[SQ004],Please rate the following statements according to your practices regarding Open Peer Review [I opt for journals that offer the open peer review option],I opt for journals that offer the open peer review option
 A5[SQ005],Please rate the following statements according to your practices regarding Open Peer Review [I sign my reviews],I sign my reviews
-A6[SQ001],Please rate the following statements according to your practices regarding Research Software in Open Science [I share my software code (e.g,NA
+A6[SQ001],"Please rate the following statements according to your practices regarding Research Software in Open Science [I share my software code (e.g. via GitHub, Figshare or Zenodo)]","I share my software code (e.g. via GitHub, Figshare or Zenodo)"
 A6[SQ002],Please rate the following statements according to your practices regarding Research Software in Open Science [I license my software to inform about the conditions under which it can be reused],I license my software to inform about the conditions under which it can be reused
 A6[SQ003],Please rate the following statements according to your practices regarding Research Software in Open Science [I extensively document my software development methodology],I extensively document my software development methodology
 A6[SQ004],Please rate the following statements according to your practices regarding Research Software in Open Science [I develop software collaboratively],I develop software collaboratively
@@ -59,7 +59,7 @@ A9[SQ005],Please rate the following statements according to your practices regar
 A10[SQ001],Please rate the following statements according to your practices regarding Gender issues [Gender equality is a concern in the constitution of my research team],Gender equality is a concern in the constitution of my research team
 A10[SQ002],Please rate the following statements according to your practices regarding Gender issues [I look for gender equality when looking for project partners],I look for gender equality when looking for project partners
 A10[SQ003],Please rate the following statements according to your practices regarding Gender issues [I seek not to have imbalances in the decision-making process],I seek not to have imbalances in the decision-making process
-A10[SQ004],Please rate the following statements according to your practices regarding Gender issues [I guarantee that the groups involved in the project (e.g,NA
+A10[SQ004],"Please rate the following statements according to your practices regarding Gender issues [I guarantee that the groups involved in the project (e.g. samples, testing groups) are gender-balanced]","I guarantee that the groups involved in the project (e.g. samples, testing groups) are gender-balanced"
 A10[SQ005],Please rate the following statements according to your practices regarding Gender issues [I conduct a gender-blind research],I conduct a gender-blind research
 B1[SQ001],How many training events have you attended in these topics? [Open Science],Open Science
 B1[SQ002],How many training events have you attended in these topics? [Open Access],Open Access
@@ -139,7 +139,7 @@ C8[SQ005],To what degree are you supported in practicing Open Science at your in
 C8[SQ006],To what degree are you supported in practicing Open Science at your institution? [Financial support and rewards],Financial support and rewards
 C8[SQ007],To what degree are you supported in practicing Open Science at your institution? [Career perspectives and recognition],Career perspectives and recognition
 C9,Please elaborate on the impact Open Science practices have in your career/ promotion chances,NA
-C10,Are there other initiatives incentivising Open Science practices at your institution (eg,NA
+C10,"Are there other initiatives incentivising Open Science practices at your institution (eg. Open Science cafes, Data Champions)?",NA
 C11,Which Open Science initiatives does your institution have?,NA
 D2[SQ001],"Overall, if you had to summarise your views, what would you say Open Science is? [An exciting opportunity, mostly with benefits]","An exciting opportunity, mostly with benefits"
 D2[SQ001comment],"Overall, if you had to summarise your views, what would you say Open Science is? [An exciting opportunity, mostly with benefits][Comment]","An exciting opportunity, mostly with benefits"
@@ -158,7 +158,7 @@ D2[SQ007comment],"Overall, if you had to summarise your views, what would you sa
 D2[other],"Overall, if you had to summarise your views, what would you say Open Science is? [Other]",Other
 D2[othercomment],"Overall, if you had to summarise your views, what would you say Open Science is? [Other comment]",Other comment
 D3[SQ001],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of proper infrastructure],Lack of proper infrastructure
-D3[SQ002],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clear steps to follow,NA
+D3[SQ002],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clear steps to follow. How do I begin? How do I proceed?],Lack of clear steps to follow. How do I begin? How do I proceed?
 D3[SQ003],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clarity where to find relevant information],Lack of clarity where to find relevant information
 D3[SQ004],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clarity around where benefits arise],Lack of clarity around where benefits arise
 D3[SQ006],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Lack of clarity in which sources/platforms to trust],Lack of clarity in which sources/platforms to trust
@@ -167,10 +167,10 @@ D3[SQ007],Which are the most significant barriers you will be facing while embra
 D3[SQ008],Which are the most significant barriers you will be facing while embracing an Open Science perspective? [Other],Other
 D4,Which other barrier do you identify?,NA
 D5[SQ001],What could be the main drivers for you to practice Open Science? [Support and wide adoption of open science practices in my research community],Support and wide adoption of open science practices in my research community
-D5[SQ002],What could be the main drivers for you to practice Open Science? [The value of sharing my research outputs in relation to societal ideals (e.g,NA
+D5[SQ002],What could be the main drivers for you to practice Open Science? [The value of sharing my research outputs in relation to societal ideals (e.g. access to knowledge)],The value of sharing my research outputs in relation to societal ideals (e.g. access to knowledge)
 D5[SQ003],What could be the main drivers for you to practice Open Science? [Funder policy mandating open access to the research outputs],Funder policy mandating open access to the research outputs
 D5[SQ004],What could be the main drivers for you to practice Open Science? [Institutional policy mandating open science practices],Institutional policy mandating open science practices
-D5[SQ006],What could be the main drivers for you to practice Open Science? [Publisher policies and requirements (e.g,NA
+D5[SQ006],What could be the main drivers for you to practice Open Science? [Publisher policies and requirements (e.g. data availability statement)],Publisher policies and requirements (e.g. data availability statement)
 D5[SQ005],What could be the main drivers for you to practice Open Science? [Career progression policies based on the adoption of open science practices],Career progression policies based on the adoption of open science practices
 D5[SQ007],What could be the main drivers for you to practice Open Science? [Ethics principles],Ethics principles
 D5[SQ008],What could be the main drivers for you to practice Open Science? [Other],Other
@@ -181,7 +181,7 @@ D7[SQ003],Would you say the following factors are drivers or barriers for you to
 D7[SQ004],Would you say the following factors are drivers or barriers for you to practice Open Science? [Plagiarism or theft of ideas],Plagiarism or theft of ideas
 D7[SQ006],Would you say the following factors are drivers or barriers for you to practice Open Science? [Collaboration and communication among researchers],Collaboration and communication among researchers
 D7[SQ005],"Would you say the following factors are drivers or barriers for you to practice Open Science? [Societal needs, values, interests and expectations]","Societal needs, values, interests and expectations"
-D7[SQ007],Would you say the following factors are drivers or barriers for you to practice Open Science? [Researcher evaluation based on citation metrics (e.g,NA
+D7[SQ007],"Would you say the following factors are drivers or barriers for you to practice Open Science? [Researcher evaluation based on citation metrics (e.g. impact factor, h-index)]","Researcher evaluation based on citation metrics (e.g. impact factor, h-index)"
 D7[SQ008],Would you say the following factors are drivers or barriers for you to practice Open Science? [Availability of high-quality open access publication choices in my research area],Availability of high-quality open access publication choices in my research area
 E1,In which country do you work?,NA
 E2,Please select the gender category that best describes you,NA
