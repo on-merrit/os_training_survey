@@ -14,8 +14,12 @@ library(tidyverse)
 library(visdat)
 library(likert)
 library(skimr)
+source(here::here("R/helpers.R"))
 
 df <- read_csv("data/results-survey731951.csv")
+question_codes <- read_csv("data/processed/question_codes.csv")
+
+theme_set(theme_bw())
 ```
 
 ```{r}
@@ -41,4 +45,12 @@ a1_df %>%
 a1_df_rec %>% 
   summarise(across(.fns = ~sum(is.na(.x))))
 ```
+
+
+
+```{r, fig.width=8, fig.height=5}
+a1_df_rec %>% 
+  plot_likert(question_codes, "my title")
+```
+
 
