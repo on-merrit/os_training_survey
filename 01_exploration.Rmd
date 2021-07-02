@@ -10,26 +10,35 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 
-
 library(tidyverse)
-library(dplyr)
 library(visdat)
 library(likert)
 library(skimr)
-library(readr)
+
 df <- read_csv("data/results-survey731951.csv")
+```
+
+```{r}
+answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
+                   "Agree", "Strongly agree", 
+                   "This topic is not relevant to my research", 
+                   "Don’t know/ Don’t have enough information")
 
 
-answer_levels <- c("Strongly disagree", "disagree", "Neither agree or disagree",
-                   "Agree", "Strongly agree", "This topic is not relevant to my research", "Don’t know or don’t have enough information")
-a1_df %>% 
+a1_df <- df %>% 
+  select(starts_with("A1[")) 
 
-
-a1_df <- df %>%
-    pull(`A1[SQ002]`) %>% unique() %>%
-  select(starts_with("A1[")) %>% 
+a1_df_rec <- a1_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
 
+a1_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+```
+
+
+```{r}
+a1_df_rec %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
 ```
 
