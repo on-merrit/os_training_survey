@@ -472,8 +472,6 @@ e3_df <- df %>%
 e3_df_rec <- e3_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e3))
 
-# > e3_df %>% mutate(E3 = fct_relevel(fct_reorder(E3, parse_number(E3)), "<20"))
-
 
 e3_df_rec %>% 
   summarise(across(.fns = ~sum(is.na(.x))))
@@ -487,9 +485,8 @@ e3_df_rec %>%
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
 
 e3_df_rec %>%
-  count(E3) %>% 
-  ggplot(aes(fct_reorder(E3, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
+  ggplot(aes(E3)) +
+  geom_bar(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Age cohorts")
 
@@ -530,14 +527,17 @@ e3b_df <- df %>%
 
 e3_df_rec %>% 
   count(E3) %>% 
-  ggplot(aes(fct_reorder(E3, n, .fun = "max"), n)) +
+  ggplot(aes(fct_reorder(E3b, n, .fun = "max"), n)) +
   geom_col(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Publish first academic publication")
 
 ```
 
-```{r, fig.width=2, fig.height=2}
+
+# Highest education
+
+```{r, fig.width=8, fig.height=5}
 
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
 
