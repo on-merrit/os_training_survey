@@ -9,11 +9,12 @@ plot_likert <- function(df, question_codes, title = NULL) {
   
   pdata %>% 
     ggplot(aes(stringr::str_wrap(question_specification, 40), prop, 
-               fill = value)) +
+               fill = fct_rev(value))) +
     geom_col(width = .7) +
     coord_flip() +
     scale_y_continuous(labels = scales::percent) +
     labs(x = NULL, y = NULL, fill = NULL,
          title = title) +
-    theme(legend.position = "top")
+    theme(legend.position = "top") +
+    guides(fill = guide_legend(reverse = TRUE))
 }
