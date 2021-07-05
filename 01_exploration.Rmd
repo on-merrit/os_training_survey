@@ -26,7 +26,6 @@ question_codes <- read_csv("data/processed/question_codes.csv")
 theme_set(theme_bw())
 ```
 
-
 # Missing data
 
 ```{r}
@@ -34,8 +33,8 @@ theme_set(theme_bw())
 vis_dat(df)
 visdat::vis_miss(df)
 
-
 ```
+
 ```{r, fig.width=12}
 df %>% 
   select_if(function(x) (sum(is.na(x)))/length(x) > .1) %>% 
