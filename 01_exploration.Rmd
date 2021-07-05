@@ -627,9 +627,6 @@ e7_df_rec <- e7_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
 
-e7_df_rec %>%
-  plot_likert(question_codes, "General knowledge area")
-
 e7_df_rec %>% 
   count(E7) %>% 
   ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
