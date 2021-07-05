@@ -487,9 +487,8 @@ e3_df_rec %>%
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
 
 e3_df_rec %>%
-  count(E3) %>% 
-  ggplot(aes(fct_reorder(E3, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
+  ggplot(aes(E3)) +
+  geom_bar(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Age cohorts")
 
