@@ -389,7 +389,7 @@ b9_df <- df %>%
   select(starts_with("B9[")) 
 
 b9_df_rec <- b9_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_b9))
+  mutate(across(.fns = factor, levels = answer_levels_3))
 
 
 b9_df_rec %>% 
