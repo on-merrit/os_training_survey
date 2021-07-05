@@ -18,8 +18,7 @@ library(scales)
 library(lubridate)
 source(here::here("R/helpers.R"))
 
-df <- read_csv("data/results-survey731951.csv")
-df <- select(df, id:E8)
+df <- read_csv("data/processed/survey_anonymised.csv")
 
 question_codes <- read_csv("data/processed/question_codes.csv")
 
