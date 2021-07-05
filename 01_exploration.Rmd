@@ -519,11 +519,9 @@ e3b_df <- df %>%
   select("E3b") %>% 
   filter(E3b > 1960)
 
-e3_df_rec %>% 
-  count(E3) %>% 
-  ggplot(aes(fct_reorder(E3b, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
+e3b_df %>% 
+  ggplot(aes(E3b)) +
+  geom_histogram() +
   labs(x = NULL, title = "Publish first academic publication")
 
 ```
