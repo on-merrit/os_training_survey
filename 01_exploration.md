@@ -643,8 +643,6 @@ e3_df <- df %>%
 e3_df_rec <- e3_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e3))
 
-# > e3_df %>% mutate(E3 = fct_relevel(fct_reorder(E3, parse_number(E3)), "<20"))
-
 
 e3_df_rec %>% 
   summarise(across(.fns = ~sum(is.na(.x))))
@@ -656,13 +654,6 @@ e3_df_rec %>%
 ##   <int>
 ## 1     5
 ```
-
-```r
-e3_df_rec %>% 
-  plot_likert(question_codes, "Age cohorts")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 ```r
 e3_df_rec %>%
@@ -679,14 +670,13 @@ e3_df_rec %>%
 
 ```r
 e3_df_rec %>%
-  count(E3) %>% 
-  ggplot(aes(fct_reorder(E3, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
+  ggplot(aes(E3)) +
+  geom_bar(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Age cohorts")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-24-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 
 # Gender
@@ -701,13 +691,7 @@ e2_df <- df %>%
 e2_df_rec <- e2_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e2))
 
-e2_df_rec %>% 
-  plot_likert(question_codes, "Gender")
-```
 
-![](01_exploration_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
-
-```r
 e2_df_rec %>% 
   count(E2) %>% 
   ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
@@ -716,7 +700,7 @@ e2_df_rec %>%
   labs(x = NULL, title = "Gender")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-25-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
 
 # Publish first academic publication
 
@@ -726,15 +710,20 @@ e3b_df <- df %>%
   select("E3b") %>% 
   filter(E3b > 1960)
 
-e3_df_rec %>% 
-  count(E3) %>% 
-  ggplot(aes(fct_reorder(E3, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
+e3b_df %>% 
+  ggplot(aes(E3b)) +
+  geom_histogram() +
   labs(x = NULL, title = "Publish first academic publication")
 ```
 
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
 ![](01_exploration_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
+
+
+# Highest education
 
 
 ```r
@@ -746,16 +735,6 @@ e4_df <- df %>%
 e4_df_rec <- e4_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e4))
 
-
-e4_df_rec %>%
-  plot_likert(question_codes, "Highest education")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
-
-```r
-# e4_df_rec %>%  mutate(across(.fns = as.numeric)) %>% ggplot(aes(E4)) + geom_histogram() + scale_x_log10()
-
 e4_df_rec %>%
   # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
   count(E4) %>%
@@ -765,7 +744,7 @@ e4_df_rec %>%
   labs(x = NULL, title = "Highest education")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-27-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
 
 # Types of institution
 
@@ -779,14 +758,6 @@ e5_df <- df %>%
 e5_df_rec <- e5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e5))
 
-
-e5_df_rec %>%
-  plot_likert(question_codes, "In what type of institution do you work?")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
-
-```r
 e5_df_rec %>% 
   count(E5) %>% 
   ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
@@ -795,7 +766,7 @@ e5_df_rec %>%
   labs(x = NULL, title = "In what type of institution do you work?")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-28-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
 
 
 
@@ -810,14 +781,6 @@ e6_df <- df %>%
 e6_df_rec <- e6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e6))
 
-
-e6_df_rec %>%
-  plot_likert(question_codes, "Position")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
-
-```r
 e6_df_rec %>% 
   count(E6) %>% 
   ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
@@ -826,7 +789,7 @@ e6_df_rec %>%
   labs(x = NULL, title = "Position")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-29-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
 
 
 ```r
@@ -839,14 +802,6 @@ e7_df <- df %>%
 e7_df_rec <- e7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
-
-e7_df_rec %>%
-  plot_likert(question_codes, "General knowledge area")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
-
-```r
 e7_df_rec %>% 
   count(E7) %>% 
   ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
@@ -855,7 +810,7 @@ e7_df_rec %>%
   labs(x = NULL, title = "Respondents by discipline")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-30-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
 
 
 # Further todos
