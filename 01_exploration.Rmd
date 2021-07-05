@@ -14,11 +14,13 @@ library(tidyverse)
 library(visdat)
 library(likert)
 library(skimr)
-library (scales)
+library(scales)
 library(lubridate)
 source(here::here("R/helpers.R"))
 
 df <- read_csv("data/results-survey731951.csv")
+df <- select(df, id:E8)
+
 question_codes <- read_csv("data/processed/question_codes.csv")
 
 theme_set(theme_bw())
@@ -28,12 +30,18 @@ theme_set(theme_bw())
 ```{r}
 # exploring missing data
 
-library(visdat)
 vis_dat(df)
 visdat::vis_miss(df)
-visdat::vis_miss(a1_df_rec)
+
 
 ```
+```{r, fig.width=12}
+df %>% 
+  select_if(function(x) (sum(is.na(x)))/length(x) > .1) %>% 
+  vis_miss()
+```
+
+
 
 
 ```{r}
@@ -65,20 +73,23 @@ a1_df_rec %>%
 
 
 ```{r, fig.width=8, fig.height=5}
+visdat::vis_miss(a1_df_rec)
+
 a1_df_rec %>% 
   plot_likert(question_codes, "Practices regarding OS")
+
 
 
 ```
 
 
-```{r, fig.width=5, fig.height=10}
+```{r, fig.width=8, fig.height=8}
 
 answer_levels_b1_001 <- c("None", "1", "2", "3-5", "more than 5")
 
 
 b1_001_df <- df %>% 
-  select("B1[SQ001]") 
+  select(starts_with("B1[")) 
 
 b1_001_df_rec <- b1_001_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b1_001))
@@ -123,9 +134,9 @@ e3_df_rec %>%
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
 
 e3_df_rec %>%
-  mutate(across(.fns = as.numeric)) %>% 
+  # mutate(across(.fns = as.numeric)) %>% 
   ggplot(aes(E3)) +
-  geom_histogram() +
+  geom_bar() 
   scale_x_log10()
 
 ```
@@ -150,11 +161,13 @@ e2_df_rec %>%
 ```{r, fig.width=8, fig.height=5}
 
 e3b_df <- df %>% 
-  select("E3b")
-
+  select("E3b") %>% 
+  filter(E3b > 1960)
 
 e3b_df %>% 
-  plot_likert(question_codes, "First publication")
+  ggplot(aes(E3b)) +
+  geom_histogram()
+
 
 ```
 
@@ -228,5 +241,20 @@ e7_df_rec <- e7_df %>%
 e7_df_rec %>%
   plot_likert(question_codes, "General knowledge area")
 
+e7_df_rec %>% 
+  count(E7) %>% 
+  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Respondents by discipline")
+
 ```
+
+
+# Further todos
+
+- remove non-consenters
+- check out cases with weird first year of publication `df %>% filter(id %in% c(356, 420, 129))` 
+
+
 
