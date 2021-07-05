@@ -594,7 +594,7 @@ b11_df_rec %>%
 
 ```r
 b11_df_rec %>% 
-  plot_likert(question_codes, "Has your awareness of open science practices increased after the training you attended?")
+  plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
 ```
 
 ![](01_exploration_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
@@ -624,7 +624,7 @@ b12_df_rec %>%
 
 ```r
 b12_df_rec %>% 
-  plot_likert(question_codes, "Would you share your experience with open science practices and tools with colleagues?")
+  plot_likert(question_codes, "Would you share your experience with open science practices\nand tools with colleagues?")
 ```
 
 ![](01_exploration_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
