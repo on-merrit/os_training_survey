@@ -476,10 +476,6 @@ e3_df_rec <- e3_df %>%
 e3_df_rec %>% 
   summarise(across(.fns = ~sum(is.na(.x))))
 
-e3_df_rec %>% 
-  plot_likert(question_codes, "Age cohorts")
-
-
 e3_df_rec %>%
   mutate(across(.fns = as.numeric)) %>% 
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
@@ -505,8 +501,6 @@ e2_df <- df %>%
 e2_df_rec <- e2_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e2))
 
-e2_df_rec %>% 
-  plot_likert(question_codes, "Gender")
 
 e2_df_rec %>% 
   count(E2) %>% 
@@ -547,12 +541,6 @@ e4_df <- df %>%
 e4_df_rec <- e4_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e4))
 
-
-e4_df_rec %>%
-  plot_likert(question_codes, "Highest education")
-
-# e4_df_rec %>%  mutate(across(.fns = as.numeric)) %>% ggplot(aes(E4)) + geom_histogram() + scale_x_log10()
-
 e4_df_rec %>%
   # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
   count(E4) %>%
@@ -576,10 +564,6 @@ e5_df <- df %>%
 e5_df_rec <- e5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e5))
 
-
-e5_df_rec %>%
-  plot_likert(question_codes, "In what type of institution do you work?")
-
 e5_df_rec %>% 
   count(E5) %>% 
   ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
@@ -602,10 +586,6 @@ e6_df <- df %>%
 e6_df_rec <- e6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e6))
 
-
-e6_df_rec %>%
-  plot_likert(question_codes, "Position")
-
 e6_df_rec %>% 
   count(E6) %>% 
   ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
@@ -625,7 +605,6 @@ e7_df <- df %>%
 
 e7_df_rec <- e7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_e7))
-
 
 e7_df_rec %>% 
   count(E7) %>% 
