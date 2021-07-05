@@ -14,6 +14,8 @@ library(tidyverse)
 library(visdat)
 library(likert)
 library(skimr)
+library (scales)
+library(lubridate)
 source(here::here("R/helpers.R"))
 
 df <- read_csv("data/results-survey731951.csv")
@@ -22,7 +24,21 @@ question_codes <- read_csv("data/processed/question_codes.csv")
 theme_set(theme_bw())
 ```
 
+
 ```{r}
+# exploring missing data
+
+library(visdat)
+vis_dat(df)
+visdat::vis_miss(df)
+visdat::vis_miss(a1_df_rec)
+
+```
+
+
+```{r}
+#exploring pratices in OS
+
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
                    "This topic is not relevant to my research", 
@@ -50,7 +66,167 @@ a1_df_rec %>%
 
 ```{r, fig.width=8, fig.height=5}
 a1_df_rec %>% 
-  plot_likert(question_codes, "my title")
+  plot_likert(question_codes, "Practices regarding OS")
+
+
 ```
 
+
+```{r, fig.width=5, fig.height=10}
+
+answer_levels_b1_001 <- c("None", "1", "2", "3-5", "more than 5")
+
+
+b1_001_df <- df %>% 
+  select("B1[SQ001]") 
+
+b1_001_df_rec <- b1_001_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_b1_001))
+
+
+b1_001_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+b1_001_df_rec %>% 
+  plot_likert(question_codes, "Attended Training Events")
+
+
+```
+
+```{r}
+
+```
+
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
+
+e3_df <- df %>% 
+  select("E3")
+
+e3_df_rec <- e3_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e3))
+
+# > e3_df %>% mutate(E3 = fct_relevel(fct_reorder(E3, parse_number(E3)), "<20"))
+
+
+e3_df_rec %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+e3_df_rec %>% 
+  plot_likert(question_codes, "Age cohorts")
+
+
+e3_df_rec %>%
+  mutate(across(.fns = as.numeric)) %>% 
+  summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
+
+e3_df_rec %>%
+  mutate(across(.fns = as.numeric)) %>% 
+  ggplot(aes(E3)) +
+  geom_histogram() +
+  scale_x_log10()
+
+```
+
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
+
+e2_df <- df %>% 
+  select("E2")
+
+e2_df_rec <- e2_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e2))
+
+e2_df_rec %>% 
+  plot_likert(question_codes, "Gender")
+
+```
+
+
+```{r, fig.width=8, fig.height=5}
+
+e3b_df <- df %>% 
+  select("E3b")
+
+
+e3b_df %>% 
+  plot_likert(question_codes, "First publication")
+
+```
+
+```{r, fig.width=2, fig.height=2}
+
+answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
+
+e4_df <- df %>% 
+  select("E4")
+
+e4_df_rec <- e4_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e4))
+
+
+e4_df_rec %>%
+  plot_likert(question_codes, "Highest education")
+
+# e4_df_rec %>%  mutate(across(.fns = as.numeric)) %>% ggplot(aes(E4)) + geom_histogram() + scale_x_log10()
+
+
+```
+
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
+
+e5_df <- df %>% 
+  select("E5")
+
+e5_df_rec <- e5_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e5))
+
+
+e5_df_rec %>%
+  plot_likert(question_codes, "In what type of institution do you work?")
+
+```
+
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/researcher", "Assistant professor", 
+                      "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
+                      "Technician or lab manager", "Core facility manager", "Other")
+
+e6_df <- df %>% 
+  select("E6")
+
+e6_df_rec <- e6_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e6))
+
+
+e6_df_rec %>%
+  plot_likert(question_codes, "Position")
+
+```
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
+                      "Social Sciences", "Humanities and the Arts")
+
+e7_df <- df %>% 
+  select("E7")
+
+e7_df_rec <- e7_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e7))
+
+
+e7_df_rec %>%
+  plot_likert(question_codes, "General knowledge area")
+
+```
 
