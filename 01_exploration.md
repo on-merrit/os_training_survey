@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "05 Juli, 2021"
+date: "06 Juli, 2021"
 output: 
   html_document:
     keep_md: true
@@ -34,7 +34,7 @@ df %>%
 ![](01_exploration_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 
-# A1 Practises in OS
+# A1 Practices in OS
 
 
 ```r
@@ -768,6 +768,7 @@ e5_df_rec %>%
 
 ![](01_exploration_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
 
+# Position
 
 
 ```r
@@ -790,6 +791,8 @@ e6_df_rec %>%
 ```
 
 ![](01_exploration_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
+
+# Respondents by disciplines
 
 
 ```r

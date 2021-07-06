@@ -42,7 +42,7 @@ df %>%
 ```
 
 
-# A1 Practises in OS
+# A1 Practices in OS
 
 ```{r}
 
@@ -486,6 +486,8 @@ e3_df_rec %>%
   coord_flip() +
   labs(x = NULL, title = "Age cohorts")
 
+
+
 ```
 
 
@@ -571,6 +573,7 @@ e5_df_rec %>%
 
 ```
 
+# Position
 
 ```{r, fig.width=8, fig.height=5}
 
@@ -592,6 +595,8 @@ e6_df_rec %>%
   labs(x = NULL, title = "Position")
 
 ```
+
+# Respondents by disciplines
 
 ```{r, fig.width=8, fig.height=5}
 
