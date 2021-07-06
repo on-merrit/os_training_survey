@@ -381,6 +381,9 @@ b8_df_rec %>%
 ```
 
 
+Most responses from the "Other" category mention that they never received any
+training.
+
 # B9 Who provided the training sessions you attended?
 
 ```{r}
