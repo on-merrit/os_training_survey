@@ -25,6 +25,26 @@ question_codes <- read_csv("data/processed/question_codes.csv")
 theme_set(theme_bw())
 ```
 
+
+
+```{r remove non consenters}
+consent <- select(df, id, starts_with("D1["))
+
+consent_rec <- consent %>% 
+  mutate(across(starts_with("D1["), .fns = dplyr::recode, Yes = TRUE, 
+                No = FALSE),
+         consented = (`D1[SQ001]` + `D1[SQ002]` + `D1[SQ003]` + `D1[SQ004]`) == 4)
+
+df <- consent_rec %>% 
+  filter(consented) %>% 
+  select(id) %>% 
+  left_join(df)
+
+# number of cases:
+nrow(df)
+```
+Our sample is based on `r nrow(df)` cases.
+
 # Missing data
 
 ```{r}
@@ -315,13 +335,15 @@ b3_df_rec %>%
 # B5 Hours of training
 
 ```{r}
-answer_levels_b5 <- c("None", "1", "2", "3-5", "more than 5", "Other")
+answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 
 b5_df <- df %>% 
   select("B5")
 
 b5_df_rec <- b5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b5))
+
+recode_successful(b5_df, b5_df_rec)
 
 
 b5_df_rec %>% 
@@ -379,6 +401,9 @@ b8_df_rec %>%
 ```
 
 
+Most responses from the "Other" category mention that they never received any
+training.
+
 # B9 Who provided the training sessions you attended?
 
 ```{r}
@@ -416,10 +441,11 @@ b10_df_rec %>%
 
 # B11 Has your awareness of open science practices increased after the training you attended?
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=8, fig.height=6}
 
-answer_levels_4 <- c("Highly disagree", "Disagree", 
-                        "Neutral", "Agree", "Highly agree", "Don't know")
+answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
+                     "Neither agree nor disagree",
+                     "Agree", "Highly agree")
 
 
 b11_df <- df %>% 
@@ -428,9 +454,8 @@ b11_df <- df %>%
 b11_df_rec <- b11_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_4))
 
+recode_successful(b11_df, b11_df_rec)
 
-b11_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
 
 b11_df_rec %>% 
   plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
@@ -440,7 +465,7 @@ b11_df_rec %>%
 
 # B11 Would you share your experience with open science practices and tools with colleagues?
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=8, fig.height=6}
 
 b12_df <- df %>% 
   select(starts_with("B12[")) 
@@ -531,14 +556,16 @@ e3b_df %>%
 # Highest education
 
 ```{r, fig.width=8, fig.height=5}
-
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
+
+answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
 
 e4_df <- df %>% 
   select("E4")
 
 e4_df_rec <- e4_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e4))
+  mutate(across(.fns = factor, levels = answer_levels_e4, 
+                labels = answer_labels_e4))
 
 e4_df_rec %>%
   # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
@@ -547,8 +574,6 @@ e4_df_rec %>%
   geom_col(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Highest education")
-
-
 ```
 
 # Types of institution
@@ -620,7 +645,6 @@ e7_df_rec %>%
 
 # Further todos
 
-- remove non-consenters
 - check out cases with weird first year of publication `df %>% filter(id %in% c(356, 420, 129))` 
 
 
