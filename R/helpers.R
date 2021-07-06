@@ -18,3 +18,13 @@ plot_likert <- function(df, question_codes, title = NULL) {
     theme(legend.position = "top") +
     guides(fill = guide_legend(reverse = TRUE))
 }
+
+
+recode_successful <- function(df1, df2) {
+  all.equal(
+    df1 %>% 
+      summarise(across(.fns = ~sum(is.na(.x)))),
+    df2 %>% 
+      summarise(across(.fns = ~sum(is.na(.x))))
+  )
+}
