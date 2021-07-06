@@ -27,7 +27,7 @@ theme_set(theme_bw())
 
 
 
-```{r}
+```{r remove non consenters}
 consent <- select(df, id, starts_with("D1["))
 
 consent_rec <- consent %>% 
@@ -441,10 +441,11 @@ b10_df_rec %>%
 
 # B11 Has your awareness of open science practices increased after the training you attended?
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=8, fig.height=6}
 
-answer_levels_4 <- c("Highly disagree", "Disagree", 
-                        "Neutral", "Agree", "Highly agree", "Don't know")
+answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
+                     "Neither agree nor disagree",
+                     "Agree", "Highly agree")
 
 
 b11_df <- df %>% 
@@ -453,9 +454,8 @@ b11_df <- df %>%
 b11_df_rec <- b11_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_4))
 
+recode_successful(b11_df, b11_df_rec)
 
-b11_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
 
 b11_df_rec %>% 
   plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
@@ -465,7 +465,7 @@ b11_df_rec %>%
 
 # B11 Would you share your experience with open science practices and tools with colleagues?
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=8, fig.height=6}
 
 b12_df <- df %>% 
   select(starts_with("B12[")) 
