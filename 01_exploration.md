@@ -12,6 +12,34 @@ output:
 
 
 
+```r
+consent <- select(df, id, starts_with("D1["))
+
+consent_rec <- consent %>% 
+  mutate(across(starts_with("D1["), .fns = dplyr::recode, Yes = TRUE, 
+                No = FALSE),
+         consented = (`D1[SQ001]` + `D1[SQ002]` + `D1[SQ003]` + `D1[SQ004]`) == 4)
+
+df <- consent_rec %>% 
+  filter(consented) %>% 
+  select(id) %>% 
+  left_join(df)
+```
+
+```
+## Joining, by = "id"
+```
+
+```r
+# number of cases:
+nrow(df)
+```
+
+```
+## [1] 167
+```
+Our sample is based on 167 cases.
+
 # Missing data
 
 
@@ -62,7 +90,7 @@ a1_df %>%
 ## # A tibble: 1 x 5
 ##   `A1[SQ001]` `A1[SQ002]` `A1[SQ003]` `A1[SQ004]` `A1[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1           8           8           9          13           9
+## 1           3           3           4           8           4
 ```
 
 
@@ -76,7 +104,7 @@ a1_df_rec %>%
 ## # A tibble: 1 x 5
 ##   `A1[SQ001]` `A1[SQ002]` `A1[SQ003]` `A1[SQ004]` `A1[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1           8           8           9          13           9
+## 1           3           3           4           8           4
 ```
 
 
@@ -119,7 +147,7 @@ a2_df %>%
 ## # A tibble: 1 x 5
 ##   `A2[SQ001]` `A2[SQ002]` `A2[SQ003]` `A2[SQ004]` `A2[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1           8           7          10          12          12
+## 1           3           2           5           7           7
 ```
 
 ```r
@@ -149,7 +177,7 @@ a3_df %>%
 ## # A tibble: 1 x 5
 ##   `A3[SQ005]` `A3[SQ001]` `A3[SQ002]` `A3[SQ003]` `A3[SQ004]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1           9          10          12          12          13
+## 1           4           5           7           7           8
 ```
 
 ```r
@@ -179,7 +207,7 @@ a4_df %>%
 ## # A tibble: 1 x 5
 ##   `A4[SQ001]` `A4[SQ002]` `A4[SQ003]` `A4[SQ004]` `A4[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1          10          10          11          17          12
+## 1           5           5           6          12           7
 ```
 
 ```r
@@ -215,7 +243,7 @@ a5_df %>%
 ## # A tibble: 1 x 5
 ##   `A5[SQ001]` `A5[SQ002]` `A5[SQ003]` `A5[SQ004]` `A5[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1          11          15          15          15          17
+## 1           6          10          10          10          12
 ```
 
 ```r
@@ -245,7 +273,7 @@ a6_df %>%
 ## # A tibble: 1 x 5
 ##   `A6[SQ001]` `A6[SQ002]` `A6[SQ003]` `A6[SQ004]` `A6[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1          14          13          14          14          14
+## 1           9           8           9           9           9
 ```
 
 ```r
@@ -275,7 +303,7 @@ a7_df %>%
 ## # A tibble: 1 x 5
 ##   `A7[SQ001]` `A7[SQ002]` `A7[SQ003]` `A7[SQ004]` `A7[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1          16          18          19          16          14
+## 1          11          13          14          11           9
 ```
 
 ```r
@@ -305,7 +333,7 @@ a8_df %>%
 ## # A tibble: 1 x 5
 ##   `A8[SQ001]` `A8[SQ002]` `A8[SQ003]` `A8[SQ004]` `A8[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1          10          10          10          10          12
+## 1           5           5           5           5           7
 ```
 
 ```r
@@ -335,7 +363,7 @@ a9_df %>%
 ## # A tibble: 1 x 5
 ##   `A9[SQ001]` `A9[SQ002]` `A9[SQ003]` `A9[SQ004]` `A9[SQ005]`
 ##         <int>       <int>       <int>       <int>       <int>
-## 1          10          10           9          10          11
+## 1           5           5           4           5           6
 ```
 
 ```r
@@ -365,7 +393,7 @@ a10_df %>%
 ## # A tibble: 1 x 5
 ##   `A10[SQ001]` `A10[SQ002]` `A10[SQ003]` `A10[SQ004]` `A10[SQ005]`
 ##          <int>        <int>        <int>        <int>        <int>
-## 1            9            9           10           11           12
+## 1            4            4            5            6            7
 ```
 
 ```r
@@ -399,7 +427,7 @@ b1_df %>%
 ## # A tibble: 1 x 11
 ##   `B1[SQ001]` `B1[SQ002]` `B1[SQ003]` `B1[SQ004]` `B1[SQ005]` `B1[SQ006]`
 ##         <int>       <int>       <int>       <int>       <int>       <int>
-## 1           5           5           5           5           5           5
+## 1           0           0           0           0           0           0
 ## # ... with 5 more variables: B1[SQ007] <int>, B1[SQ008] <int>, B1[SQ009] <int>,
 ## #   B1[SQ010] <int>, B1[SQ013] <int>
 ```
@@ -434,7 +462,7 @@ b3_df_rec %>%
 ## # A tibble: 1 x 10
 ##   `B3[SQ001]` `B3[SQ002]` `B3[SQ003]` `B3[SQ004]` `B3[SQ005]` `B3[SQ006]`
 ##         <int>       <int>       <int>       <int>       <int>       <int>
-## 1           5           5           5           5           5           5
+## 1           0           0           0           0           0           0
 ## # ... with 4 more variables: B3[SQ007] <int>, B3[SQ008] <int>, B3[SQ009] <int>,
 ## #   B3[SQ013] <int>
 ```
@@ -501,7 +529,7 @@ b6_df_rec %>%
 ## # A tibble: 1 x 11
 ##   `B6[SQ001]` `B6[SQ002]` `B6[SQ003]` `B6[SQ004]` `B6[SQ005]` `B6[SQ006]`
 ##         <int>       <int>       <int>       <int>       <int>       <int>
-## 1           5           5           5           5           5           5
+## 1           0           0           0           0           0           0
 ## # ... with 5 more variables: B6[SQ007] <int>, B6[SQ008] <int>, B6[SQ009] <int>,
 ## #   B6[SQ010] <int>, B6[SQ013] <int>
 ```
@@ -583,8 +611,9 @@ b10_df_rec %>%
 
 
 ```r
-answer_levels_4 <- c("Highly disagree", "Disagree", 
-                        "Neutral", "Agree", "Highly agree", "Don't know")
+answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
+                     "Neither agree nor disagree",
+                     "Agree", "Highly agree")
 
 
 b11_df <- df %>% 
@@ -593,16 +622,11 @@ b11_df <- df %>%
 b11_df_rec <- b11_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_4))
 
-
-b11_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
+recode_successful(b11_df, b11_df_rec)
 ```
 
 ```
-## # A tibble: 1 x 4
-##   `B11[SQ001]` `B11[SQ002]` `B11[SQ003]` `B11[SQ004]`
-##          <int>        <int>        <int>        <int>
-## 1           87           83           86           79
+## [1] TRUE
 ```
 
 ```r
@@ -632,7 +656,7 @@ b12_df_rec %>%
 ## # A tibble: 1 x 4
 ##   `B12[SQ001]` `B12[SQ002]` `B12[SQ003]` `B12[SQ004]`
 ##          <int>        <int>        <int>        <int>
-## 1           66           78           95           87
+## 1            0            0            0            0
 ```
 
 ```r
@@ -665,7 +689,7 @@ e3_df_rec %>%
 ## # A tibble: 1 x 1
 ##      E3
 ##   <int>
-## 1     5
+## 1     0
 ```
 
 ```r
