@@ -531,14 +531,16 @@ e3b_df %>%
 # Highest education
 
 ```{r, fig.width=8, fig.height=5}
-
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
+
+answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
 
 e4_df <- df %>% 
   select("E4")
 
 e4_df_rec <- e4_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e4))
+  mutate(across(.fns = factor, levels = answer_levels_e4, 
+                labels = answer_labels_e4))
 
 e4_df_rec %>%
   # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
@@ -547,8 +549,6 @@ e4_df_rec %>%
   geom_col(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Highest education")
-
-
 ```
 
 # Types of institution
