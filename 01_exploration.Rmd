@@ -645,7 +645,6 @@ e7_df_rec %>%
 
 # Further todos
 
-- remove non-consenters
 - check out cases with weird first year of publication `df %>% filter(id %in% c(356, 420, 129))` 
 
 
