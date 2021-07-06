@@ -9,6 +9,9 @@ output:
 
 
 
+
+
+
 # Missing data
 
 
@@ -448,7 +451,7 @@ b3_df_rec %>%
 
 
 ```r
-answer_levels_b5 <- c("None", "1", "2", "3-5", "more than 5", "Other")
+answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 
 b5_df <- df %>% 
   select("B5")
@@ -456,7 +459,14 @@ b5_df <- df %>%
 b5_df_rec <- b5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b5))
 
+recode_successful(b5_df, b5_df_rec)
+```
 
+```
+## [1] TRUE
+```
+
+```r
 b5_df_rec %>% 
   count(B5) %>% 
   ggplot(aes(fct_reorder(B5, n, .fun = "max"), n)) +
@@ -527,6 +537,9 @@ b8_df_rec %>%
 
 ![](01_exploration_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
+
+Most responses from the "Other" category mention that they never received any
+training.
 
 # B9 Who provided the training sessions you attended?
 
@@ -729,11 +742,14 @@ e3b_df %>%
 ```r
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
 
+answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
+
 e4_df <- df %>% 
   select("E4")
 
 e4_df_rec <- e4_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e4))
+  mutate(across(.fns = factor, levels = answer_levels_e4, 
+                labels = answer_labels_e4))
 
 e4_df_rec %>%
   # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
