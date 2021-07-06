@@ -60,10 +60,170 @@ df %>%
   vis_miss()
 ```
 
+# Demographics
+
+# Age cohorts
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
+
+e3_df <- df %>% 
+  select("E3")
+
+e3_df_rec <- e3_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e3))
+
+
+e3_df_rec %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+e3_df_rec %>%
+  mutate(across(.fns = as.numeric)) %>% 
+  summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
+
+e3_df_rec %>%
+  ggplot(aes(E3)) +
+  geom_bar(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Age cohorts")
+
+
+
+```
+
+
+# Gender
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
+
+e2_df <- df %>% 
+  select("E2")
+
+e2_df_rec <- e2_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e2))
+
+
+e2_df_rec %>% 
+  count(E2) %>% 
+  ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Gender")
+
+```
+
+# Publish first academic publication
+
+```{r, fig.width=8, fig.height=5}
+
+e3b_df <- df %>% 
+  select("E3b") %>% 
+  filter(E3b > 1960)
+
+e3b_df %>% 
+  ggplot(aes(E3b)) +
+  geom_histogram() +
+  labs(x = NULL, title = "Publish first academic publication")
+
+```
+
+
+# Highest education
+
+```{r, fig.width=8, fig.height=5}
+answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
+
+answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
+
+e4_df <- df %>% 
+  select("E4")
+
+e4_df_rec <- e4_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e4, 
+                labels = answer_labels_e4))
+
+e4_df_rec %>%
+  # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
+  count(E4) %>%
+  ggplot(aes(fct_reorder(E4, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Highest education")
+```
+
+# Types of institution
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
+
+e5_df <- df %>% 
+  select("E5")
+
+e5_df_rec <- e5_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e5))
+
+e5_df_rec %>% 
+  count(E5) %>% 
+  ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "In what type of institution do you work?")
+
+```
+
+# Position
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/researcher", "Assistant professor", 
+                      "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
+                      "Technician or lab manager", "Core facility manager", "Other")
+
+e6_df <- df %>% 
+  select("E6")
+
+e6_df_rec <- e6_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e6))
+
+e6_df_rec %>% 
+  count(E6) %>% 
+  ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Position")
+
+```
+
+# Respondents by disciplines
+
+```{r, fig.width=8, fig.height=5}
+
+answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
+                      "Social Sciences", "Humanities and the Arts")
+
+e7_df <- df %>% 
+  select("E7")
+
+e7_df_rec <- e7_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e7))
+
+e7_df_rec %>% 
+  count(E7) %>% 
+  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Respondents by discipline")
+
+```
+
 
 # A1 Practices in OS
 
-```{r}
+```{r, fig.width=8, fig.height=5}
 
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
@@ -482,165 +642,6 @@ b12_df_rec %>%
 
 ```
 
-# Demographics
-
-# Age cohorts
-
-```{r, fig.width=8, fig.height=5}
-
-answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
-
-e3_df <- df %>% 
-  select("E3")
-
-e3_df_rec <- e3_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e3))
-
-
-e3_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
-e3_df_rec %>%
-  mutate(across(.fns = as.numeric)) %>% 
-  summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
-
-e3_df_rec %>%
-  ggplot(aes(E3)) +
-  geom_bar(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Age cohorts")
-
-
-
-```
-
-
-# Gender
-
-```{r, fig.width=8, fig.height=5}
-
-answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
-
-e2_df <- df %>% 
-  select("E2")
-
-e2_df_rec <- e2_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e2))
-
-
-e2_df_rec %>% 
-  count(E2) %>% 
-  ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Gender")
-
-```
-
-# Publish first academic publication
-
-```{r, fig.width=8, fig.height=5}
-
-e3b_df <- df %>% 
-  select("E3b") %>% 
-  filter(E3b > 1960)
-
-e3b_df %>% 
-  ggplot(aes(E3b)) +
-  geom_histogram() +
-  labs(x = NULL, title = "Publish first academic publication")
-
-```
-
-
-# Highest education
-
-```{r, fig.width=8, fig.height=5}
-answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
-
-answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
-
-e4_df <- df %>% 
-  select("E4")
-
-e4_df_rec <- e4_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e4, 
-                labels = answer_labels_e4))
-
-e4_df_rec %>%
-  # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
-  count(E4) %>%
-  ggplot(aes(fct_reorder(E4, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Highest education")
-```
-
-# Types of institution
-
-```{r, fig.width=8, fig.height=5}
-
-answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
-
-e5_df <- df %>% 
-  select("E5")
-
-e5_df_rec <- e5_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e5))
-
-e5_df_rec %>% 
-  count(E5) %>% 
-  ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "In what type of institution do you work?")
-
-```
-
-# Position
-
-```{r, fig.width=8, fig.height=5}
-
-answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/researcher", "Assistant professor", 
-                      "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
-                      "Technician or lab manager", "Core facility manager", "Other")
-
-e6_df <- df %>% 
-  select("E6")
-
-e6_df_rec <- e6_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e6))
-
-e6_df_rec %>% 
-  count(E6) %>% 
-  ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Position")
-
-```
-
-# Respondents by disciplines
-
-```{r, fig.width=8, fig.height=5}
-
-answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
-                      "Social Sciences", "Humanities and the Arts")
-
-e7_df <- df %>% 
-  select("E7")
-
-e7_df_rec <- e7_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e7))
-
-e7_df_rec %>% 
-  count(E7) %>% 
-  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Respondents by discipline")
-
-```
 
 
 # Further todos

@@ -64,6 +64,195 @@ df %>%
 
 ![](01_exploration_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
+# Demographics
+
+# Age cohorts
+
+
+```r
+answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
+
+e3_df <- df %>% 
+  select("E3")
+
+e3_df_rec <- e3_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e3))
+
+
+e3_df_rec %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+```
+
+```
+## # A tibble: 1 x 1
+##      E3
+##   <int>
+## 1     0
+```
+
+```r
+e3_df_rec %>%
+  mutate(across(.fns = as.numeric)) %>% 
+  summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
+```
+
+```
+## # A tibble: 1 x 1
+##      E3
+##   <dbl>
+## 1  4.49
+```
+
+```r
+e3_df_rec %>%
+  ggplot(aes(E3)) +
+  geom_bar(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Age cohorts")
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
+
+# Gender
+
+
+```r
+answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
+
+e2_df <- df %>% 
+  select("E2")
+
+e2_df_rec <- e2_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e2))
+
+
+e2_df_rec %>% 
+  count(E2) %>% 
+  ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Gender")
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+# Publish first academic publication
+
+
+```r
+e3b_df <- df %>% 
+  select("E3b") %>% 
+  filter(E3b > 1960)
+
+e3b_df %>% 
+  ggplot(aes(E3b)) +
+  geom_histogram() +
+  labs(x = NULL, title = "Publish first academic publication")
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+
+# Highest education
+
+
+```r
+answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
+
+answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
+
+e4_df <- df %>% 
+  select("E4")
+
+e4_df_rec <- e4_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e4, 
+                labels = answer_labels_e4))
+
+e4_df_rec %>%
+  # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
+  count(E4) %>%
+  ggplot(aes(fct_reorder(E4, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Highest education")
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+# Types of institution
+
+
+```r
+answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
+
+e5_df <- df %>% 
+  select("E5")
+
+e5_df_rec <- e5_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e5))
+
+e5_df_rec %>% 
+  count(E5) %>% 
+  ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "In what type of institution do you work?")
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+
+# Position
+
+
+```r
+answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/researcher", "Assistant professor", 
+                      "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
+                      "Technician or lab manager", "Core facility manager", "Other")
+
+e6_df <- df %>% 
+  select("E6")
+
+e6_df_rec <- e6_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e6))
+
+e6_df_rec %>% 
+  count(E6) %>% 
+  ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Position")
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+
+# Respondents by disciplines
+
+
+```r
+answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
+                      "Social Sciences", "Humanities and the Arts")
+
+e7_df <- df %>% 
+  select("E7")
+
+e7_df_rec <- e7_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e7))
+
+e7_df_rec %>% 
+  count(E7) %>% 
+  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Respondents by discipline")
+```
+
+![](01_exploration_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+
 
 # A1 Practices in OS
 
@@ -113,14 +302,14 @@ a1_df_rec %>%
 visdat::vis_miss(a1_df_rec)
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 ```r
 a1_df_rec %>% 
   plot_likert(question_codes, "Practices regarding OS")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-5-2.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-12-2.png)<!-- -->
 
 
 # A2 Own pratices regarding Open Access publishing
@@ -155,7 +344,7 @@ a2_df_rec %>%
   plot_likert(question_codes, "Own pratices regarding Open Access publishing")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
 
 # A3 Own practices regarding Research Data Management
@@ -185,7 +374,7 @@ a3_df_rec %>%
   plot_likert(question_codes, "Own practices regarding Research Data Management")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
 
 # A4 Practices regarding Reproducible Research Scale
@@ -215,7 +404,7 @@ a4_df_rec %>%
   plot_likert(question_codes, "Practices regarding Reproducible Research Scale")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
 
 
 # A5 Pratices regarding Open Peer Review Scale
@@ -251,7 +440,7 @@ a5_df_rec %>%
   plot_likert(question_codes, "Pratices regarding Open Peer Review Scale")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
 
 
 # A6 Practices regarding Open Source Software Scale
@@ -281,7 +470,7 @@ a6_df_rec %>%
   plot_likert(question_codes, "Practices regarding Open Source Software Scale")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 
 
 # A7 Practices regarding Licensing Scale
@@ -311,7 +500,7 @@ a7_df_rec %>%
   plot_likert(question_codes, "Practices regarding Licensing Scale")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
 
 
 # A8 Practices regarding Research Integrity Scale
@@ -341,7 +530,7 @@ a8_df_rec %>%
   plot_likert(question_codes, "Practices regarding Research Integrity Scale")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 
 # A9 Practices regarding Citizen Science (information, consultation, public participation )
@@ -371,7 +560,7 @@ a9_df_rec %>%
   plot_likert(question_codes, "Practices regarding Citizen Science")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
 
 
 # A10 Practices regarding Gender Issues Scale
@@ -401,7 +590,7 @@ a10_df_rec %>%
   plot_likert(question_codes, "Practices regarding Gender Issues Scale")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
 
 # Part B Training on OS topics
 
@@ -437,7 +626,7 @@ b1_df_rec %>%
   plot_likert(question_codes, "Attended Training Events")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
 
 # B3 Attended Different Types of Training Sessions
@@ -472,7 +661,7 @@ b3_df_rec %>%
   plot_likert(question_codes, "Attended Different Types of Training Sessions")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
 
 
 # B5 Hours of training
@@ -503,7 +692,7 @@ b5_df_rec %>%
   labs(x = NULL, title = "Hours of training")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 
 # B6 Attended Different Types of Training Sessions
@@ -539,7 +728,7 @@ b6_df_rec %>%
   plot_likert(question_codes, "Attended Different Types of Training Sessions")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
 
 
 # B8 Attendance of first formal training in any Open Science topic
@@ -563,7 +752,7 @@ b8_df_rec %>%
   labs(x = NULL, title = "Attendance of first formal training in any Open Science topic")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
 
 
 Most responses from the "Other" category mention that they never received any
@@ -586,7 +775,7 @@ b9_df_rec %>%
   plot_likert(question_codes, "Who provided the training sessions you attended?")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
 
 
 # B10 Preferred way to learn OS topics
@@ -604,7 +793,7 @@ b10_df_rec %>%
   plot_likert(question_codes, "Preferred way to learn OS topics")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
 
 
 # B11 Has your awareness of open science practices increased after the training you attended?
@@ -634,7 +823,7 @@ b11_df_rec %>%
   plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+![](01_exploration_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
 
 
 # B11 Would you share your experience with open science practices and tools with colleagues?
@@ -664,196 +853,8 @@ b12_df_rec %>%
   plot_likert(question_codes, "Would you share your experience with open science practices\nand tools with colleagues?")
 ```
 
-![](01_exploration_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
-
-# Demographics
-
-# Age cohorts
-
-
-```r
-answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
-
-e3_df <- df %>% 
-  select("E3")
-
-e3_df_rec <- e3_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e3))
-
-
-e3_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-```
-## # A tibble: 1 x 1
-##      E3
-##   <int>
-## 1     0
-```
-
-```r
-e3_df_rec %>%
-  mutate(across(.fns = as.numeric)) %>% 
-  summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
-```
-
-```
-## # A tibble: 1 x 1
-##      E3
-##   <dbl>
-## 1  4.49
-```
-
-```r
-e3_df_rec %>%
-  ggplot(aes(E3)) +
-  geom_bar(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Age cohorts")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
-
-
-# Gender
-
-
-```r
-answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
-
-e2_df <- df %>% 
-  select("E2")
-
-e2_df_rec <- e2_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e2))
-
-
-e2_df_rec %>% 
-  count(E2) %>% 
-  ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Gender")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
-
-# Publish first academic publication
-
-
-```r
-e3b_df <- df %>% 
-  select("E3b") %>% 
-  filter(E3b > 1960)
-
-e3b_df %>% 
-  ggplot(aes(E3b)) +
-  geom_histogram() +
-  labs(x = NULL, title = "Publish first academic publication")
-```
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
-
-
-# Highest education
-
-
-```r
-answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
-
-answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
-
-e4_df <- df %>% 
-  select("E4")
-
-e4_df_rec <- e4_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e4, 
-                labels = answer_labels_e4))
-
-e4_df_rec %>%
-  # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
-  count(E4) %>%
-  ggplot(aes(fct_reorder(E4, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Highest education")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
-
-# Types of institution
-
-
-```r
-answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
-
-e5_df <- df %>% 
-  select("E5")
-
-e5_df_rec <- e5_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e5))
-
-e5_df_rec %>% 
-  count(E5) %>% 
-  ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "In what type of institution do you work?")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
-
-# Position
-
-
-```r
-answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/researcher", "Assistant professor", 
-                      "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
-                      "Technician or lab manager", "Core facility manager", "Other")
-
-e6_df <- df %>% 
-  select("E6")
-
-e6_df_rec <- e6_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e6))
-
-e6_df_rec %>% 
-  count(E6) %>% 
-  ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Position")
-```
-
-![](01_exploration_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
-
-# Respondents by disciplines
-
-
-```r
-answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
-                      "Social Sciences", "Humanities and the Arts")
-
-e7_df <- df %>% 
-  select("E7")
-
-e7_df_rec <- e7_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e7))
-
-e7_df_rec %>% 
-  count(E7) %>% 
-  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Respondents by discipline")
-```
-
 ![](01_exploration_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
+
 
 
 # Further todos
