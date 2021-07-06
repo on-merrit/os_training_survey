@@ -210,7 +210,7 @@ e5_df_rec %>%
 
 
 ```r
-answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/researcher", "Assistant professor", 
+answer_levels_e6 <- c("Junior Researcher", "Senior researcher", "Ph.D. student", "Postdoctoral fellow/ researcher", "Assistant professor", 
                       "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
                       "Technician or lab manager", "Core facility manager", "Other")
 
