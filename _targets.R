@@ -3,7 +3,7 @@ library(tarchetypes)
 source("R/functions.R")
 source("R/helpers.R")
 options(tidyverse.quiet = TRUE)
-tar_option_set(packages = c("scales", "stringr", "tidyverse"))
+tar_option_set(packages = c("scales", "tidyverse", "visdat"))
 
 list(
   tar_target(
