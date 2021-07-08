@@ -32,17 +32,29 @@ library(targets)
 source("R/functions.R")
 source("R/helpers.R")
 options(tidyverse.quiet = TRUE)
-tar_option_set(packages = c("scales", "stringr", "" "tidyverse"))
+tar_option_set(packages = c("scales", "stringr" "tidyverse"))
 list(
   tar_target(
-    df,
+    raw_data_file,
     "data/survey_anonymised.csv",
     format = "file"
   ),
   tar_target(
-    df,
+    raw_data,
     read_csv(raw_data_file, col_types = cols())
   ),
+  tar_target(
+    final_data,
+    raw_data %>%
+      remove_non_consenters()
+  ),
+  
+   tar_target(
+    final_data,
+    raw_data %>%
+      add_country()
+  ),
+)
 
 ```
 
