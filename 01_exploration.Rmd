@@ -26,19 +26,27 @@ theme_set(theme_bw())
 ```
 
 
+```{r}
+
+library(targets)
+source("R/functions.R")
+source("R/helpers.R")
+options(tidyverse.quiet = TRUE)
+tar_option_set(packages = c("scales", "stringr", "" "tidyverse"))
+list(
+  tar_target(
+    df,
+    "data/survey_anonymised.csv",
+    format = "file"
+  ),
+  tar_target(
+    df,
+    read_csv(raw_data_file, col_types = cols())
+  ),
+
+```
 
 ```{r remove non consenters}
-consent <- select(df, id, starts_with("D1["))
-
-consent_rec <- consent %>% 
-  mutate(across(starts_with("D1["), .fns = dplyr::recode, Yes = TRUE, 
-                No = FALSE),
-         consented = (`D1[SQ001]` + `D1[SQ002]` + `D1[SQ003]` + `D1[SQ004]`) == 4)
-
-df <- consent_rec %>% 
-  filter(consented) %>% 
-  select(id) %>% 
-  left_join(df)
 
 # number of cases:
 nrow(df)
