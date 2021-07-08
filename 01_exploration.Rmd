@@ -18,7 +18,7 @@ library(scales)
 library(lubridate)
 source(here::here("R/helpers.R"))
 
-df <- read_csv("data/processed/survey_anonymised.csv")
+df <- tar_read(with_countries)
 
 question_codes <- read_csv("data/processed/question_codes.csv")
 

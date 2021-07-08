@@ -1,4 +1,5 @@
 library(targets)
+library(tarchetypes)
 source("R/functions.R")
 source("R/helpers.R")
 options(tidyverse.quiet = TRUE)
@@ -31,5 +32,6 @@ list(
   tar_target(
     with_countries,
     add_country(only_consenters, countries)
-  )
+  ),
+  tar_render(parts_a_b, "01_exploration.Rmd")
 )
