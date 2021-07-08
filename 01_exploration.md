@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "06 Juli, 2021"
+date: "08 Juli, 2021"
 output: 
   html_document:
     keep_md: true
@@ -11,24 +11,6 @@ output:
 
 
 
-
-```r
-consent <- select(df, id, starts_with("D1["))
-
-consent_rec <- consent %>% 
-  mutate(across(starts_with("D1["), .fns = dplyr::recode, Yes = TRUE, 
-                No = FALSE),
-         consented = (`D1[SQ001]` + `D1[SQ002]` + `D1[SQ003]` + `D1[SQ004]`) == 4)
-
-df <- consent_rec %>% 
-  filter(consented) %>% 
-  select(id) %>% 
-  left_join(df)
-```
-
-```
-## Joining, by = "id"
-```
 
 ```r
 # number of cases:
