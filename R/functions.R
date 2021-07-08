@@ -16,13 +16,10 @@ remove_non_consenters <- function(df) {
 
 
 
-add_country <- function(raw_data, merged_countries) {countries <- read_csv("data/processed/countries_merged.csv")
-countries_distinct <- distinct(countries)
-df_small
-df_small %>% 
-  left_join(countries_distinct) 
-  }
-
-
-# df_small <- df %>% 
-#  select(id, E1)
+add_country <- function(raw_data, merged_countries) {
+  
+  countries_distinct <- distinct(merged_countries)
+  
+  raw_data %>% 
+    left_join(countries_distinct, by = "E1") 
+}
