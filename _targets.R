@@ -33,5 +33,7 @@ list(
     with_countries,
     add_country(only_consenters, countries)
   ),
-  tar_render(parts_a_b, "01_exploration.Rmd")
+  tar_render(parts_a_b, "01_exploration.Rmd"),
+  tar_render(parts_c_d, "02_exploration.Rmd")
 )
+

@@ -1,0 +1,119 @@
+---
+title: "Survey Results Task 3.3 Part C and D"
+author: "Anja Rainer"
+date: "09 Juli, 2021"
+output: 
+  html_document:
+    keep_md: true
+---
+
+
+
+# C1 Institution: OA policy
+
+
+```r
+answer_levels_5 <- c("I don't know", "No", "Yes")
+
+c1_df <- df %>% 
+  select("C1")
+
+c1_df_rec <- c1_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_5))
+
+
+c1_df_rec %>% 
+  count(C1) %>% 
+  ggplot(aes(fct_reorder(C1, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Does your institution have an OA policy?")
+```
+
+![](02_exploration_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+
+# C3 Institution: Recommend OS/OA practices?
+
+
+```r
+c3_df <- df %>% 
+  select("C3")
+
+c3_df_rec <- c3_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_5))
+
+
+c3_df_rec %>% 
+  count(C3) %>% 
+  ggplot(aes(fct_reorder(C3, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Does your institution recommend open science/ open access practices?")
+```
+
+![](02_exploration_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+
+# c5 Helpdesk/ group to support any issues
+
+
+```r
+c5_df <- df %>% 
+  select("C5")
+
+c5_df_rec <- c5_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_5))
+
+
+c5_df_rec %>% 
+  count(C5) %>% 
+  ggplot(aes(fct_reorder(C5, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Is there a dedicated helpdesk/ group to support any issues related to the open science / open access policy?")
+```
+
+![](02_exploration_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
+
+# C6 Guidance on how to comply with the policies by the financing entities that require OA to publications?
+
+
+```r
+c6_df <- df %>% 
+  select("C6")
+
+c6_df_rec <- c6_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_5))
+
+
+c6_df_rec %>% 
+  count(C6) %>% 
+  ggplot(aes(fct_reorder(C6, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications?")
+```
+
+![](02_exploration_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+# C7 Does your institution support you financially in paying article processing charges (APCs)?
+
+
+```r
+c7_df <- df %>% 
+  select("C7")
+
+c7_df_rec <- c7_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_5))
+
+
+c7_df_rec %>% 
+  count(C7) %>% 
+  ggplot(aes(fct_reorder(C7, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Does your institution support you financially in paying article processing charges (APCs)?")
+```
+
+![](02_exploration_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
