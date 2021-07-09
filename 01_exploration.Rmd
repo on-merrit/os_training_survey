@@ -475,7 +475,7 @@ b3_df_rec %>%
 
 # B5 Hours of training
 
-```{r}
+```{r, fig.width=8, fig.height=8}
 answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 
 b5_df <- df %>% 
@@ -522,7 +522,8 @@ b6_df_rec %>%
 
 # B8 Attendance of first formal training in any Open Science topic
 
-```{r}
+```{r, fig.width=8, fig.height=8}
+
 answer_levels_b8 <- c("During doctoral studies", "As a researcher", "During a conference", "Other")
 
 b8_df <- df %>% 
@@ -547,7 +548,8 @@ training.
 
 # B9 Who provided the training sessions you attended?
 
-```{r}
+```{r, fig.width=8, fig.height=8}
+
 answer_levels_3 <- c("Yes", "No")
 
 b9_df <- df %>% 
@@ -565,7 +567,7 @@ b9_df_rec %>%
 
 # B10 Preferred way to learn OS topics
 
-```{r}
+```{r, fig.width=8, fig.height=8}
 
 b10_df <- df %>% 
   select(starts_with("B10["))
