@@ -8,6 +8,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 
 df <- tar_read(with_countries)
@@ -19,7 +20,7 @@ theme_set(theme_bw())
 
 # C1 Institution: OA policy
 
-```{r}
+```{r, fig.width=8, fig.height=8}
 answer_levels_5 <- c("I don't know", "No", "Yes")
 
 c1_df <- df %>% 
@@ -40,13 +41,15 @@ c1_df_rec %>%
 
 # C3 Institution: Recommend OS/OA practices?
 
-```{r}
+```{r, fig.width=8, fig.height=8}
+
+answer_levels_6 <- c("No", "Yes")
 
 c3_df <- df %>% 
   select("C3")
 
 c3_df_rec <- c3_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_5))
+  mutate(across(.fns = factor, levels = answer_levels_6))
 
 
 c3_df_rec %>% 
@@ -60,7 +63,7 @@ c3_df_rec %>%
 
 # c5 Helpdesk/ group to support any issues
 
-```{r}
+```{r, fig.width=8, fig.height=8}
 c5_df <- df %>% 
   select("C5")
 
@@ -80,7 +83,7 @@ c5_df_rec %>%
 
 # C6 Guidance on how to comply with the policies by the financing entities that require OA to publications?
 
-```{r}
+```{r, fig.width=8, fig.height=8}
 
 c6_df <- df %>% 
   select("C6")
@@ -88,6 +91,8 @@ c6_df <- df %>%
 c6_df_rec <- c6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_5))
 
+c6_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
 
 c6_df_rec %>% 
   count(C6) %>% 
@@ -100,13 +105,16 @@ c6_df_rec %>%
 
 # C7 Does your institution support you financially in paying article processing charges (APCs)?
 
-```{r}
+```{r, fig.width=8, fig.height=8}
+
 c7_df <- df %>% 
   select("C7")
 
 c7_df_rec <- c7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_5))
 
+c7_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
 
 c7_df_rec %>% 
   count(C7) %>% 
@@ -117,3 +125,117 @@ c7_df_rec %>%
 
 ```
 
+
+# C8 Degree of support in practicing OS at institution
+
+```{r, fig.width=8, fig.height=8}
+
+answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
+"I receive sufficient support or incentives")
+
+c8_df <- df %>% 
+  select(starts_with("C8[")) 
+
+c8_df_rec <- c8_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_7))
+
+
+c8_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+c8_df_rec %>% 
+  plot_likert(question_codes, "Degree of support in practicing OS at institution")
+
+
+```
+
+
+# C10: Other initiatives incentivising Open Science practices at institution
+
+```{r, fig.width=8, fig.height=8}
+
+c10_df <- df %>% 
+  select("C10")
+
+c10_df_rec <- c10_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_6))
+
+c10_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+c10_df_rec %>% 
+  count(C10) %>% 
+  ggplot(aes(fct_reorder(C10, n, .fun = "max"), n)) +
+  geom_col(width = .7) +
+  coord_flip() +
+  labs(x = NULL, title = "Other initiatives incentivising Open Science practices at institution")
+
+
+```
+
+# Part D: Drivers and barriers to practicing Open Science
+
+# D2
+
+```{r, fig.width=8, fig.height=8}
+
+d2_df <- df %>% 
+  select("D2[SQ001]", "D2[SQ002]", "D2[SQ003]", "D2[SQ004]", "D2[SQ005]", "D2[SQ006]", "D2[SQ007]")
+
+d2_df_rec <- d2_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_6))
+
+d2_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+
+d2_df_rec %>% 
+  plot_likert(question_codes, "Drivers and barriers to practicing Open Science")
+
+```
+
+# D5 Main drivers to participate OS
+
+```{r, fig.width=8, fig.height=8}
+
+answer_levels_8 <- c("Don’t know/ Don’t have enough information", "No driver", "Minor driver",
+                     "Significant driver", "Very significant driver")
+
+d5_df <- df %>% 
+  select(starts_with("D5[")) 
+
+d5_df_rec <- d5_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_8))
+
+
+d5_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+d5_df_rec %>% 
+  plot_likert(question_codes, "Main drivers to participate OS")
+
+
+```
+
+# D7 Drivers or barriers to practice Open Science
+
+```{r, fig.width=8, fig.height=8}
+
+answer_levels_9 <- c("Don’t know/ Don’t have enough information", "Neither barrier nor driver", "Barrier",
+                     "Driver")
+
+d7_df <- df %>% 
+  select(starts_with("D7[")) 
+
+d7_df_rec <- d7_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_9))
+
+
+d7_df %>% 
+  summarise(across(.fns = ~sum(is.na(.x))))
+
+d7_df_rec %>% 
+  plot_likert(question_codes, "Drivers or barriers to practice Open Science")
+
+
+```
