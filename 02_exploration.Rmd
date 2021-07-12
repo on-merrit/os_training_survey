@@ -81,7 +81,7 @@ c5_df_rec %>%
 ```
 
 
-# C6 Guidance on how to comply with the policies by the financing entities that require OA to publications?
+# C6 Guidance on how to comply with the policies by the financing entities that require OA to publications
 
 ```{r, fig.width=8, fig.height=8}
 
@@ -99,7 +99,7 @@ c6_df_rec %>%
   ggplot(aes(fct_reorder(C6, n, .fun = "max"), n)) +
   geom_col(width = .7) +
   coord_flip() +
-  labs(x = NULL, title = "Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications?")
+  labs(x = NULL, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications")
 
 ```
 
