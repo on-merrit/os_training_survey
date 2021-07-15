@@ -410,7 +410,7 @@ a8_df_rec %>%
 ```
 
 
-# A9 Practices regarding Citizen Science (information, consultation, public participation )
+# A9 Practices regarding Citizen Science (information, consultation, public participation)
 
 ```{r, fig.width=8, fig.height=5}
 
@@ -569,7 +569,7 @@ b8_df_rec %>%
 Most responses from the "Other" category mention that they never received any
 training.
 
-# B9 Who provided the training sessions you attended?
+# B9 Provider of attended training sessions
 
 ```{r, fig.width=8, fig.height=8}
 
@@ -629,7 +629,7 @@ b11_df_rec %>%
 ```
 
 
-# B11 Would you share your experience with open science practices and tools with colleagues?
+# B12 Share experience OS practices/tool with colleagues
 
 ```{r, fig.width=8, fig.height=6}
 
