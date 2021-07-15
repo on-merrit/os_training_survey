@@ -34,7 +34,7 @@ c1_df_rec <- c1_df %>%
 c1_df_rec %>% 
   count(C1) %>% 
   ggplot(aes(fct_reorder(C1, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
+  geom_col(width = .5) +
   coord_flip() +
   labs(x = NULL, title = "Does your institution have an OA policy?")
 
@@ -56,7 +56,7 @@ c3_df_rec <- c3_df %>%
 c3_df_rec %>% 
   count(C3) %>% 
   ggplot(aes(fct_reorder(C3, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
+  geom_col(width = .5) +
   coord_flip() +
   labs(x = NULL, title = "Does your institution recommend open science/ open access practices?")
 
@@ -144,6 +144,7 @@ c8_df_rec <- c8_df %>%
 c8_df %>% 
   summarise(across(.fns = ~sum(is.na(.x))))
 
+
 c8_df_rec %>% 
   plot_likert(question_codes, "Degree of support in practicing OS at institution")
 
@@ -168,7 +169,7 @@ c10_df %>%
 c10_df_rec %>% 
   count(C10) %>% 
   ggplot(aes(fct_reorder(C10, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
+  geom_col(width = .5) +
   coord_flip() +
   labs(x = NULL, title = "Other initiatives incentivising Open Science practices at institution")
 
