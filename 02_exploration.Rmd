@@ -40,7 +40,7 @@ c1_df_rec %>%
 
 ```
 
-# C3 Institution: Recommend OS/OA practices?
+# C3 Institution: OS/OA practices recommandation
 
 ```{r, fig.width=8, fig.height=4}
 
@@ -104,7 +104,7 @@ c6_df_rec %>%
 
 ```
 
-# C7 Does your institution support you financially in paying article processing charges (APCs)?
+# C7 Financial support in paying article processing charges (APCs)
 
 ```{r, fig.width=8, fig.height=6}
 
@@ -177,7 +177,7 @@ c10_df_rec %>%
 
 # Part D: Drivers and barriers to practicing Open Science
 
-# D2
+# D2 Summarised views: What would you say OS is?
 
 ```{r, fig.width=8, fig.height=8}
 
@@ -192,7 +192,25 @@ d2_df %>%
 
 
 d2_df_rec %>% 
-  plot_likert(question_codes, "Drivers and barriers to practicing Open Science")
+  plot_likert(question_codes, "Summarised views: What would you say OS is?")
+
+```
+
+# D3  Most significant barriers facing
+
+```{r, fig.width=2, fig.height=4}
+
+answer_levels_8 <- c("Don’t know/ Don’t have enough information", "No barrier", "Minor barrier",
+                     "Significant barrier", "Very significant barrier")
+
+d3_df <- df %>% 
+  select("D3[SQ001]", "D3[SQ002]", "D3[SQ003]", "D3[SQ004]", "D3[SQ005]", "D3[SQ006]", "D3[SQ007]", "D3[SQ008]")
+
+d3_df_rec <- d3_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_8))
+
+d3_df_rec %>% 
+  plot_likert(question_codes, "Which are the most significant barriers you will be facing while\nembracing an Open Science perspective?")
 
 ```
 
