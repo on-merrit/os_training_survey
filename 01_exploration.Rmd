@@ -47,12 +47,10 @@ df %>%
 
 ```{r}
 
-levels_country <- c("Argentina", "Australia", "Austria", "Belgium", "Brazil", "Canada", "Chile", "Denmark", "Estonia", "Finland", "France", "Germany", "India", "Iran", "Ireland", "Italy", "Malaysia", "Netherlands", "New Zealand", "Nigeria", "Norway", "Palestine", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Serbia", "Slovenia", "South Africa", "Spain", "Switzerland", "Turkey", "United Kingdom", "United States")
-
 e1_rec_df <- df %>%
   select("E1_rec")
 
-e1_rec_df_rec <- countries_df %>%
+e1_rec_df_rec <- e1_rec_df %>%
     mutate(across(.fns = factor, levels = levels_country))
 
 e1_rec_df_rec %>%
