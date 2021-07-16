@@ -50,7 +50,7 @@ df %>%
 e1_rec_df <- df %>%
   select("E1_rec")
 
-e1_rec_df_rec %>%
+e1_rec_df_rec <- e1_rec_df %>%
   ggplot(aes(E1_rec)) +
   geom_bar(width = .7) +
   coord_flip() +
