@@ -20,7 +20,7 @@ theme_set(theme_bw())
 
 # C1 Institution: OA policy
 
-```{r, fig.width=4, fig.height=2}
+```{r, fig.width=6, fig.height=3}
 
 answer_levels_5 <- c("I don't know", "No", "Yes")
 
@@ -42,7 +42,7 @@ c1_df_rec %>%
 
 # C3 Institution: OS/OA practices recommandation
 
-```{r, fig.width=8, fig.height=4}
+```{r, fig.width=6, fig.height=3}
 
 answer_levels_6 <- c("No", "Yes")
 
@@ -259,4 +259,3 @@ d7_df_rec %>%
   plot_likert(question_codes, "Drivers or barriers to practice Open Science")
 
 ```
-
