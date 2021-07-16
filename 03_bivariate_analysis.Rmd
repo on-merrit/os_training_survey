@@ -1,0 +1,17 @@
+---
+title: "03_bivariate_analysis"
+author: "Anja Rainer"
+date: "16 7 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Bivariate analysis Gender
+
+```{r}
+
+```
+
