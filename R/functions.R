@@ -23,3 +23,12 @@ add_country <- function(raw_data, merged_countries) {
   raw_data %>% 
     left_join(countries_distinct, by = "E1") 
 }
+
+
+function_c7_df <- function(df = c7_df_rec, var = C7, title = „My title“) {
+  count(C7) %>% 
+    ggplot(aes(fct_reorder(C7, n, .fun = "max"), n)) +
+    geom_col(width = .7) +
+    coord_flip() +
+    labs(x = NULL, title = "Does your institution support you financially in paying article processing charges (APCs)?")
+  }
