@@ -1,6 +1,9 @@
 plot_likert <- function(df, question_codes, title = NULL) {
   pdata <- df %>% 
     pivot_longer(everything(), names_to = "var") %>% 
+    filter(!is.na(value), 
+           !(value %in% c("This topic is not relevant to my research", 
+                          "Don’t know/ Don’t have enough information"))) %>% 
     left_join(question_codes, by = c("var" = "short_code")) %>% 
     count(question_specification, value) %>% 
     group_by(question_specification) %>% 
