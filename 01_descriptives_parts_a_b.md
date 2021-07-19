@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "16 Juli, 2021"
+date: "19 Juli, 2021"
 output: 
   html_document:
     keep_md: true
@@ -102,10 +102,7 @@ e3_df_rec %>%
 
 ```r
 e3_df_rec %>%
-  ggplot(aes(E3)) +
-  geom_bar(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Age cohorts")
+  plot_bar(E3, title = "Age cohorts", reorder = FALSE)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
