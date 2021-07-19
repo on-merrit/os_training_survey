@@ -83,12 +83,7 @@ e3_df_rec %>%
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
 
 e3_df_rec %>%
-  ggplot(aes(E3)) +
-  geom_bar(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Age cohorts")
-
-
+  plot_bar(E3, title = "Age cohorts", reorder = FALSE)
 
 ```
 
