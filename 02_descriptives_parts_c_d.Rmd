@@ -169,7 +169,7 @@ c10_df %>%
 c10_df_rec %>% 
   count(C10) %>% 
   ggplot(aes(fct_reorder(C10, n, .fun = "max"), n)) +
-  geom_col(width = .5) +
+  geom_col(width = .7) +
   coord_flip() +
   labs(x = NULL, title = "Other initiatives incentivising Open Science practices at institution")
 
@@ -219,14 +219,14 @@ d3_df_rec %>%
 
 ```{r, fig.width=8, fig.height=8}
 
-answer_levels_8 <- c("Don’t know/ Don’t have enough information", "No driver", "Minor driver",
+answer_levels_9 <- c("Don’t know/ Don’t have enough information", "No driver", "Minor driver",
                      "Significant driver", "Very significant driver")
 
 d5_df <- df %>% 
   select(starts_with("D5[")) 
 
 d5_df_rec <- d5_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_8))
+  mutate(across(.fns = factor, levels = answer_levels_9))
 
 
 d5_df %>% 
