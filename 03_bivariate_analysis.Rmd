@@ -13,13 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 
-gender_df <- a10_df_rec %>%
-  select(starts_with("A10["))
+gender_df <- merge(e2_df_rec, a10_df_rec)
 
-gender_df %>%
-  left_join(e2_df_rec, by = "E2")
+#barplot
 
 
+
+```
+
+```{r}
 
 ```
 
