@@ -8,6 +8,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 
 df <- tar_read(with_countries)
