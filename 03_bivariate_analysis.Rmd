@@ -9,19 +9,93 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Merge dataframes
+
+```{r}
+gender_df <- merge(e2_df_rec, a10_df_rec)
+
+df_discipline_a1 <- merge (e7_df_rec, a1_df_rec)
+
+```
+
 # Bivariate analysis Gender
 
 ```{r}
+# try something
 
-gender_df <- merge(e2_df_rec, a10_df_rec)
 
-#barplot
+gender_df %>%
+  select(E2, `A10[SQ001]`) %>% 
+  ggplot(aes(E2, fill = `A10[SQ001]`)) +
+  geom_bar(position = "dodge") +
+  coord_flip() +
+  labs(title = "Title")
+
+gender_df %>%
+  select(E2, `A10[SQ002]`) %>% 
+  ggplot(aes(E2, fill = `A10[SQ002]`)) +
+  geom_bar(position = "dodge") +
+  coord_flip() +
+  labs(title = "Title")
+
+gender_df %>%
+  select(E2, `A10[SQ001]`) %>% 
+  ggplot(aes(x = E2, y = `A10[SQ001]`)) +
+  geom_jitter() +
+  labs(title = "Title")
 
 
 
 ```
 
 ```{r}
+
+# try ggplot
+
+
+df_discipline_a1 %>%
+  select(E7, `A1[SQ001]`) %>% 
+  ggplot(aes(E7, fill = `A1[SQ001]`)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Title")
+
+
+df_discipline_a1 %>%
+  select(E7, `A1[SQ001]`) %>% 
+  ggplot(aes(x = E7, y = `A1[SQ001]`)) +
+  geom_jitter() +
+  labs(title = "Title")
+
+
+df_discipline_a1 %>%
+  count(E7, `A1[SQ001]`) %>% 
+  ggplot(aes(x = E7, y = `A1[SQ001]`, fill = E7)) +
+  geom_bar(stat = 'identity') +
+  labs(title = "Title")
+
+df_discipline_a1 %>%
+    ggplot(aes(x = E7,
+               y = `A1[SQ001]`,
+               colour = E7,
+               linetype = E7,
+               group = E7)) + 
+    geom_line(size = 2) + 
+    geom_point(size = 4)
+
+
+
+df_discipline_a1 %>%
+  select(`A1[SQ001]`, E7) %>% 
+  ggplot(mapping = aes(x = `A1[SQ001]`, fill = E7)) + 
+  geom_histogram(binwidth = 0.8, 
+                   position = "dodge")
+
+df_discipline_a1 %>%
+select(E7, `A1[SQ001]`) %>% 
+    ggplot(mapping = aes(x = E7)) +
+    facet_grid(`A1[SQ001]`) + 
+  geom_histogram(binwidth = 0.8,
+                   fill = 'steelblue4')
 
 ```
 
