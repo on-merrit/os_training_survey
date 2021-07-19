@@ -29,17 +29,20 @@ plot_bar <- function(df,  var, title = NULL, reorder = TRUE) {
   if (reorder) {
     plot_data <- df %>%
       count({{var}}) %>%
-      mutate(xvar = fct_reorder({{var}}, n, .fun = "max"))
+      mutate(prop = n/sum(n),
+             xvar = fct_reorder({{var}}, n, .fun = "max"))
   } else {
     plot_data <- df %>%
       count({{var}}) %>%
-      mutate(xvar = {{var}})
+      mutate(prop = n/sum(n),
+             xvar = {{var}})
   }
   
   
   plot_data %>%
-    ggplot(aes(xvar, n)) +
+    ggplot(aes(xvar, prop)) +
     geom_col(width = .7) +
+    scale_y_continuous(labels = scales::percent) + 
     coord_flip() +
     labs(x = NULL, title = title)
 }
