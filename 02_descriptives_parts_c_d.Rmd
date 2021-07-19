@@ -129,7 +129,7 @@ c7_df_rec %>%
 
 # C8 Degree of support in practicing OS at institution
 
-```{r, fig.width=2, fig.height=4}
+```{r, fig.width=8, fig.height=6}
 
 answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
 "I receive sufficient support or incentives")
@@ -155,7 +155,7 @@ c8_df_rec %>%
 
 # C10: Other initiatives incentivising Open Science practices at institution
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=3, fig.height=6}
 
 c10_df <- df %>% 
   select("C10")
@@ -199,7 +199,7 @@ d2_df_rec %>%
 
 # D3  Most significant barriers facing
 
-```{r, fig.width=2, fig.height=4}
+```{r, fig.width=8, fig.height=6}
 
 answer_levels_8 <- c("Don’t know/ Don’t have enough information", "No barrier", "Minor barrier",
                      "Significant barrier", "Very significant barrier")
