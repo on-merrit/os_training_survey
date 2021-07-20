@@ -50,7 +50,7 @@ df %>%
 
 # Countries
 
-In which country do you work?
+In which country do you work? [drop-down/ open text]
 
 ```{r, e1, fig.width=8, fig.height=6.5}
 
@@ -209,7 +209,9 @@ e7_df_rec %>%
 
 # A1 Practices in OS
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Open Science
+
+```{r, a1, fig.width=8, fig.height=5}
 
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
@@ -235,7 +237,7 @@ a1_df_rec %>%
 ```
 
 
-```{r, fig.width=8, fig.height=5}
+```{r, a1, fig.width=8, fig.height=5}
 visdat::vis_miss(a1_df_rec)
 
 a1_df_rec %>% 
