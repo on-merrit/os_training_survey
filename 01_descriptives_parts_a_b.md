@@ -234,7 +234,7 @@ e7_df_rec <- e7_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
 e7_df_rec %>% 
-  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .1)
+  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .055)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/e7-1.png)<!-- -->
@@ -729,7 +729,7 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = TRUE, nudge_y = .028)
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = TRUE, nudge_y = .08)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
