@@ -12,6 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 # Merge dataframes
 
 ```{r}
+
+# bind_cols()
+# bind_rows()
+
 gender_df <- merge(e2_df_rec, a10_df_rec)
 
 df_discipline_a1 <- merge (e7_df_rec, a1_df_rec)

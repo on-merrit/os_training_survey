@@ -1,15 +1,19 @@
 ---
 title: "Survey Results Task 3.3 Part C and D"
 author: "Anja Rainer"
-date: "19 Juli, 2021"
+date: "20 Juli, 2021"
 output: 
   html_document:
     keep_md: true
+editor_options: 
+  chunk_output_type: inline
 ---
 
 
 
 # C1 Institution: OA policy
+
+Does your institution have an open access policy? (Y/N/ I don’t know)
 
 
 ```r
@@ -23,16 +27,14 @@ c1_df_rec <- c1_df %>%
 
 
 c1_df_rec %>% 
-  count(C1) %>% 
-  ggplot(aes(fct_reorder(C1, n, .fun = "max"), n)) +
-  geom_col(width = .5) +
-  coord_flip() +
-  labs(x = NULL, title = "Does your institution have an OA policy?")
+plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c1-1.png)<!-- -->
 
 # C3 Institution: OS/OA practices recommandation
+
+Does your institution recommend open science/ open access practices? (Y/N)
 
 
 ```r
@@ -46,16 +48,14 @@ c3_df_rec <- c3_df %>%
 
 
 c3_df_rec %>% 
-  count(C3) %>% 
-  ggplot(aes(fct_reorder(C3, n, .fun = "max"), n)) +
-  geom_col(width = .5) +
-  coord_flip() +
-  labs(x = NULL, title = "Does your institution recommend open science/ open access practices?")
+  plot_bar(C3, title = "Institution: OS/OA practices recommandation", reorder = TRUE, nudge_y = .08)
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c3-1.png)<!-- -->
 
 # c5 Helpdesk/group to support any issues
+
+Is there a dedicated helpdesk/ group to support any issues related to the open science / open access policy? (Y/N/ I don’t know)
 
 
 ```r
@@ -67,17 +67,15 @@ c5_df_rec <- c5_df %>%
 
 
 c5_df_rec %>% 
-  count(C5) %>% 
-  ggplot(aes(fct_reorder(C5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Is there a dedicated helpdesk/group\nto support any issues related to the open science/open access policy?")
+  plot_bar(C5, title = "Helpdesk/group to support any issues", reorder = FALSE, nudge_y = .06)
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c5-1.png)<!-- -->
 
 
 # C6 Guidance on how to comply with the policies by the financing entities that require OA to publications
+
+Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications, such as the European Commission or the European Research Council? (Y/N/ I don’t know)
 
 
 ```r
@@ -100,16 +98,14 @@ c6_df %>%
 
 ```r
 c6_df_rec %>% 
-  count(C6) %>% 
-  ggplot(aes(fct_reorder(C6, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Guidance on how to comply with the policies\nby the financing entities that require OA to publications")
+  plot_bar(C6, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications", reorder = FALSE, nudge_y = .06)
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c6-1.png)<!-- -->
 
 # C7 Financial support in paying article processing charges (APCs)
+
+Does your institution support you financially in paying article processing charges (APCs)? (Y/N/ I don’t know))
 
 
 ```r
@@ -132,17 +128,15 @@ c7_df %>%
 
 ```r
 c7_df_rec %>% 
-  count(C7) %>% 
-  ggplot(aes(fct_reorder(C7, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Does your institution support you financially in paying article processing charges (APCs)?")
+  plot_bar(C7, title = "Financial support in paying article processing charges (APCs)", reorder = FALSE, nudge_y = .07)
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c7-1.png)<!-- -->
 
 
 # C8 Degree of support in practicing OS at institution
+
+To what degree are you supported in practicing Open Science at your institution?
 
 
 ```r
@@ -173,10 +167,12 @@ c8_df_rec %>%
   plot_likert(question_codes, "Degree of support in practicing OS at institution")
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c8-1.png)<!-- -->
 
 
 # C10: Other initiatives incentivising Open Science practices at institution
+
+Are there other initiatives incentivising Open Science practices at your institution (eg. Open Science cafes, Data champions)? (Y/N)
 
 
 ```r
@@ -199,18 +195,16 @@ c10_df %>%
 
 ```r
 c10_df_rec %>% 
-  count(C10) %>% 
-  ggplot(aes(fct_reorder(C10, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Other initiatives incentivising Open Science practices at institution")
+  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/c10-1.png)<!-- -->
 
 # Part D: Drivers and barriers to practicing Open Science
 
 # D2 Summarised views: What would you say OS is?
+
+Overall, if you had to summarise your views, what would you say Open Science is?
 
 
 ```r
@@ -237,9 +231,11 @@ d2_df_rec %>%
   plot_likert(question_codes, "Summarised views: What would you say OS is?")
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/d2-1.png)<!-- -->
 
 # D3  Most significant barriers facing
+
+Which are the most significant barriers you will be facing while embracing an Open Science perspective?
 
 
 ```r
@@ -256,9 +252,11 @@ d3_df_rec %>%
   plot_likert(question_codes, "Which are the most significant barriers you will be facing while\nembracing an Open Science perspective?")
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/d3-1.png)<!-- -->
 
 # D5 Main drivers to participate OS
+
+What could be the main drivers for you to practice open science?
 
 
 ```r
@@ -289,9 +287,11 @@ d5_df_rec %>%
   plot_likert(question_codes, "Main drivers to participate OS")
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/d5-1.png)<!-- -->
 
 # D7 Drivers or barriers to practice Open Science
+
+Would you say the following factors are drivers or barriers for you to practice Open Science?
 
 
 ```r
@@ -322,4 +322,4 @@ d7_df_rec %>%
   plot_likert(question_codes, "Drivers or barriers to practice Open Science")
 ```
 
-![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](02_descriptives_parts_c_d_files/figure-html/d7-1.png)<!-- -->

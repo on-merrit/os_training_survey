@@ -1,10 +1,12 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "19 Juli, 2021"
+date: "20 Juli, 2021"
 output: 
   html_document:
     keep_md: true
+editor_options: 
+  chunk_output_type: inline
 ---
 
 
@@ -51,19 +53,46 @@ df %>%
 
 # Countries
 
+In which country do you work? [drop-down/ open text]
+
 
 ```r
 e1_rec_df <- df %>%
   select("E1_rec")
 
-e1_rec_df_rec <- e1_rec_df %>%
-  ggplot(aes(E1_rec)) +
-  geom_bar(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Countries")
+e1_rec_df %>%
+plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 ```
 
+![](01_descriptives_parts_a_b_files/figure-html/e1-1.png)<!-- -->
+
+
+
+# Gender
+
+Please select the gender category that best describes you
+
+
+```r
+answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
+
+e2_df <- df %>% 
+  select("E2")
+
+e2_df_rec <- e2_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e2))
+
+
+e2_df_rec %>% 
+  plot_bar(E2, title = "Gender", reorder = TRUE, nudge_y = .079)
+```
+
+![](01_descriptives_parts_a_b_files/figure-html/e2-1.png)<!-- -->
+
+
 # Age cohorts
+
+What is your age?
 
 
 ```r
@@ -102,36 +131,14 @@ e3_df_rec %>%
 
 ```r
 e3_df_rec %>%
-  plot_bar(E3, title = "Age cohorts", reorder = FALSE)
+  plot_bar(E3, title = "Age cohorts", reorder = FALSE, nudge_y = .028)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
-
-
-# Gender
-
-
-```r
-answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
-
-e2_df <- df %>% 
-  select("E2")
-
-e2_df_rec <- e2_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e2))
-
-
-e2_df_rec %>% 
-  count(E2) %>% 
-  ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Gender")
-```
-
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/e3-1.png)<!-- -->
 
 # Publish first academic publication
+
+When did you publish your first academic publication (journal article, book, chapter, conference proceeding, or similar)? Please tell us the year.
 
 
 ```r
@@ -140,19 +147,15 @@ e3b_df <- df %>%
   filter(E3b > 1960)
 
 e3b_df %>% 
-  ggplot(aes(E3b)) +
-  geom_histogram() +
-  labs(x = NULL, title = "Publish first academic publication")
+  plot_bar(E3b, title = "Publish first academic publication", reorder = FALSE, nudge_y = .009)
 ```
 
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
-
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/e3b-1.png)<!-- -->
 
 
 # Highest education
+
+What is the highest education level you completed? [drop down]
 
 
 ```r
@@ -168,17 +171,14 @@ e4_df_rec <- e4_df %>%
                 labels = answer_labels_e4))
 
 e4_df_rec %>%
-  # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
-  count(E4) %>%
-  ggplot(aes(fct_reorder(E4, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Highest education")
+  plot_bar(E4, title = "Highest education", reorder = FALSE, nudge_y = .2)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/e4-1.png)<!-- -->
 
 # Types of institution
+
+In what type of institution do you work? [drop down]
 
 
 ```r
@@ -191,16 +191,14 @@ e5_df_rec <- e5_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e5))
 
 e5_df_rec %>% 
-  count(E5) %>% 
-  ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "In what type of institution do you work?")
+  plot_bar(E5, title = "Types of institution", reorder = TRUE, nudge_y = .13)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/e5-1.png)<!-- -->
 
 # Position
+
+What is your position? Choose all that apply
 
 
 ```r
@@ -215,16 +213,14 @@ e6_df_rec <- e6_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e6))
 
 e6_df_rec %>% 
-  count(E6) %>% 
-  ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Position")
+  plot_bar(E6, title = "Position", reorder = TRUE, nudge_y = .035)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/e6-1.png)<!-- -->
 
 # Respondents by disciplines
+
+In which general area of knowledge do you work?
 
 
 ```r
@@ -238,17 +234,15 @@ e7_df_rec <- e7_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
 e7_df_rec %>% 
-  count(E7) %>% 
-  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Respondents by discipline")
+  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .055)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/e7-1.png)<!-- -->
 
 
 # A1 Practices in OS
+
+Please rate the following statements according to your practices regarding Open Science
 
 
 ```r
@@ -296,17 +290,19 @@ a1_df_rec %>%
 visdat::vis_miss(a1_df_rec)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a1-1.png)<!-- -->
 
 ```r
 a1_df_rec %>% 
   plot_likert(question_codes, "Practices regarding OS")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-13-2.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a1-2.png)<!-- -->
 
 
 # A2 Own pratices regarding Open Access publishing
+
+Please rate the following statements according to your own practices regarding Open Access publishing.
 
 
 ```r
@@ -338,10 +334,12 @@ a2_df_rec %>%
   plot_likert(question_codes, "Own pratices regarding Open Access publishing")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a2-1.png)<!-- -->
 
 
 # A3 Own practices regarding Research Data Management
+
+Please rate the following statements according to your own practices regarding Research Data Management.
 
 
 ```r
@@ -368,10 +366,12 @@ a3_df_rec %>%
   plot_likert(question_codes, "Own practices regarding Research Data Management")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a3-1.png)<!-- -->
 
 
 # A4 Practices regarding Reproducible Research
+
+Please rate the following statements according to your practices regarding Reproducible Research
 
 
 ```r
@@ -398,10 +398,12 @@ a4_df_rec %>%
   plot_likert(question_codes, "Practices regarding Reproducible Research")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
 
 
 # A5 Pratices regarding Open Peer Review
+
+Please rate the following statements according to your practices regarding Open Peer Review.
 
 
 ```r
@@ -434,10 +436,12 @@ a5_df_rec %>%
   plot_likert(question_codes, "Pratices regarding Open Peer Review")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a5-1.png)<!-- -->
 
 
 # A6 Practices regarding Open Source Software
+
+Please rate the following statements according to your practices regarding Open Source Software.
 
 
 ```r
@@ -464,10 +468,12 @@ a6_df_rec %>%
   plot_likert(question_codes, "Practices regarding Open Source Software")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a6-1.png)<!-- -->
 
 
 # A7 Practices regarding Licensing
+
+Please rate the following statements according to your practices regarding Licensing.
 
 
 ```r
@@ -494,10 +500,12 @@ a7_df_rec %>%
   plot_likert(question_codes, "Practices regarding Licensing")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a7-1.png)<!-- -->
 
 
 # A8 Practices regarding Research Integrity
+
+Please rate the following statements according to your practices regarding Research Integrity
 
 
 ```r
@@ -524,10 +532,12 @@ a8_df_rec %>%
   plot_likert(question_codes, "Practices regarding Research Integrity")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a8-1.png)<!-- -->
 
 
 # A9 Practices regarding Citizen Science (information, consultation, public participation)
+
+Please rate the following statements according to your practices regarding Citizen Science - consider all levels -information, consultation, public participation
 
 
 ```r
@@ -554,10 +564,12 @@ a9_df_rec %>%
   plot_likert(question_codes, "Practices regarding Citizen Science")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a9-1.png)<!-- -->
 
 
 # A10 Practices regarding Gender Issue
+
+Please rate the following statements according to your practices regarding Gender issues
 
 
 ```r
@@ -584,11 +596,13 @@ a10_df_rec %>%
   plot_likert(question_codes, "Practices regarding Gender Issues")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a10-1.png)<!-- -->
 
 # Part B Training on OS topics
 
 # B1 Attended Training Events
+
+How many training events have you attended in these topics?
 
 
 ```r
@@ -620,10 +634,12 @@ b1_df_rec %>%
   plot_likert(question_codes, "Attended Training Events")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
 
 
 # B3 Attended Different Types of Training Sessions
+
+How often did you attend the following types of training sessions?
 
 
 ```r
@@ -655,10 +671,12 @@ b3_df_rec %>%
   plot_likert(question_codes, "Attended Different Types of Training Sessions")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
 
 
 # B5 Hours of training
+
+How many hours of training in total did you get?
 
 
 ```r
@@ -679,17 +697,15 @@ recode_successful(b5_df, b5_df_rec)
 
 ```r
 b5_df_rec %>% 
-  count(B5) %>% 
-  ggplot(aes(fct_reorder(B5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Hours of training")
+  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .1)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b5-1.png)<!-- -->
 
 
 # B6 Attended Different Types of Training Sessions
+
+Did the training you receive fulfill your needs?
 
 
 ```r
@@ -722,10 +738,12 @@ b6_df_rec %>%
   plot_likert(question_codes, "Attended Different Types of Training Sessions")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
 
 
 # B8 Attendance of first formal training in any Open Science topic
+
+When did you attend your first formal training in any Open Science topic?
 
 
 ```r
@@ -739,20 +757,18 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  count(B8) %>% 
-  ggplot(aes(fct_reorder(B8, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Attendance of first formal training in any Open Science topic")
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .08)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b8-1.png)<!-- -->
 
 
 Most responses from the "Other" category mention that they never received any
 training.
 
 # B9 Provider of attended training sessions
+
+Who provided the training sessions you attended? (choose all that apply)
 
 
 ```r
@@ -769,10 +785,12 @@ b9_df_rec %>%
   plot_likert(question_codes, "Who provided the training sessions you attended?")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
 
 
 # B10 Preferred way to learn OS topics
+
+What is your preferred way to learn open science topics? (choose all that apply)
 
 
 ```r
@@ -787,10 +805,12 @@ b10_df_rec %>%
   plot_likert(question_codes, "Preferred way to learn OS topics")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->
 
 
 # B11 Has your awareness of open science practices increased after the training you attended?
+
+Has your awareness of open science practices increased after the training you attended?
 
 
 ```r
@@ -817,10 +837,12 @@ b11_df_rec %>%
   plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-30-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b11-1.png)<!-- -->
 
 
 # B12 Share experience OS practices/tool with colleagues
+
+Would you share your experience with open science practices and tools with colleagues?
 
 
 ```r
@@ -847,7 +869,7 @@ b12_df_rec %>%
   plot_likert(question_codes, "Would you share your experience with open science practices\nand tools with colleagues?")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-31-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b12-1.png)<!-- -->
 
 
 
