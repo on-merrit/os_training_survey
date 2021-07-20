@@ -43,6 +43,7 @@ plot_bar <- function(df, var, title = NULL, reorder = TRUE, nudge_y = .04,
   
   
   plot_data %>%
+    filter(!is.na({{var}})) %>%
     ggplot(aes(xvar, prop)) +
     geom_lollipop() +
     coord_flip(clip = "off") +
