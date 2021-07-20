@@ -50,6 +50,8 @@ df %>%
 
 # Countries
 
+In which country do you work?
+
 ```{r, e1, fig.width=8, fig.height=6.5}
 
 e1_rec_df <- df %>%
@@ -60,7 +62,31 @@ plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 
 ```
 
+
+
+# Gender
+
+Please select the gender category that best describes you
+
+```{r, e2, fig.width=6, fig.height=3}
+
+answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
+
+e2_df <- df %>% 
+  select("E2")
+
+e2_df_rec <- e2_df %>% 
+  mutate(across(.fns = factor, levels = answer_levels_e2))
+
+
+e2_df_rec %>% 
+  plot_bar(E2, title = "Gender", reorder = TRUE, nudge_y = .079)
+```
+
+
 # Age cohorts
+
+What is your age?
 
 ```{r, e3, fig.width=7, fig.height=3.5}
 
@@ -85,24 +111,9 @@ e3_df_rec %>%
 
 ```
 
-# Gender
-
-```{r, e2, fig.width=6, fig.height=3}
-
-answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
-
-e2_df <- df %>% 
-  select("E2")
-
-e2_df_rec <- e2_df %>% 
-  mutate(across(.fns = factor, levels = answer_levels_e2))
-
-
-e2_df_rec %>% 
-  plot_bar(E2, title = "Gender", reorder = TRUE, nudge_y = .079)
-```
-
 # Publish first academic publication
+
+When did you publish your first academic publication (journal article, book, chapter, conference proceeding, or similar)? Please tell us the year.
 
 ```{r, e3b, fig.width=5.5, fig.height=8.5}
 
@@ -117,6 +128,8 @@ e3b_df %>%
 
 
 # Highest education
+
+What is the highest education level you completed? [drop down]
 
 ```{r, e4, fig.width=6, fig.height=3}
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
@@ -136,6 +149,8 @@ e4_df_rec %>%
 
 # Types of institution
 
+In what type of institution do you work? [drop down]
+
 ```{r, e5, fig.width=7, fig.height=3}
 
 answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
@@ -152,6 +167,8 @@ e5_df_rec %>%
 ```
 
 # Position
+
+What is your position? Choose all that apply
 
 ```{r, e6, fig.width=8, fig.height=5}
 
@@ -170,6 +187,8 @@ e6_df_rec %>%
 ```
 
 # Respondents by disciplines
+
+In which general area of knowledge do you work?
 
 ```{r, e7, fig.width=6, fig.height=3.5}
 
