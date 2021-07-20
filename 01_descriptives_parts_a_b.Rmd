@@ -249,7 +249,9 @@ a1_df_rec %>%
 
 # A2 Own pratices regarding Open Access publishing
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your own practices regarding Open Access publishing.
+
+```{r, a2, fig.width=8, fig.height=5}
 
 answer_levels_2 <- c("Never", "Rarely", "Sometimes",
                    "Often", "Always", "This topic is not relevant to my research", 
@@ -273,7 +275,9 @@ a2_df_rec %>%
 
 # A3 Own practices regarding Research Data Management
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your own practices regarding Research Data Management.
+
+```{r, a3, fig.width=8, fig.height=5}
 
 a3_df <- df %>% 
   select(starts_with("A3[")) 
@@ -292,7 +296,9 @@ a3_df_rec %>%
 
 # A4 Practices regarding Reproducible Research
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Reproducible Research
+
+```{r, a4, fig.width=8, fig.height=5}
 
 a4_df <- df %>% 
   select(starts_with("A4[")) 
@@ -312,7 +318,9 @@ a4_df_rec %>%
 
 # A5 Pratices regarding Open Peer Review
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Open Peer Review.
+
+```{r, a5, fig.width=8, fig.height=5}
 
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
@@ -338,7 +346,9 @@ a5_df_rec %>%
 
 # A6 Practices regarding Open Source Software
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Open Source Software.
+
+```{r, a6, fig.width=8, fig.height=5}
 
 a6_df <- df %>% 
   select(starts_with("A6[")) 
@@ -358,7 +368,9 @@ a6_df_rec %>%
 
 # A7 Practices regarding Licensing
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Licensing.
+
+```{r, a7, fig.width=8, fig.height=5}
 
 a7_df <- df %>% 
   select(starts_with("A7[")) 
@@ -377,7 +389,9 @@ a7_df_rec %>%
 
 # A8 Practices regarding Research Integrity
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Research Integrity
+
+```{r, a8, fig.width=8, fig.height=5}
 
 a8_df <- df %>% 
   select(starts_with("A8[")) 
@@ -396,7 +410,9 @@ a8_df_rec %>%
 
 # A9 Practices regarding Citizen Science (information, consultation, public participation)
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Citizen Science - consider all levels -information, consultation, public participation
+
+```{r, a9, fig.width=8, fig.height=5}
 
 a9_df <- df %>% 
   select(starts_with("A9[")) 
@@ -415,7 +431,9 @@ a9_df_rec %>%
 
 # A10 Practices regarding Gender Issue
 
-```{r, fig.width=8, fig.height=5}
+Please rate the following statements according to your practices regarding Gender issues
+
+```{r, a10, fig.width=8, fig.height=5}
 
 a10_df <- df %>% 
   select(starts_with("A10[")) 
@@ -436,7 +454,9 @@ a10_df_rec %>%
 
 # B1 Attended Training Events
 
-```{r, fig.width=8, fig.height=8}
+How many training events have you attended in these topics?
+
+```{r, b1, fig.width=8, fig.height=8}
 
 answer_levels_b1 <- c("None", "1", "2", "3-5", "more than 5")
 
@@ -459,7 +479,9 @@ b1_df_rec %>%
 
 # B3 Attended Different Types of Training Sessions
 
-```{r, fig.width=8, fig.height=8}
+How often did you attend the following types of training sessions?
+
+```{r, b3, fig.width=8, fig.height=8}
 
 answer_levels_b3 <- c("Never", "Once", "More than once")
 
@@ -482,7 +504,9 @@ b3_df_rec %>%
 
 # B5 Hours of training
 
-```{r, fig.width=6, fig.height=3}
+How many hours of training in total did you get?
+
+```{r, b5, fig.width=6, fig.height=3}
 answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 
 b5_df <- df %>% 
@@ -501,7 +525,9 @@ b5_df_rec %>%
 
 # B6 Attended Different Types of Training Sessions
 
-```{r, fig.width=8, fig.height=8}
+Did the training you receive fulfill your needs?
+
+```{r, b6, fig.width=8, fig.height=8}
 
 answer_levels_b6 <- c("I didn’t receive training", "I need more training", 
                         "I received adequate training", "This topic is not relevant for my research")
@@ -525,7 +551,9 @@ b6_df_rec %>%
 
 # B8 Attendance of first formal training in any Open Science topic
 
-```{r, fig.width=6, fig.height=3}
+When did you attend your first formal training in any Open Science topic?
+
+```{r, b8, fig.width=6, fig.height=3}
 
 answer_levels_b8 <- c("During doctoral studies", "As a researcher", "During a conference", "Other")
 
@@ -547,7 +575,9 @@ training.
 
 # B9 Provider of attended training sessions
 
-```{r, fig.width=8, fig.height=8}
+Who provided the training sessions you attended? (choose all that apply)
+
+```{r, b9, fig.width=8, fig.height=8}
 
 answer_levels_3 <- c("Yes", "No")
 
@@ -566,7 +596,9 @@ b9_df_rec %>%
 
 # B10 Preferred way to learn OS topics
 
-```{r, fig.width=8, fig.height=8}
+What is your preferred way to learn open science topics? (choose all that apply)
+
+```{r, b10, fig.width=8, fig.height=8}
 
 b10_df <- df %>% 
   select(starts_with("B10["))
@@ -583,7 +615,9 @@ b10_df_rec %>%
 
 # B11 Has your awareness of open science practices increased after the training you attended?
 
-```{r, fig.width=8, fig.height=6}
+Has your awareness of open science practices increased after the training you attended?
+
+```{r, b11, fig.width=8, fig.height=6}
 
 answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
                      "Neither agree nor disagree",
@@ -607,7 +641,9 @@ b11_df_rec %>%
 
 # B12 Share experience OS practices/tool with colleagues
 
-```{r, fig.width=8, fig.height=6}
+Would you share your experience with open science practices and tools with colleagues?
+
+```{r, b12, fig.width=8, fig.height=6}
 
 b12_df <- df %>% 
   select(starts_with("B12[")) 
