@@ -190,7 +190,7 @@ e6_df_rec %>%
 
 In which general area of knowledge do you work?
 
-```{r, e7, fig.width=6, fig.height=3.5}
+```{r, e7, fig.width=8, fig.height=2.5}
 
 answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
                       "Social Sciences", "Humanities and the Arts")
@@ -202,7 +202,7 @@ e7_df_rec <- e7_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
 e7_df_rec %>% 
-  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .1)
+  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .055)
 
 ```
 
@@ -525,7 +525,7 @@ b6_df_rec %>%
 
 # B8 Attendance of first formal training in any Open Science topic
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=6, fig.height=3}
 
 answer_levels_b8 <- c("During doctoral studies", "As a researcher", "During a conference", "Other")
 
@@ -537,7 +537,7 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = TRUE, nudge_y = .028)
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = TRUE, nudge_y = .08)
 
 ```
 
