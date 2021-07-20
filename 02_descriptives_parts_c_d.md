@@ -30,6 +30,16 @@ c1_df_rec %>%
 plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 ```
 
+```
+## Registered S3 methods overwritten by 'ggalt':
+##   method                  from   
+##   grid.draw.absoluteGrob  ggplot2
+##   grobHeight.absoluteGrob ggplot2
+##   grobWidth.absoluteGrob  ggplot2
+##   grobX.absoluteGrob      ggplot2
+##   grobY.absoluteGrob      ggplot2
+```
+
 ![](02_descriptives_parts_c_d_files/figure-html/c1-1.png)<!-- -->
 
 # C3 Institution: OS/OA practices recommandation
@@ -164,7 +174,7 @@ c8_df %>%
 
 ```r
 c8_df_rec %>% 
-  plot_likert(question_codes, "Degree of support in practicing OS at institution")
+  plot_likert()
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/c8-1.png)<!-- -->
@@ -228,7 +238,7 @@ d2_df %>%
 
 ```r
 d2_df_rec %>% 
-  plot_likert(question_codes, "Summarised views: What would you say OS is?")
+  plot_likert()
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/d2-1.png)<!-- -->
@@ -249,7 +259,7 @@ d3_df_rec <- d3_df %>%
   mutate(across(.fns = factor, levels = answer_levels_8))
 
 d3_df_rec %>% 
-  plot_likert(question_codes, "Which are the most significant barriers you will be facing while\nembracing an Open Science perspective?")
+  plot_likert()
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/d3-1.png)<!-- -->
@@ -284,7 +294,7 @@ d5_df %>%
 
 ```r
 d5_df_rec %>% 
-  plot_likert(question_codes, "Main drivers to participate OS")
+  plot_likert()
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/d5-1.png)<!-- -->
@@ -319,7 +329,7 @@ d7_df %>%
 
 ```r
 d7_df_rec %>% 
-  plot_likert(question_codes, "Drivers or barriers to practice Open Science")
+  plot_likert()
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/d7-1.png)<!-- -->

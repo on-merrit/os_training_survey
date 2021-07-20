@@ -259,32 +259,12 @@ a1_df_rec <- a1_df %>%
   mutate(across(.fns = factor, levels = answer_levels))
 
 
-a1_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
+recode_successful(a1_df, a1_df_rec)
 ```
 
 ```
-## # A tibble: 1 x 5
-##   `A1[SQ001]` `A1[SQ002]` `A1[SQ003]` `A1[SQ004]` `A1[SQ005]`
-##         <int>       <int>       <int>       <int>       <int>
-## 1           3           3           4           8           4
+## [1] TRUE
 ```
-
-
-
-```r
-a1_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-```
-## # A tibble: 1 x 5
-##   `A1[SQ001]` `A1[SQ002]` `A1[SQ003]` `A1[SQ004]` `A1[SQ005]`
-##         <int>       <int>       <int>       <int>       <int>
-## 1           3           3           4           8           4
-```
-
-
 
 ```r
 visdat::vis_miss(a1_df_rec)
@@ -294,7 +274,7 @@ visdat::vis_miss(a1_df_rec)
 
 ```r
 a1_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding OS")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a1-2.png)<!-- -->
@@ -331,7 +311,7 @@ a2_df %>%
 
 ```r
 a2_df_rec %>% 
-  plot_likert(question_codes, "Own pratices regarding Open Access publishing")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a2-1.png)<!-- -->
@@ -363,7 +343,7 @@ a3_df %>%
 
 ```r
 a3_df_rec %>% 
-  plot_likert(question_codes, "Own practices regarding Research Data Management")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a3-1.png)<!-- -->
@@ -395,7 +375,7 @@ a4_df %>%
 
 ```r
 a4_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding Reproducible Research")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
@@ -433,7 +413,7 @@ a5_df %>%
 
 ```r
 a5_df_rec %>% 
-  plot_likert(question_codes, "Pratices regarding Open Peer Review")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a5-1.png)<!-- -->
@@ -465,7 +445,7 @@ a6_df %>%
 
 ```r
 a6_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding Open Source Software")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a6-1.png)<!-- -->
@@ -497,7 +477,7 @@ a7_df %>%
 
 ```r
 a7_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding Licensing")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a7-1.png)<!-- -->
@@ -529,7 +509,7 @@ a8_df %>%
 
 ```r
 a8_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding Research Integrity")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a8-1.png)<!-- -->
@@ -561,7 +541,7 @@ a9_df %>%
 
 ```r
 a9_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding Citizen Science")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a9-1.png)<!-- -->
@@ -593,7 +573,7 @@ a10_df %>%
 
 ```r
 a10_df_rec %>% 
-  plot_likert(question_codes, "Practices regarding Gender Issues")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a10-1.png)<!-- -->
@@ -631,7 +611,7 @@ b1_df %>%
 
 ```r
 b1_df_rec %>% 
-  plot_likert(question_codes, "Attended Training Events")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
@@ -668,7 +648,7 @@ b3_df_rec %>%
 
 ```r
 b3_df_rec %>% 
-  plot_likert(question_codes, "Attended Different Types of Training Sessions")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
@@ -735,7 +715,7 @@ b6_df_rec %>%
 
 ```r
 b6_df_rec %>% 
-  plot_likert(question_codes, "Attended Different Types of Training Sessions")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
@@ -782,7 +762,7 @@ b9_df_rec <- b9_df %>%
 
 
 b9_df_rec %>% 
-  plot_likert(question_codes, "Who provided the training sessions you attended?")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
@@ -802,7 +782,7 @@ b10_df_rec <- b10_df %>%
 
 
 b10_df_rec %>% 
-  plot_likert(question_codes, "Preferred way to learn OS topics")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->
@@ -834,7 +814,7 @@ recode_successful(b11_df, b11_df_rec)
 
 ```r
 b11_df_rec %>% 
-  plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b11-1.png)<!-- -->
@@ -866,7 +846,7 @@ b12_df_rec %>%
 
 ```r
 b12_df_rec %>% 
-  plot_likert(question_codes, "Would you share your experience with open science practices\nand tools with colleagues?")
+  plot_likert()
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b12-1.png)<!-- -->

@@ -141,7 +141,7 @@ c8_df %>%
 
 
 c8_df_rec %>% 
-  plot_likert(question_codes, "Degree of support in practicing OS at institution")
+  plot_likert()
 
 
 
@@ -188,7 +188,7 @@ d2_df %>%
 
 
 d2_df_rec %>% 
-  plot_likert(question_codes, "Summarised views: What would you say OS is?")
+  plot_likert()
 
 ```
 
@@ -208,7 +208,7 @@ d3_df_rec <- d3_df %>%
   mutate(across(.fns = factor, levels = answer_levels_8))
 
 d3_df_rec %>% 
-  plot_likert(question_codes, "Which are the most significant barriers you will be facing while\nembracing an Open Science perspective?")
+  plot_likert()
 
 ```
 
@@ -232,7 +232,7 @@ d5_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 d5_df_rec %>% 
-  plot_likert(question_codes, "Main drivers to participate OS")
+  plot_likert()
 
 
 ```
@@ -257,6 +257,6 @@ d7_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 d7_df_rec %>% 
-  plot_likert(question_codes, "Drivers or barriers to practice Open Science")
+  plot_likert()
 
 ```
