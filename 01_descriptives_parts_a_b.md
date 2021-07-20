@@ -673,7 +673,7 @@ recode_successful(b5_df, b5_df_rec)
 
 ```r
 b5_df_rec %>% 
-  plot_bar(B5, title = "Hours of training", reorder = TRUE, nudge_y = .028)
+  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
@@ -729,7 +729,7 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = TRUE, nudge_y = .08)
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .08)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
