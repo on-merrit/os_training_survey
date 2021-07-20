@@ -52,7 +52,7 @@ df %>%
 
 In which country do you work? [drop-down/ open text]
 
-```{r, e1, fig.width=8, fig.height=6.5}
+```{r e1, fig.width=8, fig.height=6.5}
 
 e1_rec_df <- df %>%
   select("E1_rec")
@@ -68,7 +68,7 @@ plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 
 Please select the gender category that best describes you
 
-```{r, e2, fig.width=6, fig.height=3}
+```{r e2, fig.width=6, fig.height=3}
 
 answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
 
@@ -88,7 +88,7 @@ e2_df_rec %>%
 
 What is your age?
 
-```{r, e3, fig.width=7, fig.height=3.5}
+```{r e3, fig.width=7, fig.height=3.5}
 
 answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
 
@@ -115,7 +115,7 @@ e3_df_rec %>%
 
 When did you publish your first academic publication (journal article, book, chapter, conference proceeding, or similar)? Please tell us the year.
 
-```{r, e3b, fig.width=5.5, fig.height=8.5}
+```{r e3b, fig.width=5.5, fig.height=8.5}
 
 e3b_df <- df %>% 
   select("E3b") %>% 
@@ -131,7 +131,7 @@ e3b_df %>%
 
 What is the highest education level you completed? [drop down]
 
-```{r, e4, fig.width=6, fig.height=3}
+```{r e4, fig.width=6, fig.height=3}
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
 
 answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
@@ -151,7 +151,7 @@ e4_df_rec %>%
 
 In what type of institution do you work? [drop down]
 
-```{r, e5, fig.width=7, fig.height=3}
+```{r e5, fig.width=7, fig.height=3}
 
 answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
 
@@ -170,7 +170,7 @@ e5_df_rec %>%
 
 What is your position? Choose all that apply
 
-```{r, e6, fig.width=8, fig.height=5}
+```{r e6, fig.width=8, fig.height=5}
 
 answer_levels_e6 <- c("Junior Researcher", "Senior Researcher", "Ph.D. student", "Postdoctoral fellow/ researcher", "Assistant professor", 
                       "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
@@ -190,7 +190,7 @@ e6_df_rec %>%
 
 In which general area of knowledge do you work?
 
-```{r, e7, fig.width=8, fig.height=2.5}
+```{r e7, fig.width=8, fig.height=2.5}
 
 answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
                       "Social Sciences", "Humanities and the Arts")
@@ -237,7 +237,7 @@ a1_df_rec %>%
 ```
 
 
-```{r, a1, fig.width=8, fig.height=5}
+```{r a1, fig.width=8, fig.height=5}
 visdat::vis_miss(a1_df_rec)
 
 a1_df_rec %>% 
@@ -271,7 +271,7 @@ plot(test, centered = TRUE)
 
 Please rate the following statements according to your own practices regarding Open Access publishing.
 
-```{r, a2, fig.width=8, fig.height=5}
+```{r a2, fig.width=8, fig.height=5}
 
 answer_levels_2 <- c("Never", "Rarely", "Sometimes",
                    "Often", "Always", "This topic is not relevant to my research", 
@@ -297,7 +297,7 @@ a2_df_rec %>%
 
 Please rate the following statements according to your own practices regarding Research Data Management.
 
-```{r, a3, fig.width=8, fig.height=5}
+```{r a3, fig.width=8, fig.height=5}
 
 a3_df <- df %>% 
   select(starts_with("A3[")) 
@@ -318,7 +318,7 @@ a3_df_rec %>%
 
 Please rate the following statements according to your practices regarding Reproducible Research
 
-```{r, a4, fig.width=8, fig.height=5}
+```{r a4, fig.width=8, fig.height=5}
 
 a4_df <- df %>% 
   select(starts_with("A4[")) 
@@ -340,7 +340,7 @@ a4_df_rec %>%
 
 Please rate the following statements according to your practices regarding Open Peer Review.
 
-```{r, a5, fig.width=8, fig.height=5}
+```{r a5, fig.width=8, fig.height=5}
 
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
@@ -368,7 +368,7 @@ a5_df_rec %>%
 
 Please rate the following statements according to your practices regarding Open Source Software.
 
-```{r, a6, fig.width=8, fig.height=5}
+```{r a6, fig.width=8, fig.height=5}
 
 a6_df <- df %>% 
   select(starts_with("A6[")) 
@@ -390,7 +390,7 @@ a6_df_rec %>%
 
 Please rate the following statements according to your practices regarding Licensing.
 
-```{r, a7, fig.width=8, fig.height=5}
+```{r a7, fig.width=8, fig.height=5}
 
 a7_df <- df %>% 
   select(starts_with("A7[")) 
@@ -411,7 +411,7 @@ a7_df_rec %>%
 
 Please rate the following statements according to your practices regarding Research Integrity
 
-```{r, a8, fig.width=8, fig.height=5}
+```{r a8, fig.width=8, fig.height=5}
 
 a8_df <- df %>% 
   select(starts_with("A8[")) 
@@ -432,7 +432,7 @@ a8_df_rec %>%
 
 Please rate the following statements according to your practices regarding Citizen Science - consider all levels -information, consultation, public participation
 
-```{r, a9, fig.width=8, fig.height=5}
+```{r a9, fig.width=8, fig.height=5}
 
 a9_df <- df %>% 
   select(starts_with("A9[")) 
@@ -453,7 +453,7 @@ a9_df_rec %>%
 
 Please rate the following statements according to your practices regarding Gender issues
 
-```{r, a10, fig.width=8, fig.height=5}
+```{r a10, fig.width=8, fig.height=5}
 
 a10_df <- df %>% 
   select(starts_with("A10[")) 
@@ -476,7 +476,7 @@ a10_df_rec %>%
 
 How many training events have you attended in these topics?
 
-```{r, b1, fig.width=8, fig.height=8}
+```{r b1, fig.width=8, fig.height=8}
 
 answer_levels_b1 <- c("None", "1", "2", "3-5", "more than 5")
 
@@ -501,7 +501,7 @@ b1_df_rec %>%
 
 How often did you attend the following types of training sessions?
 
-```{r, b3, fig.width=8, fig.height=8}
+```{r b3, fig.width=8, fig.height=8}
 
 answer_levels_b3 <- c("Never", "Once", "More than once")
 
@@ -526,7 +526,7 @@ b3_df_rec %>%
 
 How many hours of training in total did you get?
 
-```{r, b5, fig.width=6, fig.height=3}
+```{r b5, fig.width=6, fig.height=3}
 answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 
 b5_df <- df %>% 
@@ -547,7 +547,7 @@ b5_df_rec %>%
 
 Did the training you receive fulfill your needs?
 
-```{r, b6, fig.width=8, fig.height=8}
+```{r b6, fig.width=8, fig.height=8}
 
 answer_levels_b6 <- c("I didn’t receive training", "I need more training", 
                         "I received adequate training", "This topic is not relevant for my research")
@@ -573,7 +573,7 @@ b6_df_rec %>%
 
 When did you attend your first formal training in any Open Science topic?
 
-```{r, b8, fig.width=6, fig.height=3}
+```{r b8, fig.width=6, fig.height=3}
 
 answer_levels_b8 <- c("During doctoral studies", "As a researcher", "During a conference", "Other")
 
@@ -597,7 +597,7 @@ training.
 
 Who provided the training sessions you attended? (choose all that apply)
 
-```{r, b9, fig.width=8, fig.height=8}
+```{r b9, fig.width=8, fig.height=8}
 
 answer_levels_3 <- c("Yes", "No")
 
@@ -618,7 +618,7 @@ b9_df_rec %>%
 
 What is your preferred way to learn open science topics? (choose all that apply)
 
-```{r, b10, fig.width=8, fig.height=8}
+```{r b10, fig.width=8, fig.height=8}
 
 b10_df <- df %>% 
   select(starts_with("B10["))
@@ -637,7 +637,7 @@ b10_df_rec %>%
 
 Has your awareness of open science practices increased after the training you attended?
 
-```{r, b11, fig.width=8, fig.height=6}
+```{r b11, fig.width=8, fig.height=6}
 
 answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
                      "Neither agree nor disagree",
@@ -663,7 +663,7 @@ b11_df_rec %>%
 
 Would you share your experience with open science practices and tools with colleagues?
 
-```{r, b12, fig.width=8, fig.height=6}
+```{r b12, fig.width=8, fig.height=6}
 
 b12_df <- df %>% 
   select(starts_with("B12[")) 
