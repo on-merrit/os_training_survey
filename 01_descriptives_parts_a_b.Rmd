@@ -5,6 +5,8 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document:
     keep_md: true
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -48,22 +50,19 @@ df %>%
 
 # Countries
 
-```{r, e1, fig.width=20, fig.height=0.005}
+```{r, e1, fig.width=8, fig.height=6.5}
 
 e1_rec_df <- df %>%
   select("E1_rec")
 
 e1_rec_df %>%
-plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .05)
-
-
-
+plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 
 ```
 
 # Age cohorts
 
-```{r, fig.width=7, fig.height=3.5}
+```{r, e3, fig.width=7, fig.height=3.5}
 
 answer_levels_e3 <- c("<20", "20-29", "30-39", "40-49", "50-59", "60-69", "70+")
 
@@ -88,7 +87,7 @@ e3_df_rec %>%
 
 # Gender
 
-```{r, fig.width=8, fig.height=5}
+```{r, e2, fig.width=6, fig.height=3}
 
 answer_levels_e2 <- c("Man", "Woman", "Prefer not to say", "Other")
 
@@ -100,26 +99,26 @@ e2_df_rec <- e2_df %>%
 
 
 e2_df_rec %>% 
-  plot_bar(E2, title = "Gender", reorder = FALSE, nudge_y = .028)
+  plot_bar(E2, title = "Gender", reorder = TRUE, nudge_y = .079)
 ```
 
 # Publish first academic publication
 
-```{r, fig.width=8, fig.height=5}
+```{r, e3b, fig.width=5.5, fig.height=8.5}
 
 e3b_df <- df %>% 
   select("E3b") %>% 
   filter(E3b > 1960)
 
 e3b_df %>% 
-  plot_bar(E3b, title = "Publish first academic publication", reorder = FALSE, nudge_y = .028)
+  plot_bar(E3b, title = "Publish first academic publication", reorder = FALSE, nudge_y = .009)
 
 ```
 
 
 # Highest education
 
-```{r, fig.width=8, fig.height=5}
+```{r, e4, fig.width=6, fig.height=3}
 answer_levels_e4 <- c("Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing)", "Short-cycle tertiary education (e.g. master schools, colleges, vocational training schools)", "Bachelor or equivalent", "Master or equivalent", "Doctorate or equivalent", "Other")
 
 answer_labels_e4 <- str_wrap(answer_levels_e4, 30)
@@ -132,12 +131,12 @@ e4_df_rec <- e4_df %>%
                 labels = answer_labels_e4))
 
 e4_df_rec %>%
-  plot_bar(E4, title = "Highest education", reorder = FALSE, nudge_y = .028)
+  plot_bar(E4, title = "Highest education", reorder = FALSE, nudge_y = .2)
 ```
 
 # Types of institution
 
-```{r, fig.width=8, fig.height=5}
+```{r, e5, fig.width=8, fig.height=5}
 
 answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
 
@@ -154,7 +153,7 @@ e5_df_rec %>%
 
 # Position
 
-```{r, fig.width=8, fig.height=5}
+```{r, e6, fig.width=8, fig.height=5}
 
 answer_levels_e6 <- c("Junior Researcher", "Senior Researcher", "Ph.D. student", "Postdoctoral fellow/ researcher", "Assistant professor", 
                       "Associate professor", "Full professor", "Associate research scientist", "Instructor", "Lecturer", "Adjunct professor", 
@@ -172,7 +171,7 @@ e6_df_rec %>%
 
 # Respondents by disciplines
 
-```{r, fig.width=8, fig.height=5}
+```{r, e7, fig.width=8, fig.height=5}
 
 answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
                       "Social Sciences", "Humanities and the Arts")
