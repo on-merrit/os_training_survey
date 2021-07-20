@@ -48,16 +48,13 @@ df %>%
 
 # Countries
 
-```{r}
+```{r, e1, fig.width=20, fig.height=0.005}
 
 e1_rec_df <- df %>%
   select("E1_rec")
 
-e1_rec_df_rec <- e1_rec_df %>%
-  ggplot(aes(E1_rec)) +
-  geom_bar(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Countries")
+e1_rec_df %>%
+plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .05)
 
 
 
@@ -103,12 +100,7 @@ e2_df_rec <- e2_df %>%
 
 
 e2_df_rec %>% 
-  count(E2) %>% 
-  ggplot(aes(fct_reorder(E2, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Gender")
-
+  plot_bar(E2, title = "Gender", reorder = FALSE, nudge_y = .028)
 ```
 
 # Publish first academic publication
@@ -120,9 +112,7 @@ e3b_df <- df %>%
   filter(E3b > 1960)
 
 e3b_df %>% 
-  ggplot(aes(E3b)) +
-  geom_histogram() +
-  labs(x = NULL, title = "Publish first academic publication")
+  plot_bar(E3b, title = "Publish first academic publication", reorder = FALSE, nudge_y = .028)
 
 ```
 
@@ -142,12 +132,7 @@ e4_df_rec <- e4_df %>%
                 labels = answer_labels_e4))
 
 e4_df_rec %>%
-  # rename(Post-secondary non-tertiary education = Post-secondary non-tertiary education (e.g. VET Schools, schools of healthcare and nursing) %>%
-  count(E4) %>%
-  ggplot(aes(fct_reorder(E4, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Highest education")
+  plot_bar(E4, title = "Highest education", reorder = FALSE, nudge_y = .028)
 ```
 
 # Types of institution
@@ -163,11 +148,7 @@ e5_df_rec <- e5_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e5))
 
 e5_df_rec %>% 
-  count(E5) %>% 
-  ggplot(aes(fct_reorder(E5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "In what type of institution do you work?")
+  plot_bar(E5, title = "Types of institution", reorder = TRUE, nudge_y = .028)
 
 ```
 
@@ -186,12 +167,7 @@ e6_df_rec <- e6_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e6))
 
 e6_df_rec %>% 
-  count(E6) %>% 
-  ggplot(aes(fct_reorder(E6, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Position")
-
+  plot_bar(E6, title = "Position", reorder = TRUE, nudge_y = .028)
 ```
 
 # Respondents by disciplines
@@ -208,11 +184,7 @@ e7_df_rec <- e7_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
 e7_df_rec %>% 
-  count(E7) %>% 
-  ggplot(aes(fct_reorder(E7, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Respondents by discipline")
+  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .028)
 
 ```
 
