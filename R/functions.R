@@ -24,6 +24,28 @@ add_country <- function(raw_data, merged_countries) {
     left_join(countries_distinct, by = "E1") 
 }
 
+create_var_overview <- function(label_base) {
+  label_base <- read_csv(label_base, col_types = cols(
+    .default = col_character()
+  ))
+  
+  
+  var_labels <- tibble(var_names = names(label_base))
+  
+  out <- var_labels %>% 
+    separate(var_names, into = c("short_code", "question_text"),
+             sep = "\\.\\s", extra = "merge") %>% 
+    mutate(question_specification = str_extract(question_text, 
+                                                "(?<=\\[).*?(?=\\])"))
+  write_csv(out, "data/processed/question_codes.csv")
+  
+  out
+}
+
+
+
+
+
 
 plot_bar <- function(df, var, title = NULL, reorder = TRUE, nudge_y = .04,
                      y_lab = NULL) {

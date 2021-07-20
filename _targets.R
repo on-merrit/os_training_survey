@@ -10,7 +10,16 @@ list(
     raw_data_file,
     "data/processed/survey_anonymised.csv",
     format = "file"
+  ),  
+  tar_target(
+    label_base,
+    "data/label_base.csv",
+    format = "file"
   ),
+  tar_target(
+    var_overview,
+    create_var_overview(label_base)
+  ),  
   tar_target(
     raw_data,
     read_csv(raw_data_file)
