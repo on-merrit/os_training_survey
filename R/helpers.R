@@ -76,7 +76,7 @@ plot_bar <- function(df, var, title = NULL, reorder = TRUE, nudge_y = .04,
   plot_data %>%
     filter(!is.na({{var}})) %>%
     ggplot(aes(xvar, prop)) +
-    geom_lollipop() +
+    ggalt::geom_lollipop() +
     coord_flip(clip = "off") +
     geom_text(aes(label = label), nudge_y = nudge_y) +
     scale_y_continuous(labels = function(x) scales::percent(x, accurarcy = 1)) + 
