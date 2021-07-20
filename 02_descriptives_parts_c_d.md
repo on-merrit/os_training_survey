@@ -1,10 +1,12 @@
 ---
 title: "Survey Results Task 3.3 Part C and D"
 author: "Anja Rainer"
-date: "19 Juli, 2021"
+date: "20 Juli, 2021"
 output: 
   html_document:
     keep_md: true
+editor_options: 
+  chunk_output_type: inline
 ---
 
 
@@ -23,11 +25,7 @@ c1_df_rec <- c1_df %>%
 
 
 c1_df_rec %>% 
-  count(C1) %>% 
-  ggplot(aes(fct_reorder(C1, n, .fun = "max"), n)) +
-  geom_col(width = .5) +
-  coord_flip() +
-  labs(x = NULL, title = "Does your institution have an OA policy?")
+plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
@@ -46,11 +44,7 @@ c3_df_rec <- c3_df %>%
 
 
 c3_df_rec %>% 
-  count(C3) %>% 
-  ggplot(aes(fct_reorder(C3, n, .fun = "max"), n)) +
-  geom_col(width = .5) +
-  coord_flip() +
-  labs(x = NULL, title = "Does your institution recommend open science/ open access practices?")
+  plot_bar(C3, title = "Institution: OS/OA practices recommandation", reorder = TRUE, nudge_y = .08)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -67,11 +61,7 @@ c5_df_rec <- c5_df %>%
 
 
 c5_df_rec %>% 
-  count(C5) %>% 
-  ggplot(aes(fct_reorder(C5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Is there a dedicated helpdesk/group\nto support any issues related to the open science/open access policy?")
+  plot_bar(C5, title = "Helpdesk/group to support any issues", reorder = FALSE, nudge_y = .06)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -100,11 +90,7 @@ c6_df %>%
 
 ```r
 c6_df_rec %>% 
-  count(C6) %>% 
-  ggplot(aes(fct_reorder(C6, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Guidance on how to comply with the policies\nby the financing entities that require OA to publications")
+  plot_bar(C6, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications", reorder = FALSE, nudge_y = .06)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
@@ -132,11 +118,7 @@ c7_df %>%
 
 ```r
 c7_df_rec %>% 
-  count(C7) %>% 
-  ggplot(aes(fct_reorder(C7, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Does your institution support you financially in paying article processing charges (APCs)?")
+  plot_bar(C7, title = "Financial support in paying article processing charges (APCs)", reorder = FALSE, nudge_y = .07)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
@@ -199,11 +181,7 @@ c10_df %>%
 
 ```r
 c10_df_rec %>% 
-  count(C10) %>% 
-  ggplot(aes(fct_reorder(C10, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Other initiatives incentivising Open Science practices at institution")
+  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
