@@ -211,7 +211,7 @@ e7_df_rec %>%
 
 Please rate the following statements according to your practices regarding Open Science
 
-```{r, a1, fig.width=8, fig.height=5}
+```{r, fig.width=8, fig.height=5}
 
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
