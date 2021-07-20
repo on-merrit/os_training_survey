@@ -475,11 +475,7 @@ recode_successful(b5_df, b5_df_rec)
 
 
 b5_df_rec %>% 
-  count(B5) %>% 
-  ggplot(aes(fct_reorder(B5, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Hours of training")
+  plot_bar(B5, title = "Hours of training", reorder = TRUE, nudge_y = .028)
 ```
 
 
@@ -521,11 +517,7 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  count(B8) %>% 
-  ggplot(aes(fct_reorder(B8, n, .fun = "max"), n)) +
-  geom_col(width = .7) +
-  coord_flip() +
-  labs(x = NULL, title = "Attendance of first formal training in any Open Science topic")
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = TRUE, nudge_y = .028)
 
 ```
 
