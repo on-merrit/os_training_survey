@@ -136,7 +136,7 @@ e4_df_rec %>%
 
 # Types of institution
 
-```{r, e5, fig.width=8, fig.height=5}
+```{r, e5, fig.width=7, fig.height=3}
 
 answer_levels_e5 <- c("University", "Public research institute", "Private research institute", "Company", "Nonprofit", "Other")
 
@@ -147,7 +147,7 @@ e5_df_rec <- e5_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e5))
 
 e5_df_rec %>% 
-  plot_bar(E5, title = "Types of institution", reorder = TRUE, nudge_y = .028)
+  plot_bar(E5, title = "Types of institution", reorder = TRUE, nudge_y = .13)
 
 ```
 
@@ -166,12 +166,12 @@ e6_df_rec <- e6_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e6))
 
 e6_df_rec %>% 
-  plot_bar(E6, title = "Position", reorder = TRUE, nudge_y = .028)
+  plot_bar(E6, title = "Position", reorder = TRUE, nudge_y = .035)
 ```
 
 # Respondents by disciplines
 
-```{r, e7, fig.width=8, fig.height=5}
+```{r, e7, fig.width=6, fig.height=3.5}
 
 answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
                       "Social Sciences", "Humanities and the Arts")
@@ -183,7 +183,7 @@ e7_df_rec <- e7_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e7))
 
 e7_df_rec %>% 
-  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .028)
+  plot_bar(E7, title = "Respondents by disciplines", reorder = TRUE, nudge_y = .1)
 
 ```
 
