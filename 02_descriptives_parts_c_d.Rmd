@@ -22,7 +22,9 @@ theme_set(theme_bw())
 
 # C1 Institution: OA policy
 
-```{r, fig.width=6, fig.height=2}
+Does your institution have an open access policy? (Y/N/ I don’t know)
+
+```{r, c1, fig.width=6, fig.height=2}
 
 answer_levels_5 <- c("I don't know", "No", "Yes")
 
@@ -40,7 +42,9 @@ plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 
 # C3 Institution: OS/OA practices recommandation
 
-```{r, fig.width=6, fig.height=2}
+Does your institution recommend open science/ open access practices? (Y/N)
+
+```{r, c3, fig.width=6, fig.height=2}
 
 answer_levels_6 <- c("No", "Yes")
 
@@ -58,7 +62,9 @@ c3_df_rec %>%
 
 # c5 Helpdesk/group to support any issues
 
-```{r, fig.width=6, fig.height=2}
+Is there a dedicated helpdesk/ group to support any issues related to the open science / open access policy? (Y/N/ I don’t know)
+
+```{r, c5, fig.width=6, fig.height=2}
 c5_df <- df %>% 
   select("C5")
 
@@ -74,7 +80,9 @@ c5_df_rec %>%
 
 # C6 Guidance on how to comply with the policies by the financing entities that require OA to publications
 
-```{r, fig.width=6, fig.height=2}
+Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications, such as the European Commission or the European Research Council? (Y/N/ I don’t know)
+
+```{r, c6, fig.width=6, fig.height=2}
 
 c6_df <- df %>% 
   select("C6")
@@ -92,7 +100,9 @@ c6_df_rec %>%
 
 # C7 Financial support in paying article processing charges (APCs)
 
-```{r, fig.width=6, fig.height=2}
+Does your institution support you financially in paying article processing charges (APCs)? (Y/N/ I don’t know))
+
+```{r, c7, fig.width=6, fig.height=2}
 
 c7_df <- df %>% 
   select("C7")
@@ -112,7 +122,9 @@ c7_df_rec %>%
 
 # C8 Degree of support in practicing OS at institution
 
-```{r, fig.width=8, fig.height=6}
+To what degree are you supported in practicing Open Science at your institution?
+
+```{r, c8, fig.width=8, fig.height=6}
 
 answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
 "I receive sufficient support or incentives")
@@ -138,7 +150,9 @@ c8_df_rec %>%
 
 # C10: Other initiatives incentivising Open Science practices at institution
 
-```{r, fig.width=6, fig.height=2}
+Are there other initiatives incentivising Open Science practices at your institution (eg. Open Science cafes, Data champions)? (Y/N)
+
+```{r, c10, fig.width=6, fig.height=2}
 
 c10_df <- df %>% 
   select("C10")
@@ -159,7 +173,9 @@ c10_df_rec %>%
 
 # D2 Summarised views: What would you say OS is?
 
-```{r, fig.width=8, fig.height=8}
+Overall, if you had to summarise your views, what would you say Open Science is?
+
+```{r, d2, fig.width=8, fig.height=8}
 
 d2_df <- df %>% 
   select("D2[SQ001]", "D2[SQ002]", "D2[SQ003]", "D2[SQ004]", "D2[SQ005]", "D2[SQ006]", "D2[SQ007]")
@@ -178,7 +194,9 @@ d2_df_rec %>%
 
 # D3  Most significant barriers facing
 
-```{r, fig.width=8, fig.height=6}
+Which are the most significant barriers you will be facing while embracing an Open Science perspective?
+
+```{r, d3, fig.width=8, fig.height=6}
 
 answer_levels_8 <- c("Don’t know/ Don’t have enough information", "No barrier", "Minor barrier",
                      "Significant barrier", "Very significant barrier")
@@ -196,7 +214,9 @@ d3_df_rec %>%
 
 # D5 Main drivers to participate OS
 
-```{r, fig.width=8, fig.height=8}
+What could be the main drivers for you to practice open science?
+
+```{r, d5, fig.width=8, fig.height=8}
 
 answer_levels_9 <- c("Don’t know/ Don’t have enough information", "No driver", "Minor driver",
                      "Significant driver", "Very significant driver")
@@ -219,7 +239,9 @@ d5_df_rec %>%
 
 # D7 Drivers or barriers to practice Open Science
 
-```{r, fig.width=8, fig.height=8}
+Would you say the following factors are drivers or barriers for you to practice Open Science?
+
+```{r, d7, fig.width=8, fig.height=8}
 
 answer_levels_9 <- c("Don’t know/ Don’t have enough information", "Barrier", "Neither barrier nor driver",
                      "Driver")
