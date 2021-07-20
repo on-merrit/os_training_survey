@@ -358,6 +358,7 @@ a1_df %&gt;%
 </div>
 <div id="a2-own-pratices-regarding-open-access-publishing" class="section level1">
 <h1>A2 Own pratices regarding Open Access publishing</h1>
+<p>Please rate the following statements according to your own practices regarding Open Access publishing.</p>
 <pre class="r"><code>answer_levels_2 &lt;- c(&quot;Never&quot;, &quot;Rarely&quot;, &quot;Sometimes&quot;,
                    &quot;Often&quot;, &quot;Always&quot;, &quot;This topic is not relevant to my research&quot;, 
                    &quot;Don’t know/ Don’t have enough information&quot;)
@@ -382,6 +383,7 @@ a2_df %&gt;%
 </div>
 <div id="a3-own-practices-regarding-research-data-management" class="section level1">
 <h1>A3 Own practices regarding Research Data Management</h1>
+<p>Please rate the following statements according to your own practices regarding Research Data Management.</p>
 <pre class="r"><code>a3_df &lt;- df %&gt;% 
   select(starts_with(&quot;A3[&quot;)) 
 
@@ -401,6 +403,7 @@ a3_df %&gt;%
 </div>
 <div id="a4-practices-regarding-reproducible-research" class="section level1">
 <h1>A4 Practices regarding Reproducible Research</h1>
+<p>Please rate the following statements according to your practices regarding Reproducible Research</p>
 <pre class="r"><code>a4_df &lt;- df %&gt;% 
   select(starts_with(&quot;A4[&quot;)) 
 
@@ -420,6 +423,7 @@ a4_df %&gt;%
 </div>
 <div id="a5-pratices-regarding-open-peer-review" class="section level1">
 <h1>A5 Pratices regarding Open Peer Review</h1>
+<p>Please rate the following statements according to your practices regarding Open Peer Review.</p>
 <pre class="r"><code>answer_levels &lt;- c(&quot;Strongly disagree&quot;, &quot;Disagree&quot;, &quot;Neither agree nor disagree&quot;,
                    &quot;Agree&quot;, &quot;Strongly agree&quot;, 
                    &quot;This topic is not relevant to my research&quot;, 
@@ -445,6 +449,7 @@ a5_df %&gt;%
 </div>
 <div id="a6-practices-regarding-open-source-software" class="section level1">
 <h1>A6 Practices regarding Open Source Software</h1>
+<p>Please rate the following statements according to your practices regarding Open Source Software.</p>
 <pre class="r"><code>a6_df &lt;- df %&gt;% 
   select(starts_with(&quot;A6[&quot;)) 
 
@@ -464,6 +469,7 @@ a6_df %&gt;%
 </div>
 <div id="a7-practices-regarding-licensing" class="section level1">
 <h1>A7 Practices regarding Licensing</h1>
+<p>Please rate the following statements according to your practices regarding Licensing.</p>
 <pre class="r"><code>a7_df &lt;- df %&gt;% 
   select(starts_with(&quot;A7[&quot;)) 
 
@@ -483,6 +489,7 @@ a7_df %&gt;%
 </div>
 <div id="a8-practices-regarding-research-integrity" class="section level1">
 <h1>A8 Practices regarding Research Integrity</h1>
+<p>Please rate the following statements according to your practices regarding Research Integrity</p>
 <pre class="r"><code>a8_df &lt;- df %&gt;% 
   select(starts_with(&quot;A8[&quot;)) 
 
@@ -502,6 +509,7 @@ a8_df %&gt;%
 </div>
 <div id="a9-practices-regarding-citizen-science-information-consultation-public-participation" class="section level1">
 <h1>A9 Practices regarding Citizen Science (information, consultation, public participation)</h1>
+<p>Please rate the following statements according to your practices regarding Citizen Science - consider all levels -information, consultation, public participation</p>
 <pre class="r"><code>a9_df &lt;- df %&gt;% 
   select(starts_with(&quot;A9[&quot;)) 
 
@@ -521,6 +529,7 @@ a9_df %&gt;%
 </div>
 <div id="a10-practices-regarding-gender-issue" class="section level1">
 <h1>A10 Practices regarding Gender Issue</h1>
+<p>Please rate the following statements according to your practices regarding Gender issues</p>
 <pre class="r"><code>a10_df &lt;- df %&gt;% 
   select(starts_with(&quot;A10[&quot;)) 
 
@@ -543,6 +552,7 @@ a10_df %&gt;%
 </div>
 <div id="b1-attended-training-events" class="section level1">
 <h1>B1 Attended Training Events</h1>
+<p>How many training events have you attended in these topics?</p>
 <pre class="r"><code>answer_levels_b1 &lt;- c(&quot;None&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3-5&quot;, &quot;more than 5&quot;)
 
 
@@ -567,6 +577,7 @@ b1_df %&gt;%
 </div>
 <div id="b3-attended-different-types-of-training-sessions" class="section level1">
 <h1>B3 Attended Different Types of Training Sessions</h1>
+<p>How often did you attend the following types of training sessions?</p>
 <pre class="r"><code>answer_levels_b3 &lt;- c(&quot;Never&quot;, &quot;Once&quot;, &quot;More than once&quot;)
 
 
@@ -591,6 +602,7 @@ b3_df_rec %&gt;%
 </div>
 <div id="b5-hours-of-training" class="section level1">
 <h1>B5 Hours of training</h1>
+<p>How many hours of training in total did you get?</p>
 <pre class="r"><code>answer_levels_b5 &lt;- c(&quot;None&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3-5&quot;, &quot;More than 5&quot;, &quot;Other&quot;)
 
 b5_df &lt;- df %&gt;% 
@@ -607,6 +619,7 @@ recode_successful(b5_df, b5_df_rec)</code></pre>
 </div>
 <div id="b6-attended-different-types-of-training-sessions" class="section level1">
 <h1>B6 Attended Different Types of Training Sessions</h1>
+<p>Did the training you receive fulfill your needs?</p>
 <pre class="r"><code>answer_levels_b6 &lt;- c(&quot;I didn’t receive training&quot;, &quot;I need more training&quot;, 
                         &quot;I received adequate training&quot;, &quot;This topic is not relevant for my research&quot;)
 
@@ -632,6 +645,7 @@ b6_df_rec %&gt;%
 </div>
 <div id="b8-attendance-of-first-formal-training-in-any-open-science-topic" class="section level1">
 <h1>B8 Attendance of first formal training in any Open Science topic</h1>
+<p>When did you attend your first formal training in any Open Science topic?</p>
 <pre class="r"><code>answer_levels_b8 &lt;- c(&quot;During doctoral studies&quot;, &quot;As a researcher&quot;, &quot;During a conference&quot;, &quot;Other&quot;)
 
 b8_df &lt;- df %&gt;% 
@@ -648,6 +662,7 @@ b8_df_rec %&gt;%
 </div>
 <div id="b9-provider-of-attended-training-sessions" class="section level1">
 <h1>B9 Provider of attended training sessions</h1>
+<p>Who provided the training sessions you attended? (choose all that apply)</p>
 <pre class="r"><code>answer_levels_3 &lt;- c(&quot;Yes&quot;, &quot;No&quot;)
 
 b9_df &lt;- df %&gt;% 
@@ -663,6 +678,7 @@ b9_df_rec %&gt;%
 </div>
 <div id="b10-preferred-way-to-learn-os-topics" class="section level1">
 <h1>B10 Preferred way to learn OS topics</h1>
+<p>What is your preferred way to learn open science topics? (choose all that apply)</p>
 <pre class="r"><code>b10_df &lt;- df %&gt;% 
   select(starts_with(&quot;B10[&quot;))
 
@@ -676,6 +692,7 @@ b10_df_rec %&gt;%
 </div>
 <div id="b11-has-your-awareness-of-open-science-practices-increased-after-the-training-you-attended" class="section level1">
 <h1>B11 Has your awareness of open science practices increased after the training you attended?</h1>
+<p>Has your awareness of open science practices increased after the training you attended?</p>
 <pre class="r"><code>answer_levels_4 &lt;- c(&quot;Don’t know&quot;, &quot;Highly disagree&quot;, &quot;Disagree&quot;,
                      &quot;Neither agree nor disagree&quot;,
                      &quot;Agree&quot;, &quot;Highly agree&quot;)
@@ -695,6 +712,7 @@ recode_successful(b11_df, b11_df_rec)</code></pre>
 </div>
 <div id="b12-share-experience-os-practicestool-with-colleagues" class="section level1">
 <h1>B12 Share experience OS practices/tool with colleagues</h1>
+<p>Would you share your experience with open science practices and tools with colleagues?</p>
 <pre class="r"><code>b12_df &lt;- df %&gt;% 
   select(starts_with(&quot;B12[&quot;)) 
 
