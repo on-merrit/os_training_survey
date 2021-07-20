@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 
 df <- tar_read(with_countries)
 
-question_codes <- read_csv("data/processed/question_codes.csv")
+question_codes <- tar_read(var_overview)
 
 theme_set(theme_bw())
 ```
@@ -211,7 +211,7 @@ e7_df_rec %>%
 
 Please rate the following statements according to your practices regarding Open Science
 
-```{r, fig.width=8, fig.height=5}
+```{r a1, fig.width=8, fig.height=5}
 
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
                    "Agree", "Strongly agree", 
@@ -226,44 +226,14 @@ a1_df_rec <- a1_df %>%
   mutate(across(.fns = factor, levels = answer_levels))
 
 
-a1_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
+recode_successful(a1_df, a1_df_rec)
 
 
-```{r}
-a1_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-
-```{r a1, fig.width=8, fig.height=5}
 visdat::vis_miss(a1_df_rec)
+
 
 a1_df_rec %>% 
   plot_likert(question_codes, "Practices regarding OS")
-
-# a1_df_rec_l <- likert(as.data.frame(a1_df_rec))
-# plot(a1_df_rec_l, center = 3, include.histogram = TRUE)
-# 
-# a1_df_rec %>% 
-#   mutate(across(.fns = function(x) case_when(
-#     x == "Don’t know/ Don’t have enough information" ~ factor(NA, levels = levels(x)),
-#     x == "This topic is not relevant to my research" ~ factor(NA, levels = levels(x)),
-#                                              TRUE ~ x))) %>% 
-#   as.data.frame() %>% 
-#   likert() -> test
-
-
-a1_df_rec %>% 
-  mutate(across(.fns = factor, levels = c("Strongly disagree", "Disagree", "Neither agree nor disagree",
-                   "Agree", "Strongly agree"))) %>% 
-  as.data.frame() %>% 
-  likert() -> test
-
-plot(test, centered = TRUE) 
-  labs(y = NULL)
-  ggtitle("test")
 ```
 
 

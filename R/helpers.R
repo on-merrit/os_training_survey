@@ -1,25 +1,32 @@
 plot_likert <- function(df, question_codes, title = NULL) {
-  pdata <- df %>% 
-    pivot_longer(everything(), names_to = "var") %>% 
-    filter(!is.na(value), 
-           !(value %in% c("This topic is not relevant to my research", 
-                          "Don’t know/ Don’t have enough information"))) %>% 
-    left_join(question_codes, by = c("var" = "short_code")) %>% 
-    count(question_specification, value) %>% 
-    group_by(question_specification) %>% 
-    mutate(prop = n/sum(n)) 
   
+  # remove don't know and irrelevant research
+  old_levels <- levels(df[[1, 1]])
+  new_levels <- old_levels[!(old_levels %in%
+                               c("This topic is not relevant to my research",
+                                 "Don’t know/ Don’t have enough information"))]
   
-  pdata %>% 
-    ggplot(aes(stringr::str_wrap(question_specification, 40), prop, 
-               fill = fct_rev(value))) +
-    geom_col(width = .7) +
-    coord_flip() +
-    scale_y_continuous(labels = scales::percent) +
-    labs(x = NULL, y = NULL, fill = NULL,
-         title = title) +
-    theme(legend.position = "top") +
-    guides(fill = guide_legend(reverse = TRUE))
+  df <- mutate(df, across(.fns = factor, levels = new_levels))
+  
+  # plot it
+  df %>% 
+    set_names_for_likert() %>% 
+    as.data.frame() %>% 
+    likert::likert() %>% 
+    plot() +
+    guides(fill = guide_legend(title = NULL, nrow = 2)) +
+    labs()
+}
+
+set_names_for_likert <- function(df, var_overview = question_codes) {
+  old_names <- names(df)
+  
+  new_names <- var_overview %>% 
+    filter(short_code %in% old_names) %>% 
+    pull(question_specification)
+  
+  df_new <- set_names(df, new_names)
+  df_new
 }
 
 
