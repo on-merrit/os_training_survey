@@ -250,7 +250,27 @@ visdat::vis_miss(a1_df_rec)
 a1_df_rec %>% 
   plot_likert(question_codes, "Practices regarding OS")
 
+# a1_df_rec_l <- likert(as.data.frame(a1_df_rec))
+# plot(a1_df_rec_l, center = 3, include.histogram = TRUE)
+# 
+# a1_df_rec %>% 
+#   mutate(across(.fns = function(x) case_when(
+#     x == "Don’t know/ Don’t have enough information" ~ factor(NA, levels = levels(x)),
+#     x == "This topic is not relevant to my research" ~ factor(NA, levels = levels(x)),
+#                                              TRUE ~ x))) %>% 
+#   as.data.frame() %>% 
+#   likert() -> test
 
+
+a1_df_rec %>% 
+  mutate(across(.fns = factor, levels = c("Strongly disagree", "Disagree", "Neither agree nor disagree",
+                   "Agree", "Strongly agree"))) %>% 
+  as.data.frame() %>% 
+  likert() -> test
+
+plot(test, centered = TRUE) 
+  labs(y = NULL)
+  ggtitle("test")
 ```
 
 
