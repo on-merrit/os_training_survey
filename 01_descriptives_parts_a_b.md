@@ -302,6 +302,8 @@ a1_df_rec %>%
 
 # A2 Own pratices regarding Open Access publishing
 
+Please rate the following statements according to your own practices regarding Open Access publishing.
+
 
 ```r
 answer_levels_2 <- c("Never", "Rarely", "Sometimes",
@@ -332,10 +334,12 @@ a2_df_rec %>%
   plot_likert(question_codes, "Own pratices regarding Open Access publishing")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a2-1.png)<!-- -->
 
 
 # A3 Own practices regarding Research Data Management
+
+Please rate the following statements according to your own practices regarding Research Data Management.
 
 
 ```r
@@ -362,10 +366,12 @@ a3_df_rec %>%
   plot_likert(question_codes, "Own practices regarding Research Data Management")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a3-1.png)<!-- -->
 
 
 # A4 Practices regarding Reproducible Research
+
+Please rate the following statements according to your practices regarding Reproducible Research
 
 
 ```r
@@ -392,10 +398,12 @@ a4_df_rec %>%
   plot_likert(question_codes, "Practices regarding Reproducible Research")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
 
 
 # A5 Pratices regarding Open Peer Review
+
+Please rate the following statements according to your practices regarding Open Peer Review.
 
 
 ```r
@@ -428,10 +436,12 @@ a5_df_rec %>%
   plot_likert(question_codes, "Pratices regarding Open Peer Review")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a5-1.png)<!-- -->
 
 
 # A6 Practices regarding Open Source Software
+
+Please rate the following statements according to your practices regarding Open Source Software.
 
 
 ```r
@@ -458,10 +468,12 @@ a6_df_rec %>%
   plot_likert(question_codes, "Practices regarding Open Source Software")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a6-1.png)<!-- -->
 
 
 # A7 Practices regarding Licensing
+
+Please rate the following statements according to your practices regarding Licensing.
 
 
 ```r
@@ -488,10 +500,12 @@ a7_df_rec %>%
   plot_likert(question_codes, "Practices regarding Licensing")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a7-1.png)<!-- -->
 
 
 # A8 Practices regarding Research Integrity
+
+Please rate the following statements according to your practices regarding Research Integrity
 
 
 ```r
@@ -518,10 +532,12 @@ a8_df_rec %>%
   plot_likert(question_codes, "Practices regarding Research Integrity")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a8-1.png)<!-- -->
 
 
 # A9 Practices regarding Citizen Science (information, consultation, public participation)
+
+Please rate the following statements according to your practices regarding Citizen Science - consider all levels -information, consultation, public participation
 
 
 ```r
@@ -548,10 +564,12 @@ a9_df_rec %>%
   plot_likert(question_codes, "Practices regarding Citizen Science")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a9-1.png)<!-- -->
 
 
 # A10 Practices regarding Gender Issue
+
+Please rate the following statements according to your practices regarding Gender issues
 
 
 ```r
@@ -578,11 +596,13 @@ a10_df_rec %>%
   plot_likert(question_codes, "Practices regarding Gender Issues")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/a10-1.png)<!-- -->
 
 # Part B Training on OS topics
 
 # B1 Attended Training Events
+
+How many training events have you attended in these topics?
 
 
 ```r
@@ -614,10 +634,12 @@ b1_df_rec %>%
   plot_likert(question_codes, "Attended Training Events")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
 
 
 # B3 Attended Different Types of Training Sessions
+
+How often did you attend the following types of training sessions?
 
 
 ```r
@@ -649,10 +671,12 @@ b3_df_rec %>%
   plot_likert(question_codes, "Attended Different Types of Training Sessions")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
 
 
 # B5 Hours of training
+
+How many hours of training in total did you get?
 
 
 ```r
@@ -676,10 +700,12 @@ b5_df_rec %>%
   plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .1)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b5-1.png)<!-- -->
 
 
 # B6 Attended Different Types of Training Sessions
+
+Did the training you receive fulfill your needs?
 
 
 ```r
@@ -712,10 +738,12 @@ b6_df_rec %>%
   plot_likert(question_codes, "Attended Different Types of Training Sessions")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
 
 
 # B8 Attendance of first formal training in any Open Science topic
+
+When did you attend your first formal training in any Open Science topic?
 
 
 ```r
@@ -732,13 +760,15 @@ b8_df_rec %>%
   plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .08)
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b8-1.png)<!-- -->
 
 
 Most responses from the "Other" category mention that they never received any
 training.
 
 # B9 Provider of attended training sessions
+
+Who provided the training sessions you attended? (choose all that apply)
 
 
 ```r
@@ -755,10 +785,12 @@ b9_df_rec %>%
   plot_likert(question_codes, "Who provided the training sessions you attended?")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
 
 
 # B10 Preferred way to learn OS topics
+
+What is your preferred way to learn open science topics? (choose all that apply)
 
 
 ```r
@@ -773,10 +805,12 @@ b10_df_rec %>%
   plot_likert(question_codes, "Preferred way to learn OS topics")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->
 
 
 # B11 Has your awareness of open science practices increased after the training you attended?
+
+Has your awareness of open science practices increased after the training you attended?
 
 
 ```r
@@ -803,10 +837,12 @@ b11_df_rec %>%
   plot_likert(question_codes, "Has your awareness of open science practices\nincreased after the training you attended?")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b11-1.png)<!-- -->
 
 
 # B12 Share experience OS practices/tool with colleagues
+
+Would you share your experience with open science practices and tools with colleagues?
 
 
 ```r
@@ -833,7 +869,7 @@ b12_df_rec %>%
   plot_likert(question_codes, "Would you share your experience with open science practices\nand tools with colleagues?")
 ```
 
-![](01_descriptives_parts_a_b_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+![](01_descriptives_parts_a_b_files/figure-html/b12-1.png)<!-- -->
 
 
 

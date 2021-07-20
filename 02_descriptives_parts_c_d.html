@@ -173,6 +173,7 @@ pre code {
 
 <div id="c1-institution-oa-policy" class="section level1">
 <h1>C1 Institution: OA policy</h1>
+<p>Does your institution have an open access policy? (Y/N/ I don’t know)</p>
 <pre class="r"><code>answer_levels_5 &lt;- c(&quot;I don&#39;t know&quot;, &quot;No&quot;, &quot;Yes&quot;)
 
 c1_df &lt;- df %&gt;% 
@@ -188,6 +189,7 @@ plot_bar(C1, title = &quot;Institution: OA policy&quot;, reorder = TRUE, nudge_y
 </div>
 <div id="c3-institution-osoa-practices-recommandation" class="section level1">
 <h1>C3 Institution: OS/OA practices recommandation</h1>
+<p>Does your institution recommend open science/ open access practices? (Y/N)</p>
 <pre class="r"><code>answer_levels_6 &lt;- c(&quot;No&quot;, &quot;Yes&quot;)
 
 c3_df &lt;- df %&gt;% 
@@ -203,6 +205,7 @@ c3_df_rec %&gt;%
 </div>
 <div id="c5-helpdeskgroup-to-support-any-issues" class="section level1">
 <h1>c5 Helpdesk/group to support any issues</h1>
+<p>Is there a dedicated helpdesk/ group to support any issues related to the open science / open access policy? (Y/N/ I don’t know)</p>
 <pre class="r"><code>c5_df &lt;- df %&gt;% 
   select(&quot;C5&quot;)
 
@@ -216,6 +219,7 @@ c5_df_rec %&gt;%
 </div>
 <div id="c6-guidance-on-how-to-comply-with-the-policies-by-the-financing-entities-that-require-oa-to-publications" class="section level1">
 <h1>C6 Guidance on how to comply with the policies by the financing entities that require OA to publications</h1>
+<p>Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications, such as the European Commission or the European Research Council? (Y/N/ I don’t know)</p>
 <pre class="r"><code>c6_df &lt;- df %&gt;% 
   select(&quot;C6&quot;)
 
@@ -234,6 +238,7 @@ c6_df %&gt;%
 </div>
 <div id="c7-financial-support-in-paying-article-processing-charges-apcs" class="section level1">
 <h1>C7 Financial support in paying article processing charges (APCs)</h1>
+<p>Does your institution support you financially in paying article processing charges (APCs)? (Y/N/ I don’t know))</p>
 <pre class="r"><code>c7_df &lt;- df %&gt;% 
   select(&quot;C7&quot;)
 
@@ -252,6 +257,7 @@ c7_df %&gt;%
 </div>
 <div id="c8-degree-of-support-in-practicing-os-at-institution" class="section level1">
 <h1>C8 Degree of support in practicing OS at institution</h1>
+<p>To what degree are you supported in practicing Open Science at your institution?</p>
 <pre class="r"><code>answer_levels_7 &lt;- c(&quot;Don’t know/ Don’t have enough information&quot;, &quot;I do not receive any support or incentives&quot;, &quot;I do not receive any support or incentives but would like to&quot;, &quot;I receive some support or incentives&quot;, 
 &quot;I receive sufficient support or incentives&quot;)
 
@@ -275,6 +281,7 @@ c8_df %&gt;%
 </div>
 <div id="c10-other-initiatives-incentivising-open-science-practices-at-institution" class="section level1">
 <h1>C10: Other initiatives incentivising Open Science practices at institution</h1>
+<p>Are there other initiatives incentivising Open Science practices at your institution (eg. Open Science cafes, Data champions)? (Y/N)</p>
 <pre class="r"><code>c10_df &lt;- df %&gt;% 
   select(&quot;C10&quot;)
 
@@ -296,6 +303,7 @@ c10_df %&gt;%
 </div>
 <div id="d2-summarised-views-what-would-you-say-os-is" class="section level1">
 <h1>D2 Summarised views: What would you say OS is?</h1>
+<p>Overall, if you had to summarise your views, what would you say Open Science is?</p>
 <pre class="r"><code>d2_df &lt;- df %&gt;% 
   select(&quot;D2[SQ001]&quot;, &quot;D2[SQ002]&quot;, &quot;D2[SQ003]&quot;, &quot;D2[SQ004]&quot;, &quot;D2[SQ005]&quot;, &quot;D2[SQ006]&quot;, &quot;D2[SQ007]&quot;)
 
@@ -315,6 +323,7 @@ d2_df %&gt;%
 </div>
 <div id="d3-most-significant-barriers-facing" class="section level1">
 <h1>D3 Most significant barriers facing</h1>
+<p>Which are the most significant barriers you will be facing while embracing an Open Science perspective?</p>
 <pre class="r"><code>answer_levels_8 &lt;- c(&quot;Don’t know/ Don’t have enough information&quot;, &quot;No barrier&quot;, &quot;Minor barrier&quot;,
                      &quot;Significant barrier&quot;, &quot;Very significant barrier&quot;)
 
@@ -330,6 +339,7 @@ d3_df_rec %&gt;%
 </div>
 <div id="d5-main-drivers-to-participate-os" class="section level1">
 <h1>D5 Main drivers to participate OS</h1>
+<p>What could be the main drivers for you to practice open science?</p>
 <pre class="r"><code>answer_levels_9 &lt;- c(&quot;Don’t know/ Don’t have enough information&quot;, &quot;No driver&quot;, &quot;Minor driver&quot;,
                      &quot;Significant driver&quot;, &quot;Very significant driver&quot;)
 
@@ -353,6 +363,7 @@ d5_df %&gt;%
 </div>
 <div id="d7-drivers-or-barriers-to-practice-open-science" class="section level1">
 <h1>D7 Drivers or barriers to practice Open Science</h1>
+<p>Would you say the following factors are drivers or barriers for you to practice Open Science?</p>
 <pre class="r"><code>answer_levels_9 &lt;- c(&quot;Don’t know/ Don’t have enough information&quot;, &quot;Barrier&quot;, &quot;Neither barrier nor driver&quot;,
                      &quot;Driver&quot;)
 
