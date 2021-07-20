@@ -5,6 +5,8 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document:
     keep_md: true
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +22,7 @@ theme_set(theme_bw())
 
 # C1 Institution: OA policy
 
-```{r, fig.width=6, fig.height=3}
+```{r, fig.width=6, fig.height=2}
 
 answer_levels_5 <- c("I don't know", "No", "Yes")
 
@@ -32,13 +34,13 @@ c1_df_rec <- c1_df %>%
 
 
 c1_df_rec %>% 
-plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .05)
+plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 
 ```
 
 # C3 Institution: OS/OA practices recommandation
 
-```{r, fig.width=6, fig.height=3}
+```{r, fig.width=6, fig.height=2}
 
 answer_levels_6 <- c("No", "Yes")
 
@@ -50,13 +52,13 @@ c3_df_rec <- c3_df %>%
 
 
 c3_df_rec %>% 
-  plot_bar(C3, title = "Institution: OS/OA practices recommandation", reorder = TRUE, nudge_y = .05)
+  plot_bar(C3, title = "Institution: OS/OA practices recommandation", reorder = TRUE, nudge_y = .08)
 
 ```
 
 # c5 Helpdesk/group to support any issues
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=6, fig.height=2}
 c5_df <- df %>% 
   select("C5")
 
@@ -65,14 +67,14 @@ c5_df_rec <- c5_df %>%
 
 
 c5_df_rec %>% 
-  plot_bar(C5, title = "Helpdesk/group to support any issues", reorder = FALSE, nudge_y = .05)
+  plot_bar(C5, title = "Helpdesk/group to support any issues", reorder = FALSE, nudge_y = .06)
 
 ```
 
 
 # C6 Guidance on how to comply with the policies by the financing entities that require OA to publications
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=6, fig.height=2}
 
 c6_df <- df %>% 
   select("C6")
@@ -84,13 +86,13 @@ c6_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 c6_df_rec %>% 
-  plot_bar(C6, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications", reorder = FALSE, nudge_y = .05)
+  plot_bar(C6, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications", reorder = FALSE, nudge_y = .06)
 
 ```
 
 # C7 Financial support in paying article processing charges (APCs)
 
-```{r, fig.width=8, fig.height=6}
+```{r, fig.width=6, fig.height=2}
 
 c7_df <- df %>% 
   select("C7")
@@ -102,7 +104,7 @@ c7_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 c7_df_rec %>% 
-  plot_bar(C7, title = "Financial support in paying article processing charges (APCs)", reorder = FALSE, nudge_y = .05)
+  plot_bar(C7, title = "Financial support in paying article processing charges (APCs)", reorder = FALSE, nudge_y = .07)
 
 
 ```
@@ -136,7 +138,7 @@ c8_df_rec %>%
 
 # C10: Other initiatives incentivising Open Science practices at institution
 
-```{r, fig.width=3, fig.height=6}
+```{r, fig.width=6, fig.height=2}
 
 c10_df <- df %>% 
   select("C10")
@@ -148,7 +150,7 @@ c10_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 c10_df_rec %>% 
-  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .05)
+  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
 
 
 ```
