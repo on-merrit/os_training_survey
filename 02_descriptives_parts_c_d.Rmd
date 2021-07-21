@@ -122,7 +122,7 @@ c7_df_rec %>%
 
 To what degree are you supported in practicing Open Science at your institution?
 
-```{r c8, fig.width=9, fig.height=6}
+```{r c8, fig.width=9, fig.height=6, results="asis"}
 
 answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
 "I receive sufficient support or incentives")
@@ -173,7 +173,7 @@ c10_df_rec %>%
 
 Overall, if you had to summarise your views, what would you say Open Science is?
 
-```{r d2, fig.width=8, fig.height=8}
+```{r d2, fig.width=8, fig.height=8, results="asis"}
 
 d2_df <- df %>% 
   select("D2[SQ001]", "D2[SQ002]", "D2[SQ003]", "D2[SQ004]", "D2[SQ005]", "D2[SQ006]", "D2[SQ007]")
@@ -194,7 +194,7 @@ d2_df_rec %>%
 
 Which are the most significant barriers you will be facing while embracing an Open Science perspective?
 
-```{r d3, fig.width=8, fig.height=6}
+```{r d3, fig.width=8, fig.height=6, results="asis"}
 
 answer_levels_8 <- c("Don’t know/ Don’t have enough information", "No barrier", "Minor barrier",
                      "Significant barrier", "Very significant barrier")
@@ -214,7 +214,7 @@ d3_df_rec %>%
 
 What could be the main drivers for you to practice open science?
 
-```{r d5, fig.width=8, fig.height=8}
+```{r d5, fig.width=8, fig.height=8, results="asis"}
 
 answer_levels_9 <- c("Don’t know/ Don’t have enough information", "No driver", "Minor driver",
                      "Significant driver", "Very significant driver")
@@ -239,7 +239,7 @@ d5_df_rec %>%
 
 Would you say the following factors are drivers or barriers for you to practice Open Science?
 
-```{r d7, fig.width=8, fig.height=8}
+```{r d7, fig.width=8, fig.height=8, results="asis"}
 
 answer_levels_9 <- c("Don’t know/ Don’t have enough information", "Barrier", "Neither barrier nor driver",
                      "Driver")
