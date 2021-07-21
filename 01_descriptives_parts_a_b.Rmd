@@ -567,7 +567,8 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .08)
+  filter(B8 != "Other") %>%
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .099)
 
 ```
 
