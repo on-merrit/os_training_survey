@@ -460,7 +460,7 @@ b1_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 b1_df_rec %>% 
-  plot_likert(center = 1.5, legend_rows = 1)
+  plot_likert(center_for_likert = 1.5, legend_rows = 1)
 
 ```
 
@@ -485,7 +485,7 @@ b3_df_rec %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 b3_df_rec %>% 
-  plot_likert(center_for_likert = 1.5, 1)
+  plot_likert(center_for_likert = 1.5, legend_rows = 1)
 
 ```
 
@@ -533,7 +533,7 @@ b6_df_rec %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 b6_df_rec %>% 
-  plot_likert(legend_rows = 1)
+  plot_likert(legend_rows = 1, centered = FALSE)
 
 ```
 
