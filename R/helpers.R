@@ -4,6 +4,7 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2) {
   old_levels <- levels(df[[1, 1]])
   new_levels <- old_levels[!(old_levels %in%
                                c("This topic is not relevant to my research",
+                                 "This topic is not relevant for my research",
                                  "Don’t know/ Don’t have enough information"))]
   
   df <- mutate(df, across(.fns = factor, levels = new_levels))
