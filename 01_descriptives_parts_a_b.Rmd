@@ -257,7 +257,7 @@ a2_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 a2_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 
@@ -278,7 +278,7 @@ a3_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 a3_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 
@@ -299,7 +299,7 @@ a4_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 a4_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
@@ -349,7 +349,7 @@ a6_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 a6_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
@@ -392,7 +392,7 @@ a8_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 a8_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 
@@ -533,7 +533,7 @@ b6_df_rec %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 b6_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
@@ -579,7 +579,7 @@ b9_df_rec <- b9_df %>%
 
 
 b9_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
@@ -598,7 +598,7 @@ b10_df_rec <- b10_df %>%
 
 
 b10_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
