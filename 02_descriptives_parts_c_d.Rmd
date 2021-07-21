@@ -122,7 +122,7 @@ c7_df_rec %>%
 
 To what degree are you supported in practicing Open Science at your institution?
 
-```{r c8, fig.width=8, fig.height=6}
+```{r c8, fig.width=9, fig.height=6}
 
 answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
 "I receive sufficient support or incentives")
@@ -186,7 +186,7 @@ d2_df %>%
 
 
 d2_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
@@ -206,7 +206,7 @@ d3_df_rec <- d3_df %>%
   mutate(across(.fns = factor, levels = answer_levels_8))
 
 d3_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 ```
 
@@ -230,7 +230,7 @@ d5_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 d5_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 
 
 ```
