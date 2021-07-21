@@ -192,7 +192,7 @@ e6_df_rec %>%
 
 In which general area of knowledge do you work?
 
-```{r e7, fig.width=8, fig.height=2.5}
+```{r e7, fig.width=8, fig.height=3}
 
 answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
                       "Social Sciences", "Humanities and the Arts")
@@ -521,7 +521,7 @@ recode_successful(b5_df, b5_df_rec)
 
 
 b5_df_rec %>% 
-  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .1)
+  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .065)
 ```
 
 
