@@ -327,7 +327,7 @@ a2_df %>%
 
 ```r
 a2_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a2-1.png)<!-- -->
@@ -359,7 +359,7 @@ a3_df %>%
 
 ```r
 a3_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a3-1.png)<!-- -->
@@ -391,7 +391,7 @@ a4_df %>%
 
 ```r
 a4_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
@@ -461,7 +461,7 @@ a6_df %>%
 
 ```r
 a6_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a6-1.png)<!-- -->
@@ -525,7 +525,7 @@ a8_df %>%
 
 ```r
 a8_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/a8-1.png)<!-- -->
@@ -627,7 +627,7 @@ b1_df %>%
 
 ```r
 b1_df_rec %>% 
-  plot_likert()
+  plot_likert(center = 1.5, legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
@@ -664,7 +664,7 @@ b3_df_rec %>%
 
 ```r
 b3_df_rec %>% 
-  plot_likert()
+  plot_likert(center_for_likert = 1.5, 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
@@ -705,8 +705,9 @@ Did the training you receive fulfill your needs?
 
 
 ```r
-answer_levels_b6 <- c("I didn’t receive training", "I need more training", 
-                        "I received adequate training", "This topic is not relevant for my research")
+answer_levels_b6 <- c("I didn’t receive training", 
+                      "I received adequate training", 
+                      "I need more training")
 
 
 b6_df <- df %>% 
@@ -724,14 +725,14 @@ b6_df_rec %>%
 ## # A tibble: 1 x 11
 ##   `B6[SQ001]` `B6[SQ002]` `B6[SQ003]` `B6[SQ004]` `B6[SQ005]` `B6[SQ006]`
 ##         <int>       <int>       <int>       <int>       <int>       <int>
-## 1           0           0           0           0           0           0
+## 1           5           3          10           8           4          17
 ## # ... with 5 more variables: B6[SQ007] <int>, B6[SQ008] <int>, B6[SQ009] <int>,
 ## #   B6[SQ010] <int>, B6[SQ013] <int>
 ```
 
 ```r
 b6_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
@@ -779,7 +780,7 @@ b9_df_rec <- b9_df %>%
 
 
 b9_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
@@ -799,7 +800,7 @@ b10_df_rec <- b10_df %>%
 
 
 b10_df_rec %>% 
-  plot_likert()
+  plot_likert(legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->
@@ -811,7 +812,7 @@ Has your awareness of open science practices increased after the training you at
 
 
 ```r
-answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
+answer_levels_4 <- c("Highly disagree", "Disagree",
                      "Neither agree nor disagree",
                      "Agree", "Highly agree")
 
@@ -826,7 +827,10 @@ recode_successful(b11_df, b11_df_rec)
 ```
 
 ```
-## [1] TRUE
+## [1] "Component \"B11[SQ001]\": Mean absolute difference: 52"
+## [2] "Component \"B11[SQ002]\": Mean absolute difference: 46"
+## [3] "Component \"B11[SQ003]\": Mean absolute difference: 45"
+## [4] "Component \"B11[SQ004]\": Mean absolute difference: 45"
 ```
 
 ```r
@@ -858,7 +862,7 @@ b12_df_rec %>%
 ## # A tibble: 1 x 4
 ##   `B12[SQ001]` `B12[SQ002]` `B12[SQ003]` `B12[SQ004]`
 ##          <int>        <int>        <int>        <int>
-## 1            0            0            0            0
+## 1           31           38           47           44
 ```
 
 ```r
