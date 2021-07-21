@@ -115,14 +115,16 @@ e3_df_rec %>%
 
 When did you publish your first academic publication (journal article, book, chapter, conference proceeding, or similar)? Please tell us the year.
 
-```{r e3b, fig.width=5.5, fig.height=8.5}
+```{r e3b, fig.width=6, fig.height=3}
 
 e3b_df <- df %>% 
   select("E3b") %>% 
   filter(E3b > 1960)
 
 e3b_df %>% 
-  plot_bar(E3b, title = "Publish first academic publication", reorder = FALSE, nudge_y = .009)
+  ggplot(aes(E3b)) +
+  geom_histogram() +
+  labs(x = NULL, title = NULL)
 
 ```
 
