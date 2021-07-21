@@ -444,7 +444,7 @@ a10_df_rec %>%
 
 How many training events have you attended in these topics?
 
-```{r b1, fig.width=8, fig.height=8}
+```{r b1, fig.height=5, fig.width=7}
 
 answer_levels_b1 <- c("None", "1", "2", "3-5", "more than 5")
 
@@ -460,7 +460,7 @@ b1_df %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 b1_df_rec %>% 
-  plot_likert()
+  plot_likert(center = 1.5, legend_rows = 1)
 
 ```
 
@@ -485,7 +485,7 @@ b3_df_rec %>%
   summarise(across(.fns = ~sum(is.na(.x))))
 
 b3_df_rec %>% 
-  plot_likert()
+  plot_likert(center_for_likert = 1.5, 1)
 
 ```
 
@@ -517,8 +517,9 @@ Did the training you receive fulfill your needs?
 
 ```{r b6, fig.width=8, fig.height=8}
 
-answer_levels_b6 <- c("I didn’t receive training", "I need more training", 
-                        "I received adequate training", "This topic is not relevant for my research")
+answer_levels_b6 <- c("I didn’t receive training", 
+                      "I received adequate training", 
+                      "I need more training")
 
 
 b6_df <- df %>% 
@@ -608,7 +609,7 @@ Has your awareness of open science practices increased after the training you at
 
 ```{r b11, fig.width=8, fig.height=6}
 
-answer_levels_4 <- c("Don’t know", "Highly disagree", "Disagree",
+answer_levels_4 <- c("Highly disagree", "Disagree",
                      "Neither agree nor disagree",
                      "Agree", "Highly agree")
 
