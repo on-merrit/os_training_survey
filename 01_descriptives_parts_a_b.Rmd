@@ -11,15 +11,11 @@ editor_options:
 
 ```{r setup, include=FALSE}
 library(tidyverse)
-library(ggalt)
-library(glue)
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 
 df <- tar_read(with_countries)
 
 question_codes <- tar_read(var_overview)
-
-theme_set(theme_bw())
 ```
 
 
