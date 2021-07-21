@@ -19,6 +19,22 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2,
   df <- df %>% 
     select(-any_of("Other"))
   
+  
+  # create table
+  the_table <- df %>% 
+    pivot_longer(everything(), names_to = "variable") %>% 
+    count(variable, value) %>% 
+    filter(!is.na(value)) %>% 
+    group_by(variable) %>% 
+    mutate(prop = scales::percent(n/sum(n), accuracy = 1),
+           res = glue::glue("{n} ({prop})")) %>% 
+    ungroup() %>% 
+    pivot_wider(-c(n, prop), names_from = "value", values_from = "res") %>% 
+    knitr::kable()
+  
+  print(the_table)
+  
+  
   labels_df <- df %>% 
     summarise(across(.fns = ~sum(!is.na(.x)))) %>% 
     pivot_longer(everything()) %>% 
