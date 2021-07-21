@@ -14,6 +14,10 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2) {
     set_names_for_likert() %>% 
     as.data.frame()
   
+  # remove other levels
+  df <- df %>% 
+    select(-any_of("Other"))
+  
   labels_df <- df %>% 
     summarise(across(.fns = ~sum(!is.na(.x)))) %>% 
     pivot_longer(everything()) %>% 
