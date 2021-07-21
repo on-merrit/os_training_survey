@@ -770,7 +770,9 @@ How many hours of training in total did you get?
 
 
 ```r
-answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
+# answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
+# # remove "none" category, since these people did not receive training at all
+answer_levels_b5 <- c("1", "2", "3-5", "More than 5", "Other")
 
 b5_df <- df %>% 
   select("B5")
@@ -781,7 +783,7 @@ b5_df_rec <- b5_df %>%
 recode_successful(b5_df, b5_df_rec)
 ```
 
-[1] TRUE
+[1] "Component \"B5\": Mean absolute difference: 42"
 
 ```r
 b5_df_rec %>% 
