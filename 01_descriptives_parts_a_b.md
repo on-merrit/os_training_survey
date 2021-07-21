@@ -772,7 +772,7 @@ How many hours of training in total did you get?
 ```r
 # answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 # # remove "none" category, since these people did not receive training at all
-answer_levels_b5 <- c("1", "2", "3-5", "More than 5", "Other")
+answer_levels_b5 <- c( "Other", "1", "2", "3-5", "More than 5")
 
 b5_df <- df %>% 
   select("B5")
