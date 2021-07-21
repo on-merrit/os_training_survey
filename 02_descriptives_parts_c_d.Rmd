@@ -16,8 +16,6 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 df <- tar_read(with_countries)
 
 question_codes <- read_csv("data/processed/question_codes.csv")
-
-theme_set(theme_bw())
 ```
 
 # C1 Institution: OA policy
