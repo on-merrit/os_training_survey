@@ -1,12 +1,12 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
+raw_data_file|stem|51c7a24b6856f205|011b0056b61bebfd|ef46db3751d8e999|2110307107|data/processed/survey_anonymised.csv|t18813.5140527149s|843400e95fa3837d|479549|file|vector|||2.17||
 set_names_for_likert|function|5610998c486e9ab1||||||||||||||
 create_var_overview|function|286bfc46f8922e71||||||||||||||
 recode_successful|function|53c7f240057b4b1a||||||||||||||
 remove_non_consenters|function|0f7aacdd80263492||||||||||||||
 plot_bar|function|74c22cfd77565c8d||||||||||||||
 add_country|function|32ea69776a2f5ed9||||||||||||||
-plot_likert|function|cb8c8b85d3b0829b||||||||||||||
-raw_data_file|stem|51c7a24b6856f205|011b0056b61bebfd|ef46db3751d8e999|2110307107|data/processed/survey_anonymised.csv|t18813.5140527149s|843400e95fa3837d|479549|file|vector|||2.17||
+plot_likert|function|4cc3b20ea490fa8d||||||||||||||
 label_base|stem|6b374a9cbf418229|7729a277065738fa|ef46db3751d8e999|-941452255|data/label_base.csv|t18813.5140622509s|4b5fec7dec416ae7|26960|file|vector|||1.09|package tibble was built under R version 4.0.4|
 countries_file|stem|3be58917bdd33095|a7bb79b6cc70917a|ef46db3751d8e999|481707418|data/processed/countries_merged.csv|t18829.3234520746s|b05d651c18c5598a|3352|file|vector|||0||
 raw_data|stem|ae113b691794a083|cb0622c639d99d20|318a04beeaad43fe|-979620141||t18823.5858206735s|88cbaf4c4e0c5df4|45887|rds|vector|||0.53||
@@ -14,5 +14,5 @@ var_overview|stem|b015e23b31754603|a97323ab032339eb|bd5b46a654ff5bb6|-667044878|
 countries|stem|52dadd68c4004343|6f59d0fc78433a49|6cbdb45e90a6a093|-1719789746||t18829.3500449897s|6a921abd68957f25|808|rds|vector|||0.08||
 only_consenters|stem|df12e8cbbe354f1c|05581865fa6d4093|203b31a1928232ee|1581914726||t18823.5858206619s|cb8add8952bd887d|44280|rds|vector|||0.11||
 with_countries|stem|b4a289126c6e6bb7|b06beb22685089e2|5732b973de91d2f9|-1982417673||t18829.3500459272s|ef8f8a698644e9f7|44680|rds|vector|||0.02||
-parts_a_b|stem|51987dd34835e0d9|8a569ffed821b1ef|a7824f998d83cffe|408416123|01_descriptives_parts_a_b.html*01_descriptives_parts_a_b.Rmd*01_descriptives_parts_a_b_files|t18829.3502884434s|0951f1303a9ad048|5114676|file|vector|||20.97|NAs introduced by coercion|
-parts_c_d|stem|ad0aa2095029c733|c7527d2226fc9914|9eb2218ca62f6f1b|-926299217|02_descriptives_parts_c_d.html*02_descriptives_parts_c_d.Rmd*02_descriptives_parts_c_d_files|t18829.3503681359s|75b4c0ea404b4854|1918632|file|vector|||6.47|NAs introduced by coercion|
+parts_a_b|stem|65aecc04b2aa4b14|8a569ffed821b1ef|a7824f998d83cffe|408416123|01_descriptives_parts_a_b.html*01_descriptives_parts_a_b.Rmd*01_descriptives_parts_a_b_files|t18829.3565313314s|d3f146ac0166f3cc|5025160|file|vector|||21.24|font family not found in Windows font database|
+parts_c_d|stem|ad0aa2095029c733|c7527d2226fc9914|9eb2218ca62f6f1b|-926299217|02_descriptives_parts_c_d.html*02_descriptives_parts_c_d.Rmd*02_descriptives_parts_c_d_files|t18829.3503681359s|eecae2576e688c72|1374083|file|vector|||6.47|NAs introduced by coercion|

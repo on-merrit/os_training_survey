@@ -64,6 +64,16 @@ e1_rec_df %>%
 plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 ```
 
+```
+## Registered S3 methods overwritten by 'ggalt':
+##   method                  from   
+##   grid.draw.absoluteGrob  ggplot2
+##   grobHeight.absoluteGrob ggplot2
+##   grobWidth.absoluteGrob  ggplot2
+##   grobX.absoluteGrob      ggplot2
+##   grobY.absoluteGrob      ggplot2
+```
+
 ![](01_descriptives_parts_a_b_files/figure-html/e1-1.png)<!-- -->
 
 
