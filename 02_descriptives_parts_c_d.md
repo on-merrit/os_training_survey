@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 Part C and D"
 author: "Anja Rainer"
-date: "20 Juli, 2021"
+date: "21 Juli, 2021"
 output: 
   html_document:
     keep_md: true
@@ -243,7 +243,7 @@ d2_df_rec %>%
 
 ![](02_descriptives_parts_c_d_files/figure-html/d2-1.png)<!-- -->
 
-# D3  Most significant barriers facing
+# D3  Most significant barriers facing while embracing an OS perspective
 
 Which are the most significant barriers you will be facing while embracing an Open Science perspective?
 

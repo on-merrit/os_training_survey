@@ -192,7 +192,7 @@ d2_df_rec %>%
 
 ```
 
-# D3  Most significant barriers facing
+# D3  Most significant barriers facing while embracing an OS perspective
 
 Which are the most significant barriers you will be facing while embracing an Open Science perspective?
 

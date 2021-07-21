@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "20 Juli, 2021"
+date: "21 Juli, 2021"
 output: 
   html_document:
     keep_md: true
@@ -280,7 +280,7 @@ a1_df_rec %>%
 ![](01_descriptives_parts_a_b_files/figure-html/a1-2.png)<!-- -->
 
 
-# A2 Own pratices regarding Open Access publishing
+# A2 Own practices regarding Open Access publishing
 
 Please rate the following statements according to your own practices regarding Open Access publishing.
 
@@ -381,7 +381,7 @@ a4_df_rec %>%
 ![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
 
 
-# A5 Pratices regarding Open Peer Review
+# A5 Practices regarding Open Peer Review
 
 Please rate the following statements according to your practices regarding Open Peer Review.
 
@@ -547,7 +547,7 @@ a9_df_rec %>%
 ![](01_descriptives_parts_a_b_files/figure-html/a9-1.png)<!-- -->
 
 
-# A10 Practices regarding Gender Issue
+# A10 Practices regarding Gender Issues
 
 Please rate the following statements according to your practices regarding Gender issues
 

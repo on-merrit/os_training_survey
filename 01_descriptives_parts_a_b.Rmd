@@ -115,14 +115,16 @@ e3_df_rec %>%
 
 When did you publish your first academic publication (journal article, book, chapter, conference proceeding, or similar)? Please tell us the year.
 
-```{r e3b, fig.width=5.5, fig.height=8.5}
+```{r e3b, fig.width=6, fig.height=3}
 
 e3b_df <- df %>% 
   select("E3b") %>% 
   filter(E3b > 1960)
 
 e3b_df %>% 
-  plot_bar(E3b, title = "Publish first academic publication", reorder = FALSE, nudge_y = .009)
+  ggplot(aes(E3b)) +
+  geom_histogram() +
+  labs(x = NULL, title = NULL)
 
 ```
 
@@ -190,7 +192,7 @@ e6_df_rec %>%
 
 In which general area of knowledge do you work?
 
-```{r e7, fig.width=8, fig.height=2.5}
+```{r e7, fig.width=8, fig.height=3}
 
 answer_levels_e7 <- c("Natural Sciences", "Engineering and technology", "Medical and health sciences", "Agricultural and Veterinary sciences", 
                       "Social Sciences", "Humanities and the Arts")
@@ -236,7 +238,7 @@ a1_df_rec %>%
 ```
 
 
-# A2 Own pratices regarding Open Access publishing
+# A2 Own practices regarding Open Access publishing
 
 Please rate the following statements according to your own practices regarding Open Access publishing.
 
@@ -305,7 +307,7 @@ a4_df_rec %>%
 ```
 
 
-# A5 Pratices regarding Open Peer Review
+# A5 Practices regarding Open Peer Review
 
 Please rate the following statements according to your practices regarding Open Peer Review.
 
@@ -418,7 +420,7 @@ a9_df_rec %>%
 ```
 
 
-# A10 Practices regarding Gender Issue
+# A10 Practices regarding Gender Issues
 
 Please rate the following statements according to your practices regarding Gender issues
 
@@ -508,7 +510,7 @@ recode_successful(b5_df, b5_df_rec)
 
 
 b5_df_rec %>% 
-  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .1)
+  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .065)
 ```
 
 
@@ -542,7 +544,7 @@ b6_df_rec %>%
 
 When did you attend your first formal training in any Open Science topic?
 
-```{r b8, fig.width=6, fig.height=3}
+```{r b8, fig.width=5.5, fig.height=3}
 
 answer_levels_b8 <- c("During doctoral studies", "As a researcher", "During a conference", "Other")
 
@@ -554,7 +556,8 @@ b8_df_rec <- b8_df %>%
 
 
 b8_df_rec %>% 
-  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .08)
+  filter(B8 != "Other") %>%
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .12)
 
 ```
 
