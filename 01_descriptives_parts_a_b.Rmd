@@ -49,13 +49,13 @@ df %>%
 
 In which country do you work? [drop-down/ open text]
 
-```{r e1, fig.width=8, fig.height=6.5}
+```{r e1, fig.width=8, fig.height=4}
 
 e1_rec_df <- df %>%
   select("E1_rec")
 
 e1_rec_df %>%
-  mutate(forcats::fct_lump_min(E1_rec, min = 5, other_level = "under 5")) %>%
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
   plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 
 ```
