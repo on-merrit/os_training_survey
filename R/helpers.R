@@ -1,4 +1,5 @@
-plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2) {
+plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2, 
+                        centered = TRUE) {
   
   # remove don't know and irrelevant research
   old_levels <- levels(df[[1, 1]])
@@ -29,15 +30,15 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2) {
     theme_void() 
   
   plot_it <- if (!is.null(center_for_likert)) {
-    function(x, center) plot(x, center = center_for_likert)
+    function(x, center, ...) plot(x, center = center_for_likert, ...)
   } else {
-    function(x) plot(x)
+    function(x, ...) plot(x, ...)
   }
   
   # plot it
   p1 <- df %>% 
     likert::likert() %>% 
-    plot_it() +
+    plot_it(centered = centered) +
     guides(fill = guide_legend(title = NULL, nrow = legend_rows))
   
   p1 + p2 +
