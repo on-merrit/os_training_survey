@@ -36,7 +36,7 @@ c1_df_rec <- c1_df %>%
 
 
 c1_df_rec %>% 
-plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
+  plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 
 ```
 
