@@ -555,7 +555,7 @@ b6_df_rec %>%
 
 When did you attend your first formal training in any Open Science topic?
 
-```{r b8, fig.width=6, fig.height=3}
+```{r b8, fig.width=5.5, fig.height=3}
 
 answer_levels_b8 <- c("During doctoral studies", "As a researcher", "During a conference", "Other")
 
@@ -568,7 +568,7 @@ b8_df_rec <- b8_df %>%
 
 b8_df_rec %>% 
   filter(B8 != "Other") %>%
-  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .099)
+  plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .12)
 
 ```
 
