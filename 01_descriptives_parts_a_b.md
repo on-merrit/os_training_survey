@@ -160,7 +160,7 @@ e3b_df <- df %>%
 e3b_df %>% 
   ggplot(aes(E3b)) +
   geom_histogram() +
-  labs(x = NULL, title = NULL)
+  labs(x = NULL, y = NULL, title = NULL)
 ```
 
 ```
