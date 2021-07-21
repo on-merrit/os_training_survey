@@ -247,7 +247,7 @@ a1_df_rec %>%
 ```
 
 
-# A2 Own pratices regarding Open Access publishing
+# A2 Own practices regarding Open Access publishing
 
 Please rate the following statements according to your own practices regarding Open Access publishing.
 
@@ -316,7 +316,7 @@ a4_df_rec %>%
 ```
 
 
-# A5 Pratices regarding Open Peer Review
+# A5 Practices regarding Open Peer Review
 
 Please rate the following statements according to your practices regarding Open Peer Review.
 
@@ -429,7 +429,7 @@ a9_df_rec %>%
 ```
 
 
-# A10 Practices regarding Gender Issue
+# A10 Practices regarding Gender Issues
 
 Please rate the following statements according to your practices regarding Gender issues
 
