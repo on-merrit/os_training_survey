@@ -61,6 +61,7 @@ e1_rec_df <- df %>%
   select("E1_rec")
 
 e1_rec_df %>%
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
   plot_bar(E1_rec, title = "Countries", reorder = TRUE, nudge_y = .03)
 ```
 
