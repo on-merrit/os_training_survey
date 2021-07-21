@@ -22,10 +22,10 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2,
   
   # create table
   the_table <- df %>% 
-    pivot_longer(everything(), names_to = "variable") %>% 
-    count(variable, value) %>% 
+    pivot_longer(everything(), names_to = "Variable") %>% 
+    count(Variable, value) %>% 
     filter(!is.na(value)) %>% 
-    group_by(variable) %>% 
+    group_by(Variable) %>% 
     mutate(prop = scales::percent(n/sum(n), accuracy = 1),
            res = glue::glue("{n} ({prop})")) %>% 
     ungroup() %>% 
