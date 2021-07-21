@@ -627,7 +627,7 @@ b1_df %>%
 
 ```r
 b1_df_rec %>% 
-  plot_likert(center = 1.5, legend_rows = 1)
+  plot_likert(center_for_likert = 1.5, legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
@@ -664,7 +664,7 @@ b3_df_rec %>%
 
 ```r
 b3_df_rec %>% 
-  plot_likert(center_for_likert = 1.5, 1)
+  plot_likert(center_for_likert = 1.5, legend_rows = 1)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
@@ -732,7 +732,7 @@ b6_df_rec %>%
 
 ```r
 b6_df_rec %>% 
-  plot_likert(legend_rows = 1)
+  plot_likert(legend_rows = 1, centered = FALSE)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
