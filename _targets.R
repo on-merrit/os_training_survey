@@ -1,7 +1,9 @@
 library(targets)
 library(tarchetypes)
-source("R/functions.R")
-source("R/helpers.R")
+# need to set encodings to handle " ' " characters:
+# https://stackoverflow.com/a/41747709/3149349
+source("R/functions.R", encoding = "UTF-8")
+source("R/helpers.R", encoding = "UTF-8")
 options(tidyverse.quiet = TRUE)
 tar_option_set(packages = c("scales", "tidyverse", "visdat", "patchwork"))
 
