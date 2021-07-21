@@ -27,17 +27,7 @@ c1_df_rec <- c1_df %>%
 
 
 c1_df_rec %>% 
-plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
-```
-
-```
-## Registered S3 methods overwritten by 'ggalt':
-##   method                  from   
-##   grid.draw.absoluteGrob  ggplot2
-##   grobHeight.absoluteGrob ggplot2
-##   grobWidth.absoluteGrob  ggplot2
-##   grobX.absoluteGrob      ggplot2
-##   grobY.absoluteGrob      ggplot2
+  plot_bar(C1, title = "Institution: OA policy", reorder = TRUE, nudge_y = .08)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/c1-1.png)<!-- -->
