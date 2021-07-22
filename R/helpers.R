@@ -34,7 +34,9 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2,
   
   print(the_table)
   
-  cat("<br><br>")
+  cat("
+      
+      ")
   
   labels_df <- df %>% 
     summarise(across(.fns = ~sum(!is.na(.x)))) %>% 

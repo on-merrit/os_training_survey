@@ -309,7 +309,9 @@ a1_df_rec %>%
 |Open science consists of different dimensions (e.g. publications, data, code, methods) |4 (3%)            |8 (5%)   |12 (8%)                    |74 (50%) |50 (34%)       |
 |Open science is different from traditional research approaches                         |5 (3%)            |31 (20%) |38 (25%)                   |52 (34%) |26 (17%)       |
 |Open science values transparency in research                                           |5 (3%)            |2 (1%)   |12 (8%)                    |46 (29%) |92 (59%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a1-2.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a1-2.png)<!-- -->
 
 
 # A2 Own practices regarding Open Access publishing
@@ -353,7 +355,9 @@ a2_df_rec %>%
 |I know how to get funding for open access publication fees   |21 (14%) |29 (20%) |38 (26%)  |36 (25%) |21 (14%) |
 |I publish in open-access journals                            |8 (5%)   |22 (13%) |60 (37%)  |64 (39%) |9 (6%)   |
 |I publish my publications under an open license              |7 (5%)   |21 (14%) |47 (32%)  |54 (36%) |20 (13%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a2-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a2-1.png)<!-- -->
 
 
 # A3 Own practices regarding Research Data Management
@@ -392,7 +396,9 @@ a3_df_rec %>%
 |I publish my data’s description along with its identifier (DOI, handle ,...)     |33 (24%) |21 (15%) |22 (16%)  |38 (27%) |25 (18%) |
 |I share my data in a data repository                                             |35 (25%) |31 (22%) |28 (20%)  |28 (20%) |19 (13%) |
 |When submitting an article, I make sure my data can be accessed by the reviewers |29 (21%) |26 (18%) |35 (25%)  |23 (16%) |28 (20%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a3-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a3-1.png)<!-- -->
 
 
 # A4 Practices regarding Reproducible Research
@@ -431,7 +437,9 @@ a4_df_rec %>%
 |I pre-register my hypothesis                                                    |67 (61%) |20 (18%) |14 (13%)  |5 (5%)   |4 (4%)   |
 |I share my electronic laboratory notebooks                                      |59 (69%) |10 (12%) |9 (10%)   |3 (3%)   |5 (6%)   |
 |I use platforms like open science framework or GitHub to share my research      |58 (44%) |25 (19%) |25 (19%)  |17 (13%) |7 (5%)   |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a4-1.png)<!-- -->
 
 
 # A5 Practices regarding Open Peer Review
@@ -476,7 +484,9 @@ a5_df_rec %>%
 |Open peer review improves the transparency of the review process |7 (5%)            |13 (9%)  |37 (26%)                   |47 (33%) |38 (27%)       |
 |Platforms that allow open peer review are easy to use            |2 (2%)            |8 (9%)   |42 (46%)                   |28 (30%) |12 (13%)       |
 |Reviewers’ comments are attentive in open peer-review            |6 (5%)            |4 (4%)   |55 (48%)                   |32 (28%) |17 (15%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a5-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a5-1.png)<!-- -->
 
 
 # A6 Practices regarding Open Source Software
@@ -515,7 +525,9 @@ a6_df_rec %>%
 |I license my software to inform about the conditions under which it can be reused |28 (38%) |11 (15%) |10 (14%)  |9 (12%)  |15 (21%) |
 |I reuse and build upon open-source software                                       |14 (17%) |12 (14%) |23 (28%)  |23 (28%) |11 (13%) |
 |I share my software code (e.g. via GitHub, Figshare or Zenodo)                    |21 (26%) |14 (17%) |13 (16%)  |21 (26%) |12 (15%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a6-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a6-1.png)<!-- -->
 
 
 # A7 Practices regarding Licensing
@@ -554,7 +566,9 @@ a7_df_rec %>%
 |I tend to use licenses that enable some kind of reuse                                                           |8 (8%)            |10 (9%)  |12 (11%)                   |55 (52%) |21 (20%)       |
 |I use Creative Commons licenses                                                                                 |11 (10%)          |13 (12%) |17 (15%)                   |46 (41%) |25 (22%)       |
 |Using a license will prevent unauthorised uses of my work                                                       |6 (5%)            |30 (26%) |31 (27%)                   |32 (28%) |15 (13%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a7-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a7-1.png)<!-- -->
 
 
 # A8 Practices regarding Research Integrity
@@ -593,7 +607,9 @@ a8_df_rec %>%
 |I inform subjects and ask for their consent prior to disseminating my research                         |2 (2%)    |13 (13%) |84 (82%)  |2 (2%) |2 (2%) |
 |I review publications without biases or influences                                                     |4 (3%)    |22 (14%) |123 (80%) |4 (3%) |NA     |
 |I thoroughly inform my human subjects of all the details concerning their participation in my research |2 (2%)    |11 (12%) |81 (85%)  |NA     |1 (1%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a8-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a8-1.png)<!-- -->
 
 
 # A9 Practices regarding Citizen Science (information, consultation, public participation)
@@ -632,7 +648,9 @@ a9_df_rec %>%
 |I involve citizens in data gathering for my research                          |23 (20%)          |19 (17%) |23 (20%)                   |38 (33%) |11 (10%)       |
 |I provide the public with the information they need to understand my research |4 (3%)            |4 (3%)   |28 (18%)                   |67 (43%) |53 (34%)       |
 |I regularly publish news about my research                                    |12 (8%)           |29 (19%) |41 (26%)                   |47 (30%) |26 (17%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a9-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a9-1.png)<!-- -->
 
 
 # A10 Practices regarding Gender Issues
@@ -671,7 +689,9 @@ a10_df_rec %>%
 |I guarantee that the groups involved in the project (e.g. samples, testing groups) are gender-balanced |8 (7%)            |13 (12%) |34 (31%)                   |34 (31%) |22 (20%)       |
 |I look for gender equality when looking for project partners                                           |9 (6%)            |15 (10%) |37 (26%)                   |50 (35%) |32 (22%)       |
 |I seek not to have imbalances in the decision-making process                                           |2 (1%)            |2 (1%)   |25 (17%)                   |73 (50%) |45 (31%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/a10-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/a10-1.png)<!-- -->
 
 # Part B Training on OS topics
 
@@ -721,7 +741,9 @@ b1_df_rec %>%
 |Open Science          |121 (75%) |27 (17%) |9 (6%)   |4 (2%)   |
 |Reproducible Research |125 (76%) |23 (14%) |8 (5%)   |9 (5%)   |
 |Research integrity    |89 (56%)  |37 (23%) |16 (10%) |18 (11%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b1-1.png)<!-- -->
 
 
 # B3 Attended Different Types of Training Sessions
@@ -769,7 +791,9 @@ b3_df_rec %>%
 |Several days workshop             |127 (76%) |12 (7%)  |28 (17%)       |
 |Summer/ Winter School             |142 (85%) |8 (5%)   |17 (10%)       |
 |Webinar                           |73 (44%)  |22 (13%) |72 (43%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b3-1.png)<!-- -->
 
 
 # B5 Hours of training
@@ -849,7 +873,9 @@ b6_df_rec %>%
 |Open Science          |99 (61%)                  |30 (19%)                     |33 (20%)             |
 |Reproducible Research |100 (63%)                 |37 (23%)                     |22 (14%)             |
 |Research integrity    |88 (54%)                  |60 (37%)                     |16 (10%)             |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b6-1.png)<!-- -->
 
 
 # B8 Attendance of first formal training in any Open Science topic
@@ -908,7 +934,9 @@ b9_df_rec %>%
 |My supervisor               |5 (3%)   |162 (97%) |
 |Research school             |11 (7%)  |156 (93%) |
 |Session at a conference     |30 (18%) |137 (82%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
 
 
 # B10 Preferred way to learn OS topics
@@ -937,7 +965,9 @@ b10_df_rec %>%
 |Mandatory training                         |22 (13%) |145 (87%) |
 |Optional training                          |84 (50%) |83 (50%)  |
 |Personal reading                           |62 (37%) |105 (63%) |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->
 
 
 # B11 Has your awareness of open science practices increased after the training you attended?
@@ -978,7 +1008,9 @@ b11_df_rec %>%
 |I am more aware of the opportunities offered by practicing open science |5 (4%)          |7 (6%)   |30 (26%)                   |61 (53%) |12 (10%)     |
 |I incorporated some open science practices in my daily research work    |4 (3%)          |8 (7%)   |32 (26%)                   |63 (52%) |14 (12%)     |
 |I still don’t understand why I should make an extra effort              |32 (26%)        |48 (39%) |29 (24%)                   |10 (8%)  |3 (2%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b11-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b11-1.png)<!-- -->
 
 
 # B12 Share experience OS practices/tool with colleagues
@@ -1016,7 +1048,9 @@ b12_df_rec %>%
 |My colleagues wouldn’t make the effort                                                            |10 (8%)         |54 (44%) |38 (31%)                   |15 (12%) |6 (5%)       |
 |My research community already has established open science practices                              |9 (7%)          |24 (19%) |35 (27%)                   |50 (39%) |11 (9%)      |
 |My research community already has established tools and practices that don’t foresee open science |12 (10%)        |34 (28%) |43 (36%)                   |29 (24%) |2 (2%)       |
-<br><br>![](01_descriptives_parts_a_b_files/figure-html/b12-1.png)<!-- -->
+
+      
+      ![](01_descriptives_parts_a_b_files/figure-html/b12-1.png)<!-- -->
 
 
 
