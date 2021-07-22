@@ -107,6 +107,8 @@ plot_bar <- function(df, var, title = NULL, reorder = TRUE, nudge_y = .04,
     ggalt::geom_lollipop() +
     coord_flip(clip = "off") +
     geom_text(aes(label = label), nudge_y = nudge_y) +
+    # the following could be used to align the text better with the dots
+    # geom_text(aes(label = label), nudge_y = nudge_y, hjust = "left") +
     scale_y_continuous(labels = function(x) scales::percent(x, accurarcy = 1)) + 
     labs(x = NULL, y = y_lab) +
     hrbrthemes::theme_ipsum(base_family = "Hind", grid = "")
