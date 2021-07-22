@@ -177,8 +177,8 @@ c8_df_rec %>%
 |Support by an Ethics committee                                                                                |33 (24%)                                   |16 (12%)                                                     |41 (30%)                             |46 (34%)                                   |
 |Training on different aspects of Open Science                                                                 |43 (32%)                                   |27 (20%)                                                     |47 (35%)                             |18 (13%)                                   |
 
-      
-      ![](02_descriptives_parts_c_d_files/figure-html/c8-1.png)<!-- -->
+
+![](02_descriptives_parts_c_d_files/figure-html/c8-1.png)<!-- -->
 
 
 # C10: Other initiatives incentivising Open Science practices at institution
@@ -252,8 +252,8 @@ d2_df_rec %>%
 |Mostly positive, it has benefits but also important drawbacks |106 (63%) |61 (37%) |
 |Not relevant for my research                                  |152 (91%) |15 (9%)  |
 
-      
-      ![](02_descriptives_parts_c_d_files/figure-html/d2-1.png)<!-- -->
+
+![](02_descriptives_parts_c_d_files/figure-html/d2-1.png)<!-- -->
 
 # D3  Most significant barriers facing while embracing an OS perspective
 
@@ -286,8 +286,8 @@ d3_df_rec %>%
 |Lack of proper infrastructure                                    |29 (21%)   |35 (26%)      |51 (38%)            |21 (15%)                 |
 |Time constraints                                                 |28 (19%)   |40 (27%)      |56 (38%)            |23 (16%)                 |
 
-      
-      ![](02_descriptives_parts_c_d_files/figure-html/d3-1.png)<!-- -->
+
+![](02_descriptives_parts_c_d_files/figure-html/d3-1.png)<!-- -->
 
 # D5 Main drivers to participate OS
 
@@ -332,8 +332,8 @@ d5_df_rec %>%
 |Support and wide adoption of open science practices in my research community                       |13 (8%)   |32 (21%)     |70 (45%)           |39 (25%)                |
 |The value of sharing my research outputs in relation to societal ideals (e.g. access to knowledge) |6 (4%)    |21 (14%)     |71 (46%)           |56 (36%)                |
 
-      
-      ![](02_descriptives_parts_c_d_files/figure-html/d5-1.png)<!-- -->
+
+![](02_descriptives_parts_c_d_files/figure-html/d5-1.png)<!-- -->
 
 # D7 Drivers or barriers to practice Open Science
 
@@ -379,5 +379,5 @@ d7_df_rec %>%
 |Researcher evaluation based on citation metrics (e.g. impact factor, h-index)    |34 (23%)  |54 (37%)                   |57 (39%)  |
 |Societal needs, values, interests and expectations                               |5 (3%)    |30 (20%)                   |113 (76%) |
 
-      
-      ![](02_descriptives_parts_c_d_files/figure-html/d7-1.png)<!-- -->
+
+![](02_descriptives_parts_c_d_files/figure-html/d7-1.png)<!-- -->
