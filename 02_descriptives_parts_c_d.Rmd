@@ -88,12 +88,8 @@ c6_df <- df %>%
 c6_df_rec <- c6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_5))
 
-c6_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 c6_df_rec %>% 
   plot_bar(C6, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications", reorder = FALSE, nudge_y = .06)
-
 ```
 
 # C7 Financial support in paying article processing charges (APCs)
@@ -108,13 +104,8 @@ c7_df <- df %>%
 c7_df_rec <- c7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_5))
 
-c7_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 c7_df_rec %>% 
   plot_bar(C7, title = "Financial support in paying article processing charges (APCs)", reorder = FALSE, nudge_y = .07)
-
-
 ```
 
 
@@ -133,16 +124,8 @@ c8_df <- df %>%
 c8_df_rec <- c8_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_7))
 
-
-c8_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
-
 c8_df_rec %>% 
   plot_likert()
-
-
-
 ```
 
 
@@ -158,13 +141,8 @@ c10_df <- df %>%
 c10_df_rec <- c10_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_6))
 
-c10_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 c10_df_rec %>% 
   plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
-
-
 ```
 
 # Part D: Drivers and barriers to practicing Open Science
@@ -181,13 +159,8 @@ d2_df <- df %>%
 d2_df_rec <- d2_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_6))
 
-d2_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
-
 d2_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```
 
 # D3  Most significant barriers facing while embracing an OS perspective
@@ -207,7 +180,6 @@ d3_df_rec <- d3_df %>%
 
 d3_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```
 
 # D5 Main drivers to participate OS
@@ -225,14 +197,8 @@ d5_df <- df %>%
 d5_df_rec <- d5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_9))
 
-
-d5_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 d5_df_rec %>% 
   plot_likert(legend_rows = 1)
-
-
 ```
 
 # D7 Drivers or barriers to practice Open Science
@@ -250,11 +216,6 @@ d7_df <- df %>%
 d7_df_rec <- d7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_9))
 
-
-d7_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 d7_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```

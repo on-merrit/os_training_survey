@@ -97,9 +97,6 @@ e3_df_rec <- e3_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e3))
 
 
-e3_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 e3_df_rec %>%
   mutate(across(.fns = as.numeric)) %>% 
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
@@ -256,10 +253,6 @@ a2_df <- df %>%
 a2_df_rec <- a2_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a2_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 a2_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -276,10 +269,6 @@ a3_df <- df %>%
 
 a3_df_rec <- a3_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
-
-
-a3_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
 
 a3_df_rec %>% 
   plot_likert(legend_rows = 1)
@@ -298,13 +287,8 @@ a4_df <- df %>%
 a4_df_rec <- a4_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a4_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 a4_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```
 
 
@@ -326,13 +310,8 @@ a5_df <- df %>%
 a5_df_rec <- a5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
-
-a5_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 a5_df_rec %>% 
   plot_likert()
-
 ```
 
 
@@ -348,13 +327,8 @@ a6_df <- df %>%
 a6_df_rec <- a6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a6_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 a6_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```
 
 
@@ -369,10 +343,6 @@ a7_df <- df %>%
 
 a7_df_rec <- a7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
-
-
-a7_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
 
 a7_df_rec %>% 
   plot_likert()
@@ -391,10 +361,6 @@ a8_df <- df %>%
 a8_df_rec <- a8_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a8_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 a8_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -411,10 +377,6 @@ a9_df <- df %>%
 
 a9_df_rec <- a9_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
-
-
-a9_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
 
 a9_df_rec %>% 
   plot_likert()
@@ -433,13 +395,8 @@ a10_df <- df %>%
 a10_df_rec <- a10_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
-
-a10_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 a10_df_rec %>% 
   plot_likert()
-
 ```
 
 # Part B Training on OS topics
@@ -460,12 +417,8 @@ b1_df_rec <- b1_df %>%
   mutate(across(.fns = factor, levels = answer_levels_b1))
 
 
-b1_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 b1_df_rec %>% 
   plot_likert(center_for_likert = 1.5, legend_rows = 1)
-
 ```
 
 
@@ -484,13 +437,8 @@ b3_df <- df %>%
 b3_df_rec <- b3_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b3))
 
-
-b3_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 b3_df_rec %>% 
   plot_likert(center_for_likert = 1.5, legend_rows = 1)
-
 ```
 
 
@@ -534,13 +482,8 @@ b6_df <- df %>%
 b6_df_rec <- b6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b6))
 
-
-b6_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 b6_df_rec %>% 
   plot_likert(legend_rows = 1, centered = FALSE)
-
 ```
 
 
@@ -558,11 +501,9 @@ b8_df <- df %>%
 b8_df_rec <- b8_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b8))
 
-
 b8_df_rec %>% 
   filter(B8 != "Other") %>%
   plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .12)
-
 ```
 
 
@@ -583,10 +524,8 @@ b9_df <- df %>%
 b9_df_rec <- b9_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_3))
 
-
 b9_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```
 
 
@@ -602,10 +541,8 @@ b10_df <- df %>%
 b10_df_rec <- b10_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_3))
 
-
 b10_df_rec %>% 
   plot_likert(legend_rows = 1)
-
 ```
 
 
@@ -628,10 +565,8 @@ b11_df_rec <- b11_df %>%
 
 recode_successful(b11_df, b11_df_rec)
 
-
 b11_df_rec %>% 
   plot_likert()
-
 ```
 
 
@@ -647,13 +582,8 @@ b12_df <- df %>%
 b12_df_rec <- b12_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_4))
 
-
-b12_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-
 b12_df_rec %>% 
   plot_likert()
-
 ```
 
 

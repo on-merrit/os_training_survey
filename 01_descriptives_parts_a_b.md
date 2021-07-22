@@ -116,18 +116,6 @@ e3_df_rec <- e3_df %>%
   mutate(across(.fns = factor, levels = answer_levels_e3))
 
 
-e3_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-```
-## # A tibble: 1 x 1
-##      E3
-##   <int>
-## 1     0
-```
-
-```r
 e3_df_rec %>%
   mutate(across(.fns = as.numeric)) %>% 
   summarise(across(everything(), ~mean(.x, na.rm = TRUE)))
@@ -331,17 +319,6 @@ a2_df <- df %>%
 a2_df_rec <- a2_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a2_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A2[SQ001]` `A2[SQ002]` `A2[SQ003]` `A2[SQ004]` `A2[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1           3           2           5           7           7
-
-```r
 a2_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -372,17 +349,6 @@ a3_df <- df %>%
 a3_df_rec <- a3_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a3_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A3[SQ005]` `A3[SQ001]` `A3[SQ002]` `A3[SQ003]` `A3[SQ004]`
-        <int>       <int>       <int>       <int>       <int>
-1           4           5           7           7           8
-
-```r
 a3_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -413,17 +379,6 @@ a4_df <- df %>%
 a4_df_rec <- a4_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a4_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A4[SQ001]` `A4[SQ002]` `A4[SQ003]` `A4[SQ004]` `A4[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1           5           5           6          12           7
-
-```r
 a4_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -460,17 +415,6 @@ a5_df <- df %>%
 a5_df_rec <- a5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
-
-a5_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A5[SQ001]` `A5[SQ002]` `A5[SQ003]` `A5[SQ004]` `A5[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1           6          10          10          10          12
-
-```r
 a5_df_rec %>% 
   plot_likert()
 ```
@@ -501,17 +445,6 @@ a6_df <- df %>%
 a6_df_rec <- a6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a6_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A6[SQ001]` `A6[SQ002]` `A6[SQ003]` `A6[SQ004]` `A6[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1           9           8           9           9           9
-
-```r
 a6_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -542,17 +475,6 @@ a7_df <- df %>%
 a7_df_rec <- a7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
-
-a7_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A7[SQ001]` `A7[SQ002]` `A7[SQ003]` `A7[SQ004]` `A7[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1          11          13          14          11           9
-
-```r
 a7_df_rec %>% 
   plot_likert()
 ```
@@ -583,17 +505,6 @@ a8_df <- df %>%
 a8_df_rec <- a8_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_2))
 
-
-a8_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A8[SQ001]` `A8[SQ002]` `A8[SQ003]` `A8[SQ004]` `A8[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1           5           5           5           5           7
-
-```r
 a8_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -624,17 +535,6 @@ a9_df <- df %>%
 a9_df_rec <- a9_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
-
-a9_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A9[SQ001]` `A9[SQ002]` `A9[SQ003]` `A9[SQ004]` `A9[SQ005]`
-        <int>       <int>       <int>       <int>       <int>
-1           5           5           4           5           6
-
-```r
 a9_df_rec %>% 
   plot_likert()
 ```
@@ -665,17 +565,6 @@ a10_df <- df %>%
 a10_df_rec <- a10_df %>% 
   mutate(across(.fns = factor, levels = answer_levels))
 
-
-a10_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 5
-  `A10[SQ001]` `A10[SQ002]` `A10[SQ003]` `A10[SQ004]` `A10[SQ005]`
-         <int>        <int>        <int>        <int>        <int>
-1            4            4            5            6            7
-
-```r
 a10_df_rec %>% 
   plot_likert()
 ```
@@ -711,18 +600,6 @@ b1_df_rec <- b1_df %>%
   mutate(across(.fns = factor, levels = answer_levels_b1))
 
 
-b1_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 11
-  `B1[SQ001]` `B1[SQ002]` `B1[SQ003]` `B1[SQ004]` `B1[SQ005]` `B1[SQ006]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           0           0           0           0           0           0
-# ... with 5 more variables: B1[SQ007] <int>, B1[SQ008] <int>, B1[SQ009] <int>,
-#   B1[SQ010] <int>, B1[SQ013] <int>
-
-```r
 b1_df_rec %>% 
   plot_likert(center_for_likert = 1.5, legend_rows = 1)
 ```
@@ -761,19 +638,6 @@ b3_df <- df %>%
 b3_df_rec <- b3_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b3))
 
-
-b3_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 10
-  `B3[SQ001]` `B3[SQ002]` `B3[SQ003]` `B3[SQ004]` `B3[SQ005]` `B3[SQ006]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           0           0           0           0           0           0
-# ... with 4 more variables: B3[SQ007] <int>, B3[SQ008] <int>, B3[SQ009] <int>,
-#   B3[SQ013] <int>
-
-```r
 b3_df_rec %>% 
   plot_likert(center_for_likert = 1.5, legend_rows = 1)
 ```
@@ -842,19 +706,6 @@ b6_df <- df %>%
 b6_df_rec <- b6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b6))
 
-
-b6_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 11
-  `B6[SQ001]` `B6[SQ002]` `B6[SQ003]` `B6[SQ004]` `B6[SQ005]` `B6[SQ006]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           5           3          10           8           4          17
-# ... with 5 more variables: B6[SQ007] <int>, B6[SQ008] <int>, B6[SQ009] <int>,
-#   B6[SQ010] <int>, B6[SQ013] <int>
-
-```r
 b6_df_rec %>% 
   plot_likert(legend_rows = 1, centered = FALSE)
 ```
@@ -892,7 +743,6 @@ b8_df <- df %>%
 b8_df_rec <- b8_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_b8))
 
-
 b8_df_rec %>% 
   filter(B8 != "Other") %>%
   plot_bar(B8, title = "Attendance of first formal training in any Open Science topic", reorder = FALSE, nudge_y = .12)
@@ -917,7 +767,6 @@ b9_df <- df %>%
 
 b9_df_rec <- b9_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_3))
-
 
 b9_df_rec %>% 
   plot_likert(legend_rows = 1)
@@ -950,7 +799,6 @@ b10_df <- df %>%
 
 b10_df_rec <- b10_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_3))
-
 
 b10_df_rec %>% 
   plot_likert(legend_rows = 1)
@@ -1025,17 +873,6 @@ b12_df <- df %>%
 b12_df_rec <- b12_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_4))
 
-
-b12_df_rec %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 4
-  `B12[SQ001]` `B12[SQ002]` `B12[SQ003]` `B12[SQ004]`
-         <int>        <int>        <int>        <int>
-1           31           38           47           44
-
-```r
 b12_df_rec %>% 
   plot_likert()
 ```

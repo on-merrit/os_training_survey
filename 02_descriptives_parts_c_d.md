@@ -85,18 +85,6 @@ c6_df <- df %>%
 c6_df_rec <- c6_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_5))
 
-c6_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-```
-## # A tibble: 1 x 1
-##      C6
-##   <int>
-## 1     3
-```
-
-```r
 c6_df_rec %>% 
   plot_bar(C6, title = "Guidance on how to comply with the policies by the financing entities that require OA to publications", reorder = FALSE, nudge_y = .06)
 ```
@@ -115,18 +103,6 @@ c7_df <- df %>%
 c7_df_rec <- c7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_5))
 
-c7_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-```
-## # A tibble: 1 x 1
-##      C7
-##   <int>
-## 1     4
-```
-
-```r
 c7_df_rec %>% 
   plot_bar(C7, title = "Financial support in paying article processing charges (APCs)", reorder = FALSE, nudge_y = .07)
 ```
@@ -149,18 +125,6 @@ c8_df <- df %>%
 c8_df_rec <- c8_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_7))
 
-
-c8_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 7
-  `C8[SQ001]` `C8[SQ002]` `C8[SQ003]` `C8[SQ004]` `C8[SQ005]` `C8[SQ006]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           0           0           0           0           0           0
-# ... with 1 more variable: C8[SQ007] <int>
-
-```r
 c8_df_rec %>% 
   plot_likert()
 ```
@@ -193,18 +157,6 @@ c10_df <- df %>%
 c10_df_rec <- c10_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_6))
 
-c10_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-```
-## # A tibble: 1 x 1
-##     C10
-##   <int>
-## 1     0
-```
-
-```r
 c10_df_rec %>% 
   plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
 ```
@@ -225,17 +177,6 @@ d2_df <- df %>%
 d2_df_rec <- d2_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_6))
 
-d2_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 7
-  `D2[SQ001]` `D2[SQ002]` `D2[SQ003]` `D2[SQ004]` `D2[SQ005]` `D2[SQ006]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           0           0           0           0           0           0
-# ... with 1 more variable: D2[SQ007] <int>
-
-```r
 d2_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -304,18 +245,6 @@ d5_df <- df %>%
 d5_df_rec <- d5_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_9))
 
-
-d5_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 8
-  `D5[SQ001]` `D5[SQ002]` `D5[SQ003]` `D5[SQ004]` `D5[SQ006]` `D5[SQ005]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           0           0           0           0           0           0
-# ... with 2 more variables: D5[SQ007] <int>, D5[SQ008] <int>
-
-```r
 d5_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
@@ -350,18 +279,6 @@ d7_df <- df %>%
 d7_df_rec <- d7_df %>% 
   mutate(across(.fns = factor, levels = answer_levels_9))
 
-
-d7_df %>% 
-  summarise(across(.fns = ~sum(is.na(.x))))
-```
-
-# A tibble: 1 x 8
-  `D7[SQ001]` `D7[SQ002]` `D7[SQ003]` `D7[SQ004]` `D7[SQ006]` `D7[SQ005]`
-        <int>       <int>       <int>       <int>       <int>       <int>
-1           0           0           0           0           0           0
-# ... with 2 more variables: D7[SQ007] <int>, D7[SQ008] <int>
-
-```r
 d7_df_rec %>% 
   plot_likert(legend_rows = 1)
 ```
