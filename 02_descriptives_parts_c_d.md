@@ -158,7 +158,7 @@ c10_df_rec <- c10_df %>%
   mutate(across(.fns = factor, levels = answer_levels_6))
 
 c10_df_rec %>% 
-  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
+  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .1)
 ```
 
 ![](02_descriptives_parts_c_d_files/figure-html/c10-1.png)<!-- -->

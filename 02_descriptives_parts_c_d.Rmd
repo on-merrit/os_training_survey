@@ -55,7 +55,6 @@ c3_df_rec <- c3_df %>%
 
 c3_df_rec %>% 
   plot_bar(C3, title = "Institution: OS/OA practices recommandation", reorder = TRUE, nudge_y = .08)
-
 ```
 
 # c5 Helpdesk/group to support any issues
@@ -72,7 +71,6 @@ c5_df_rec <- c5_df %>%
 
 c5_df_rec %>% 
   plot_bar(C5, title = "Helpdesk/group to support any issues", reorder = FALSE, nudge_y = .06)
-
 ```
 
 
@@ -81,7 +79,6 @@ c5_df_rec %>%
 Do you receive any guidance on how to comply with the policies issued by the financing entities that require open access to publications, such as the European Commission or the European Research Council? (Y/N/ I don’t know)
 
 ```{r c6, fig.width=6, fig.height=2}
-
 c6_df <- df %>% 
   select("C6")
 
@@ -134,7 +131,6 @@ c8_df_rec %>%
 Are there other initiatives incentivising Open Science practices at your institution (eg. Open Science cafes, Data champions)? (Y/N)
 
 ```{r c10, fig.width=6, fig.height=2}
-
 c10_df <- df %>% 
   select("C10")
 
@@ -142,7 +138,7 @@ c10_df_rec <- c10_df %>%
   mutate(across(.fns = factor, levels = answer_levels_6))
 
 c10_df_rec %>% 
-  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .08)
+  plot_bar(C10, title = "Other initiatives incentivising Open Science practices at institution", reorder = FALSE, nudge_y = .1)
 ```
 
 # Part D: Drivers and barriers to practicing Open Science
