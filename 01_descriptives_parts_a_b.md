@@ -189,7 +189,14 @@ e4_df_rec <- e4_df %>%
                 labels = answer_labels_e4))
 
 e4_df_rec %>%
-  plot_bar(E4, title = "Highest education", reorder = FALSE, nudge_y = .2)
+  plot_bar(E4, title = "Highest education", reorder = FALSE, nudge_y = .2) +
+  scale_y_continuous(breaks = c(0, .25, .5, .75, 1), 
+                     labels = function(x) scales::percent(x, accuracy = 1))
+```
+
+```
+## Scale for 'y' is already present. Adding another scale for 'y', which will
+## replace the existing scale.
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/e4-1.png)<!-- -->
