@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "21 Juli, 2021"
+date: "22 Juli, 2021"
 output: 
   html_document:
     keep_md: true
@@ -773,7 +773,6 @@ How many hours of training in total did you get?
 # answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5", "Other")
 # # remove "none" category, since these people did not receive training at all
 answer_levels_b5 <- c("1", "2", "3-5", "More than 5")
-
 
 b5_df <- df %>% 
   select("B5")
