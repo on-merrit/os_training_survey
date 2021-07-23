@@ -168,7 +168,9 @@ answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not 
 "I receive sufficient support or incentives")
 
 country_c8_df <- prepare_per_country(df, starts_with("C8["), E1_rec,
-                                      answer_levels_7)
+                                      answer_levels_7) %>%
+              left_join(question_codes, by = c(starts_with("C8[") = "short_code")) %>% 
+
 
 country_c8_df %>%
   pivot_longer(starts_with("C8[")) %>% 
@@ -176,7 +178,7 @@ country_c8_df %>%
   filter(!is.na(value)) %>% 
   group_by(E1_rec, name) %>% 
   mutate(prop = n / sum(n)) %>% 
-  ggplot(aes(E1_rec, prop, fill = value,)) +
+  ggplot(aes(stringr::str_wrap(question_specification, 40), E1_rec, prop, fill = value,)) +
   geom_col() +
   coord_flip() +
   scale_fill_brewer(palette = "PuOr") +
