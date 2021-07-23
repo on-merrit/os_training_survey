@@ -70,9 +70,9 @@ gender_df %>%
 
 ```
 
-# OS practices by country
+# A1 OS practices by country
 
-```{r}
+```{r, fig.width=8, fig.height=4}
 
 country_a1_df <- df %>% 
   select(starts_with("A1["), E1_rec) %>% 
@@ -93,6 +93,32 @@ country_a1_df %>%
   guides(fill = guide_legend(title = NULL, nrow = NULL)) +
   labs(x = NULL, y = NULL, title = NULL)
 
+
+```
+
+# B5 hours of training by country
+
+```{r}
+answer_levels_b5 <- c("1", "2", "3-5", "More than 5")
+
+country_b5_df <- df %>% 
+  select(B5, E1_rec) %>% 
+  mutate(across(B5, .fns = factor, levels = answer_levels_b5)) %>% 
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other"))
+
+country_b5_df %>%
+  pivot_longer(B5) %>% 
+  count(E1_rec, name, value) %>% 
+  filter(!is.na(value)) %>% 
+  group_by(E1_rec, name) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(E1_rec, prop, fill = value,)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_brewer(palette = "PuOr") +
+  facet_wrap(vars(name)) +
+  guides(fill = guide_legend(title = NULL, nrow = NULL)) +
+  labs(x = NULL, y = NULL, title = NULL)
 
 ```
 
