@@ -99,7 +99,8 @@ country_a1_df %>%
 
 # B5 hours of training by country
 
-```{r}
+```{r,fig.width=8, fig.height=4}
+
 answer_levels_b5 <- c("1", "2", "3-5", "More than 5")
 
 country_b5_df <- df %>% 
@@ -110,6 +111,64 @@ country_b5_df <- df %>%
 
 country_b5_df %>%
   pivot_longer(B5) %>% 
+  count(E1_rec, name, value) %>% 
+  filter(!is.na(value)) %>% 
+  group_by(E1_rec, name) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(E1_rec, prop, fill = value,)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_brewer(palette = "PuOr") +
+  facet_wrap(vars(name)) +
+  guides(fill = guide_legend(title = NULL, nrow = NULL)) +
+  labs(x = NULL, y = NULL, title = NULL)
+
+```
+
+# B10 Preferred way to learn OS by country
+
+```{r, fig.width=8, fig.height=4}
+
+answer_levels_3 <- c("Yes", "No")
+
+country_b10_df <- df %>% 
+  select(starts_with("B10["), E1_rec) %>% 
+  mutate(across(starts_with("B10["), .fns = factor, levels = answer_levels_3)) %>% 
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
+  filter(E1_rec != "NA")
+
+country_b10_df %>%
+  pivot_longer(starts_with("B10[")) %>% 
+  count(E1_rec, name, value) %>% 
+  filter(!is.na(value)) %>% 
+  group_by(E1_rec, name) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(E1_rec, prop, fill = value,)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_brewer(palette = "Set2") +
+  facet_wrap(vars(name)) +
+  guides(fill = guide_legend(title = NULL, nrow = NULL)) +
+  labs(x = NULL, y = NULL, title = NULL)
+
+
+```
+
+# C8 Degree of support in practicing OS at institution by country
+
+```{r, fig.width=8, fig.height=4}
+
+answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
+"I receive sufficient support or incentives")
+
+country_c8_df <- df %>% 
+  select(starts_with("C8["), E1_rec) %>% 
+  mutate(across(starts_with("C8["), .fns = factor, levels = answer_levels_7)) %>% 
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
+  filter(E1_rec != "NA")
+
+country_c8_df %>%
+  pivot_longer(starts_with("C8[")) %>% 
   count(E1_rec, name, value) %>% 
   filter(!is.na(value)) %>% 
   group_by(E1_rec, name) %>% 
