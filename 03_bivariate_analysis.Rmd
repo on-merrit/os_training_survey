@@ -27,33 +27,29 @@ question_codes <- read_csv("data/processed/question_codes.csv")
 # Bivariate analysis Gender
 
 ```{r}
-# try something
+# omit "this topic is not relevant" and "don't know" -> these will be turned
+# to NA
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
-                   "Agree", "Strongly agree", 
-                   "This topic is not relevant to my research", 
-                   "Don’t know/ Don’t have enough information")
+                   "Agree", "Strongly agree")
 
 gender_df <- df %>% 
   select(starts_with("A10["), E2) %>% 
-  mutate(across(.fns = factor, levels = answer_levels))
+  mutate(across(starts_with("A10["), .fns = factor, levels = answer_levels)) %>% 
+  # remove "other" genders;
+  # potentially could also remove "prefer not to say", since cell counts are low
+  filter(E2 != "Other")
 
 
 gender_df %>%
-  select(E2, `A10[SQ001]`) %>% 
-  filter(!is.na(value) %>%
-         value != "Don’t know/ Don’t have enough information") %>% 
-  ggplot(aes(E2, fill = `A10[SQ001]`)) +
-  geom_bar(position = "dodge") +
-  labs(title = "Title")
-
-gender_df %>%
-  select(E2, `A10[SQ001]`) %>% 
-  filter(!is.na(value) %>%
-         value != "Don’t know/ Don’t have enough information") %>% 
-  ggplot(aes(E2, fill = `A10[SQ001]`)) +
-  geom_bar(position = "dodge") +
-  labs(title = "Title")
-
+  pivot_longer(starts_with("A10[")) %>% 
+  count(E2, name, value) %>% 
+  filter(!is.na(value)) %>% 
+  group_by(E2, name) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(E2, prop, fill = value)) +
+  geom_col() +
+  coord_flip() +
+  facet_wrap(vars(name))
 ```
 
 # Analyse discipline
