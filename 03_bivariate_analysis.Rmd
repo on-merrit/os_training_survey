@@ -27,6 +27,8 @@ question_codes <- read_csv("data/processed/question_codes.csv")
 # Bivariate analysis Gender
 
 ```{r}
+
+library(RColorBrewer)
 # omit "this topic is not relevant" and "don't know" -> these will be turned
 # to NA
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
@@ -39,6 +41,8 @@ gender_df <- df %>%
   # potentially could also remove "prefer not to say", since cell counts are low
   filter(E2 != "Other")
 
+custom.col <- c("#FFDB6D", "#C4961A", "#F4EDCA", 
+                "#D16103", "#C3D7A4", "#52854C", "#4E84C4", "#293352")
 
 gender_df %>%
   pivot_longer(starts_with("A10[")) %>% 
@@ -46,10 +50,27 @@ gender_df %>%
   filter(!is.na(value)) %>% 
   group_by(E2, name) %>% 
   mutate(prop = n / sum(n)) %>% 
-  ggplot(aes(E2, prop, fill = value)) +
+  ggplot(aes(E2, prop, fill = value,)) +
   geom_col() +
   coord_flip() +
+  scale_fill_manual(values = c("#FFDB6D", "#C4961A", "#F4EDCA", 
+                "#D16103", "#C3D7A4", "#52854C", "#4E84C4", "#293352")) +
   facet_wrap(vars(name))
+
+gender_df %>%
+  pivot_longer(starts_with("A10[")) %>% 
+  count(E2, name, value) %>% 
+  filter(!is.na(value)) %>% 
+  group_by(E2, name) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(E2, prop, fill = value,)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_brewer(palette = "PuOr") +
+  facet_wrap(vars(name)) +
+  guides(fill = guide_legend(title = NULL, nrow = NULL))
+
+
 ```
 
 # Analyse discipline
