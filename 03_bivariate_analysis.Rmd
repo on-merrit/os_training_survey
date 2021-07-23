@@ -77,7 +77,8 @@ gender_df %>%
 country_a1_df <- df %>% 
   select(starts_with("A1["), E1_rec) %>% 
   mutate(across(starts_with("A1["), .fns = factor, levels = answer_levels)) %>% 
-  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other"))
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
+  filter(E1_rec != "NA")
 
 country_a1_df %>%
   pivot_longer(starts_with("A1[")) %>% 
@@ -104,7 +105,8 @@ answer_levels_b5 <- c("1", "2", "3-5", "More than 5")
 country_b5_df <- df %>% 
   select(B5, E1_rec) %>% 
   mutate(across(B5, .fns = factor, levels = answer_levels_b5)) %>% 
-  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other"))
+  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
+  filter(E1_rec != "NA")
 
 country_b5_df %>%
   pivot_longer(B5) %>% 
