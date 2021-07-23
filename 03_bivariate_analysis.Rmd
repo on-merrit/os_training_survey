@@ -7,6 +7,8 @@ output: html_document
 
 ```{r setup, include=FALSE}
 library(tidyverse)
+library(RColorBrewer)
+
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, dpi = 300)
 
 df <- tar_read(with_countries)
@@ -27,8 +29,6 @@ question_codes <- read_csv("data/processed/question_codes.csv")
 # Bivariate analysis Gender
 
 ```{r}
-
-library(RColorBrewer)
 # omit "this topic is not relevant" and "don't know" -> these will be turned
 # to NA
 answer_levels <- c("Strongly disagree", "Disagree", "Neither agree nor disagree",
@@ -73,12 +73,20 @@ gender_df %>%
 # A1 OS practices by country
 
 ```{r, fig.width=8, fig.height=4}
+# factor out function to reduce repetition
+prepare_per_country <- function(df, vars, by, fac_levels) {
+  df %>% 
+    select({{vars}}, {{by}}) %>% 
+    mutate(across({{vars}}, .fns = factor, levels = fac_levels)) %>% 
+    mutate(E1_rec = forcats::fct_lump_min({{by}}, min = 10, 
+                                          other_level = "Other")) %>%
+    filter(E1_rec != "NA")
+}
 
-country_a1_df <- df %>% 
-  select(starts_with("A1["), E1_rec) %>% 
-  mutate(across(starts_with("A1["), .fns = factor, levels = answer_levels)) %>% 
-  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
-  filter(E1_rec != "NA")
+
+
+country_a1_df <- prepare_per_country(df, starts_with("A1["), E1_rec,
+                                     answer_levels)
 
 country_a1_df %>%
   pivot_longer(starts_with("A1[")) %>% 
@@ -101,13 +109,10 @@ country_a1_df %>%
 
 ```{r,fig.width=8, fig.height=4}
 
-answer_levels_b5 <- c("1", "2", "3-5", "More than 5")
+answer_levels_b5 <- c("None", "1", "2", "3-5", "More than 5")
 
-country_b5_df <- df %>% 
-  select(B5, E1_rec) %>% 
-  mutate(across(B5, .fns = factor, levels = answer_levels_b5)) %>% 
-  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
-  filter(E1_rec != "NA")
+country_b5_df <- prepare_per_country(df, B5, E1_rec, answer_levels_b5)
+  
 
 country_b5_df %>%
   pivot_longer(B5) %>% 
@@ -131,11 +136,8 @@ country_b5_df %>%
 
 answer_levels_3 <- c("Yes", "No")
 
-country_b10_df <- df %>% 
-  select(starts_with("B10["), E1_rec) %>% 
-  mutate(across(starts_with("B10["), .fns = factor, levels = answer_levels_3)) %>% 
-  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
-  filter(E1_rec != "NA")
+country_b10_df <- prepare_per_country(df, starts_with("B10["), E1_rec,
+                                      answer_levels_3)
 
 country_b10_df %>%
   pivot_longer(starts_with("B10[")) %>% 
@@ -161,11 +163,8 @@ country_b10_df %>%
 answer_levels_7 <- c("Don’t know/ Don’t have enough information", "I do not receive any support or incentives", "I do not receive any support or incentives but would like to", "I receive some support or incentives", 
 "I receive sufficient support or incentives")
 
-country_c8_df <- df %>% 
-  select(starts_with("C8["), E1_rec) %>% 
-  mutate(across(starts_with("C8["), .fns = factor, levels = answer_levels_7)) %>% 
-  mutate(E1_rec = forcats::fct_lump_min(E1_rec, min = 4, other_level = "Other")) %>%
-  filter(E1_rec != "NA")
+country_c8_df <- prepare_per_country(df, starts_with("C8["), E1_rec,
+                                      answer_levels_7)
 
 country_c8_df %>%
   pivot_longer(starts_with("C8[")) %>% 
