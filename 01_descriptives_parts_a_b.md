@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 731951"
 author: "Anja Rainer"
-date: "22 Juli, 2021"
+date: "25 August, 2021"
 output: 
   html_document:
     keep_md: true
@@ -760,7 +760,7 @@ Who provided the training sessions you attended? (choose all that apply)
 
 
 ```r
-answer_levels_3 <- c("Yes", "No")
+answer_levels_3 <- c("No", "Yes")
 
 b9_df <- df %>% 
   select(starts_with("B9[")) 
@@ -774,15 +774,15 @@ b9_df_rec %>%
 
 
 
-|Variable                    |Yes      |No        |
-|:---------------------------|:--------|:---------|
-|An external organisation    |32 (19%) |135 (81%) |
-|Library                     |28 (17%) |139 (83%) |
-|My institution              |93 (56%) |74 (44%)  |
-|My professional association |23 (14%) |144 (86%) |
-|My supervisor               |5 (3%)   |162 (97%) |
-|Research school             |11 (7%)  |156 (93%) |
-|Session at a conference     |30 (18%) |137 (82%) |
+|Variable                    |No        |Yes      |
+|:---------------------------|:---------|:--------|
+|An external organisation    |135 (81%) |32 (19%) |
+|Library                     |139 (83%) |28 (17%) |
+|My institution              |74 (44%)  |93 (56%) |
+|My professional association |144 (86%) |23 (14%) |
+|My supervisor               |162 (97%) |5 (3%)   |
+|Research school             |156 (93%) |11 (7%)  |
+|Session at a conference     |137 (82%) |30 (18%) |
 
 
 ![](01_descriptives_parts_a_b_files/figure-html/b9-1.png)<!-- -->
@@ -806,13 +806,13 @@ b10_df_rec %>%
 
 
 
-|Variable                                   |Yes      |No        |
-|:------------------------------------------|:--------|:---------|
-|Discussions with peers                     |80 (48%) |87 (52%)  |
-|I haven't learnt about Open Science topics |28 (17%) |139 (83%) |
-|Mandatory training                         |22 (13%) |145 (87%) |
-|Optional training                          |84 (50%) |83 (50%)  |
-|Personal reading                           |62 (37%) |105 (63%) |
+|Variable                                   |No        |Yes      |
+|:------------------------------------------|:---------|:--------|
+|Discussions with peers                     |87 (52%)  |80 (48%) |
+|I haven't learnt about Open Science topics |139 (83%) |28 (17%) |
+|Mandatory training                         |145 (87%) |22 (13%) |
+|Optional training                          |83 (50%)  |84 (50%) |
+|Personal reading                           |105 (63%) |62 (37%) |
 
 
 ![](01_descriptives_parts_a_b_files/figure-html/b10-1.png)<!-- -->

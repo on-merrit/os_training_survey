@@ -516,7 +516,7 @@ Who provided the training sessions you attended? (choose all that apply)
 
 ```{r b9, fig.width=8, fig.height=5.7, results="asis"}
 
-answer_levels_3 <- c("Yes", "No")
+answer_levels_3 <- c("No", "Yes")
 
 b9_df <- df %>% 
   select(starts_with("B9[")) 
