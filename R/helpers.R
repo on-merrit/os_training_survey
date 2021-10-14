@@ -26,7 +26,7 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2,
     count(Variable, value) %>% 
     filter(!is.na(value)) %>% 
     group_by(Variable) %>% 
-    mutate(prop = scales::percent(n/sum(n), accuracy = 1),
+    mutate(prop = scales::percent(n/sum(n), accuracy = .1),
            res = glue::glue("{n} ({prop})")) %>% 
     ungroup() %>% 
     pivot_wider(-c(n, prop), names_from = "value", values_from = "res") %>% 
