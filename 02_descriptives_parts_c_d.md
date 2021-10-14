@@ -1,7 +1,7 @@
 ---
 title: "Survey Results Task 3.3 Part C and D"
 author: "Anja Rainer"
-date: "22 Juli, 2021"
+date: "14 Oktober, 2021"
 output: 
   html_document:
     keep_md: true
@@ -133,13 +133,13 @@ c8_df_rec %>%
 
 |Variable                                                                                                      |I do not receive any support or incentives |I do not receive any support or incentives but would like to |I receive some support or incentives |I receive sufficient support or incentives |
 |:-------------------------------------------------------------------------------------------------------------|:------------------------------------------|:------------------------------------------------------------|:------------------------------------|:------------------------------------------|
-|Access to technical infrastructure (software, storage, databases, publication and/or data repositories, etc.) |33 (23%)                                   |18 (13%)                                                     |47 (33%)                             |44 (31%)                                   |
-|Career perspectives and recognition                                                                           |61 (45%)                                   |32 (23%)                                                     |31 (23%)                             |13 (9%)                                    |
-|Financial support and rewards                                                                                 |54 (39%)                                   |24 (18%)                                                     |45 (33%)                             |14 (10%)                                   |
-|Information on funders’ policies and recommendations regarding Open Science                                   |40 (28%)                                   |27 (19%)                                                     |48 (34%)                             |28 (20%)                                   |
-|Legal support for licensing research outputs and on IPR or GDPR issues                                        |34 (28%)                                   |22 (18%)                                                     |42 (34%)                             |24 (20%)                                   |
-|Support by an Ethics committee                                                                                |33 (24%)                                   |16 (12%)                                                     |41 (30%)                             |46 (34%)                                   |
-|Training on different aspects of Open Science                                                                 |43 (32%)                                   |27 (20%)                                                     |47 (35%)                             |18 (13%)                                   |
+|Access to technical infrastructure (software, storage, databases, publication and/or data repositories, etc.) |33 (23.2%)                                 |18 (12.7%)                                                   |47 (33.1%)                           |44 (31.0%)                                 |
+|Career perspectives and recognition                                                                           |61 (44.5%)                                 |32 (23.4%)                                                   |31 (22.6%)                           |13 (9.5%)                                  |
+|Financial support and rewards                                                                                 |54 (39.4%)                                 |24 (17.5%)                                                   |45 (32.8%)                           |14 (10.2%)                                 |
+|Information on funders’ policies and recommendations regarding Open Science                                   |40 (28.0%)                                 |27 (18.9%)                                                   |48 (33.6%)                           |28 (19.6%)                                 |
+|Legal support for licensing research outputs and on IPR or GDPR issues                                        |34 (27.9%)                                 |22 (18.0%)                                                   |42 (34.4%)                           |24 (19.7%)                                 |
+|Support by an Ethics committee                                                                                |33 (24.3%)                                 |16 (11.8%)                                                   |41 (30.1%)                           |46 (33.8%)                                 |
+|Training on different aspects of Open Science                                                                 |43 (31.9%)                                 |27 (20.0%)                                                   |47 (34.8%)                           |18 (13.3%)                                 |
 
 
 ![](02_descriptives_parts_c_d_files/figure-html/c8-1.png)<!-- -->
@@ -183,15 +183,15 @@ d2_df_rec %>%
 
 
 
-|Variable                                                      |No        |Yes      |
-|:-------------------------------------------------------------|:---------|:--------|
-|A real threat to my research                                  |158 (95%) |9 (5%)   |
-|A worrying new perspective                                    |161 (96%) |6 (4%)   |
-|An exciting opportunity, mostly with benefits                 |115 (69%) |52 (31%) |
-|An opportunity, with the benefits outweighing the drawbacks   |121 (72%) |46 (28%) |
-|An unimportant bureaucratic burden                            |159 (95%) |8 (5%)   |
-|Mostly positive, it has benefits but also important drawbacks |106 (63%) |61 (37%) |
-|Not relevant for my research                                  |152 (91%) |15 (9%)  |
+|Variable                                                      |No          |Yes        |
+|:-------------------------------------------------------------|:-----------|:----------|
+|A real threat to my research                                  |158 (94.6%) |9 (5.4%)   |
+|A worrying new perspective                                    |161 (96.4%) |6 (3.6%)   |
+|An exciting opportunity, mostly with benefits                 |115 (68.9%) |52 (31.1%) |
+|An opportunity, with the benefits outweighing the drawbacks   |121 (72.5%) |46 (27.5%) |
+|An unimportant bureaucratic burden                            |159 (95.2%) |8 (4.8%)   |
+|Mostly positive, it has benefits but also important drawbacks |106 (63.5%) |61 (36.5%) |
+|Not relevant for my research                                  |152 (91.0%) |15 (9.0%)  |
 
 
 ![](02_descriptives_parts_c_d_files/figure-html/d2-1.png)<!-- -->
@@ -219,13 +219,13 @@ d3_df_rec %>%
 
 |Variable                                                         |No barrier |Minor barrier |Significant barrier |Very significant barrier |
 |:----------------------------------------------------------------|:----------|:-------------|:-------------------|:------------------------|
-|Extra effort                                                     |18 (12%)   |50 (34%)      |47 (32%)            |33 (22%)                 |
-|Lack of clarity around where benefits arise                      |43 (29%)   |49 (33%)      |42 (29%)            |13 (9%)                  |
-|Lack of clarity in which sources/platforms to trust              |21 (14%)   |37 (25%)      |45 (30%)            |45 (30%)                 |
-|Lack of clarity where to find relevant information               |26 (18%)   |46 (31%)      |59 (40%)            |17 (11%)                 |
-|Lack of clear steps to follow. How do I begin? How do I proceed? |24 (17%)   |40 (28%)      |52 (36%)            |28 (19%)                 |
-|Lack of proper infrastructure                                    |29 (21%)   |35 (26%)      |51 (38%)            |21 (15%)                 |
-|Time constraints                                                 |28 (19%)   |40 (27%)      |56 (38%)            |23 (16%)                 |
+|Extra effort                                                     |18 (12.2%) |50 (33.8%)    |47 (31.8%)          |33 (22.3%)               |
+|Lack of clarity around where benefits arise                      |43 (29.3%) |49 (33.3%)    |42 (28.6%)          |13 (8.8%)                |
+|Lack of clarity in which sources/platforms to trust              |21 (14.2%) |37 (25.0%)    |45 (30.4%)          |45 (30.4%)               |
+|Lack of clarity where to find relevant information               |26 (17.6%) |46 (31.1%)    |59 (39.9%)          |17 (11.5%)               |
+|Lack of clear steps to follow. How do I begin? How do I proceed? |24 (16.7%) |40 (27.8%)    |52 (36.1%)          |28 (19.4%)               |
+|Lack of proper infrastructure                                    |29 (21.3%) |35 (25.7%)    |51 (37.5%)          |21 (15.4%)               |
+|Time constraints                                                 |28 (19.0%) |40 (27.2%)    |56 (38.1%)          |23 (15.6%)               |
 
 
 ![](02_descriptives_parts_c_d_files/figure-html/d3-1.png)<!-- -->
@@ -251,15 +251,15 @@ d5_df_rec %>%
 
 
 
-|Variable                                                                                           |No driver |Minor driver |Significant driver |Very significant driver |
-|:--------------------------------------------------------------------------------------------------|:---------|:------------|:------------------|:-----------------------|
-|Career progression policies based on the adoption of open science practices                        |26 (17%)  |37 (24%)     |55 (36%)           |34 (22%)                |
-|Ethics principles                                                                                  |15 (10%)  |27 (18%)     |62 (41%)           |47 (31%)                |
-|Funder policy mandating open access to the research outputs                                        |9 (6%)    |27 (17%)     |62 (39%)           |60 (38%)                |
-|Institutional policy mandating open science practices                                              |7 (4%)    |30 (19%)     |75 (48%)           |44 (28%)                |
-|Publisher policies and requirements (e.g. data availability statement)                             |12 (8%)   |34 (22%)     |71 (46%)           |38 (25%)                |
-|Support and wide adoption of open science practices in my research community                       |13 (8%)   |32 (21%)     |70 (45%)           |39 (25%)                |
-|The value of sharing my research outputs in relation to societal ideals (e.g. access to knowledge) |6 (4%)    |21 (14%)     |71 (46%)           |56 (36%)                |
+|Variable                                                                                           |No driver  |Minor driver |Significant driver |Very significant driver |
+|:--------------------------------------------------------------------------------------------------|:----------|:------------|:------------------|:-----------------------|
+|Career progression policies based on the adoption of open science practices                        |26 (17.1%) |37 (24.3%)   |55 (36.2%)         |34 (22.4%)              |
+|Ethics principles                                                                                  |15 (9.9%)  |27 (17.9%)   |62 (41.1%)         |47 (31.1%)              |
+|Funder policy mandating open access to the research outputs                                        |9 (5.7%)   |27 (17.1%)   |62 (39.2%)         |60 (38.0%)              |
+|Institutional policy mandating open science practices                                              |7 (4.5%)   |30 (19.2%)   |75 (48.1%)         |44 (28.2%)              |
+|Publisher policies and requirements (e.g. data availability statement)                             |12 (7.7%)  |34 (21.9%)   |71 (45.8%)         |38 (24.5%)              |
+|Support and wide adoption of open science practices in my research community                       |13 (8.4%)  |32 (20.8%)   |70 (45.5%)         |39 (25.3%)              |
+|The value of sharing my research outputs in relation to societal ideals (e.g. access to knowledge) |6 (3.9%)   |21 (13.6%)   |71 (46.1%)         |56 (36.4%)              |
 
 
 ![](02_descriptives_parts_c_d_files/figure-html/d5-1.png)<!-- -->
@@ -285,16 +285,16 @@ d7_df_rec %>%
 
 
 
-|Variable                                                                         |Barrier   |Neither barrier nor driver |Driver    |
-|:--------------------------------------------------------------------------------|:---------|:--------------------------|:---------|
-|Article processing charges (APCs)                                                |130 (86%) |16 (11%)                   |6 (4%)    |
-|Availability of high-quality open access publication choices in my research area |31 (20%)  |33 (21%)                   |90 (58%)  |
-|Collaboration and communication among researchers                                |8 (5%)    |42 (28%)                   |99 (66%)  |
-|Difficulties of applying licenses to publications/ data                          |70 (56%)  |51 (40%)                   |5 (4%)    |
-|Plagiarism or theft of ideas                                                     |58 (42%)  |67 (48%)                   |14 (10%)  |
-|Publisher’s policies on the sharing of publications/manuscripts                  |76 (51%)  |45 (30%)                   |28 (19%)  |
-|Researcher evaluation based on citation metrics (e.g. impact factor, h-index)    |34 (23%)  |54 (37%)                   |57 (39%)  |
-|Societal needs, values, interests and expectations                               |5 (3%)    |30 (20%)                   |113 (76%) |
+|Variable                                                                         |Barrier     |Neither barrier nor driver |Driver      |
+|:--------------------------------------------------------------------------------|:-----------|:--------------------------|:-----------|
+|Article processing charges (APCs)                                                |130 (85.5%) |16 (10.5%)                 |6 (3.9%)    |
+|Availability of high-quality open access publication choices in my research area |31 (20.1%)  |33 (21.4%)                 |90 (58.4%)  |
+|Collaboration and communication among researchers                                |8 (5.4%)    |42 (28.2%)                 |99 (66.4%)  |
+|Difficulties of applying licenses to publications/ data                          |70 (55.6%)  |51 (40.5%)                 |5 (4.0%)    |
+|Plagiarism or theft of ideas                                                     |58 (41.7%)  |67 (48.2%)                 |14 (10.1%)  |
+|Publisher’s policies on the sharing of publications/manuscripts                  |76 (51.0%)  |45 (30.2%)                 |28 (18.8%)  |
+|Researcher evaluation based on citation metrics (e.g. impact factor, h-index)    |34 (23.4%)  |54 (37.2%)                 |57 (39.3%)  |
+|Societal needs, values, interests and expectations                               |5 (3.4%)    |30 (20.3%)                 |113 (76.4%) |
 
 
 ![](02_descriptives_parts_c_d_files/figure-html/d7-1.png)<!-- -->

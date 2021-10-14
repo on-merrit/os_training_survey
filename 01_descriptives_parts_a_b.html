@@ -60,6 +60,15 @@ if (!!window.navigator.userAgent.match("MSIE 8")) {
 !function(a){"use strict";a.matchMedia=a.matchMedia||function(a){var b,c=a.documentElement,d=c.firstElementChild||c.firstChild,e=a.createElement("body"),f=a.createElement("div");return f.id="mq-test-1",f.style.cssText="position:absolute;top:-100em",e.style.background="none",e.appendChild(f),function(a){return f.innerHTML='&shy;<style media="'+a+'"> #mq-test-1 { width: 42px; }</style>',c.insertBefore(e,d),b=42===f.offsetWidth,c.removeChild(e),{matches:b,media:a}}}(a.document)}(this),function(a){"use strict";function b(){u(!0)}var c={};a.respond=c,c.update=function(){};var d=[],e=function(){var b=!1;try{b=new a.XMLHttpRequest}catch(c){b=new a.ActiveXObject("Microsoft.XMLHTTP")}return function(){return b}}(),f=function(a,b){var c=e();c&&(c.open("GET",a,!0),c.onreadystatechange=function(){4!==c.readyState||200!==c.status&&304!==c.status||b(c.responseText)},4!==c.readyState&&c.send(null))};if(c.ajax=f,c.queue=d,c.regex={media:/@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,keyframes:/@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,urls:/(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,findStyles:/@media *([^\{]+)\{([\S\s]+?)$/,only:/(only\s+)?([a-zA-Z]+)\s?/,minw:/\([\s]*min\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/,maxw:/\([\s]*max\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/},c.mediaQueriesSupported=a.matchMedia&&null!==a.matchMedia("only all")&&a.matchMedia("only all").matches,!c.mediaQueriesSupported){var g,h,i,j=a.document,k=j.documentElement,l=[],m=[],n=[],o={},p=30,q=j.getElementsByTagName("head")[0]||k,r=j.getElementsByTagName("base")[0],s=q.getElementsByTagName("link"),t=function(){var a,b=j.createElement("div"),c=j.body,d=k.style.fontSize,e=c&&c.style.fontSize,f=!1;return b.style.cssText="position:absolute;font-size:1em;width:1em",c||(c=f=j.createElement("body"),c.style.background="none"),k.style.fontSize="100%",c.style.fontSize="100%",c.appendChild(b),f&&k.insertBefore(c,k.firstChild),a=b.offsetWidth,f?k.removeChild(c):c.removeChild(b),k.style.fontSize=d,e&&(c.style.fontSize=e),a=i=parseFloat(a)},u=function(b){var c="clientWidth",d=k[c],e="CSS1Compat"===j.compatMode&&d||j.body[c]||d,f={},o=s[s.length-1],r=(new Date).getTime();if(b&&g&&p>r-g)return a.clearTimeout(h),h=a.setTimeout(u,p),void 0;g=r;for(var v in l)if(l.hasOwnProperty(v)){var w=l[v],x=w.minw,y=w.maxw,z=null===x,A=null===y,B="em";x&&(x=parseFloat(x)*(x.indexOf(B)>-1?i||t():1)),y&&(y=parseFloat(y)*(y.indexOf(B)>-1?i||t():1)),w.hasquery&&(z&&A||!(z||e>=x)||!(A||y>=e))||(f[w.media]||(f[w.media]=[]),f[w.media].push(m[w.rules]))}for(var C in n)n.hasOwnProperty(C)&&n[C]&&n[C].parentNode===q&&q.removeChild(n[C]);n.length=0;for(var D in f)if(f.hasOwnProperty(D)){var E=j.createElement("style"),F=f[D].join("\n");E.type="text/css",E.media=D,q.insertBefore(E,o.nextSibling),E.styleSheet?E.styleSheet.cssText=F:E.appendChild(j.createTextNode(F)),n.push(E)}},v=function(a,b,d){var e=a.replace(c.regex.keyframes,"").match(c.regex.media),f=e&&e.length||0;b=b.substring(0,b.lastIndexOf("/"));var g=function(a){return a.replace(c.regex.urls,"$1"+b+"$2$3")},h=!f&&d;b.length&&(b+="/"),h&&(f=1);for(var i=0;f>i;i++){var j,k,n,o;h?(j=d,m.push(g(a))):(j=e[i].match(c.regex.findStyles)&&RegExp.$1,m.push(RegExp.$2&&g(RegExp.$2))),n=j.split(","),o=n.length;for(var p=0;o>p;p++)k=n[p],l.push({media:k.split("(")[0].match(c.regex.only)&&RegExp.$2||"all",rules:m.length-1,hasquery:k.indexOf("(")>-1,minw:k.match(c.regex.minw)&&parseFloat(RegExp.$1)+(RegExp.$2||""),maxw:k.match(c.regex.maxw)&&parseFloat(RegExp.$1)+(RegExp.$2||"")})}u()},w=function(){if(d.length){var b=d.shift();f(b.href,function(c){v(c,b.href,b.media),o[b.href]=!0,a.setTimeout(function(){w()},0)})}},x=function(){for(var b=0;b<s.length;b++){var c=s[b],e=c.href,f=c.media,g=c.rel&&"stylesheet"===c.rel.toLowerCase();e&&g&&!o[e]&&(c.styleSheet&&c.styleSheet.rawCssText?(v(c.styleSheet.rawCssText,e,f),o[e]=!0):(!/^([a-zA-Z:]*\/\/)/.test(e)&&!r||e.replace(RegExp.$1,"").split("/")[0]===a.location.host)&&("//"===e.substring(0,2)&&(e=a.location.protocol+e),d.push({href:e,media:f})))}w()};x(),c.update=x,c.getEmValue=t,a.addEventListener?a.addEventListener("resize",b,!1):a.attachEvent&&a.attachEvent("onresize",b)}}(this);
 };
 </script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script>
 
 /**
@@ -232,11 +241,6 @@ color: #d14;
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -249,32 +253,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 
@@ -285,10 +263,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -305,6 +279,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -317,7 +294,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -381,13 +357,13 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
 <h1 class="title toc-ignore">Survey Results Task 3.3 731951</h1>
 <h4 class="author">Anja Rainer</h4>
-<h4 class="date">25 August, 2021</h4>
+<h4 class="date">14 Oktober, 2021</h4>
 
 </div>
 
@@ -577,12 +553,12 @@ recode_successful(a1_df, a1_df_rec)</code></pre>
   plot_likert()</code></pre>
 <table>
 <colgroup>
-<col width="52%" />
+<col width="51%" />
 <col width="10%" />
-<col width="5%" />
-<col width="16%" />
-<col width="5%" />
-<col width="9%" />
+<col width="6%" />
+<col width="15%" />
+<col width="6%" />
+<col width="8%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -597,43 +573,43 @@ recode_successful(a1_df, a1_df_rec)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left">I make an effort to make my research collaborative</td>
-<td align="left">4 (2%)</td>
-<td align="left">2 (1%)</td>
-<td align="left">14 (9%)</td>
-<td align="left">62 (38%)</td>
-<td align="left">81 (50%)</td>
+<td align="left">4 (2.5%)</td>
+<td align="left">2 (1.2%)</td>
+<td align="left">14 (8.6%)</td>
+<td align="left">62 (38.0%)</td>
+<td align="left">81 (49.7%)</td>
 </tr>
 <tr class="even">
 <td align="left">I make an effort to make my research open</td>
-<td align="left">3 (2%)</td>
-<td align="left">3 (2%)</td>
-<td align="left">14 (9%)</td>
-<td align="left">69 (43%)</td>
-<td align="left">73 (45%)</td>
+<td align="left">3 (1.9%)</td>
+<td align="left">3 (1.9%)</td>
+<td align="left">14 (8.6%)</td>
+<td align="left">69 (42.6%)</td>
+<td align="left">73 (45.1%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open science consists of different dimensions (e.g. publications, data, code, methods)</td>
-<td align="left">4 (3%)</td>
-<td align="left">8 (5%)</td>
-<td align="left">12 (8%)</td>
-<td align="left">74 (50%)</td>
-<td align="left">50 (34%)</td>
+<td align="left">4 (2.7%)</td>
+<td align="left">8 (5.4%)</td>
+<td align="left">12 (8.1%)</td>
+<td align="left">74 (50.0%)</td>
+<td align="left">50 (33.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open science is different from traditional research approaches</td>
-<td align="left">5 (3%)</td>
-<td align="left">31 (20%)</td>
-<td align="left">38 (25%)</td>
-<td align="left">52 (34%)</td>
-<td align="left">26 (17%)</td>
+<td align="left">5 (3.3%)</td>
+<td align="left">31 (20.4%)</td>
+<td align="left">38 (25.0%)</td>
+<td align="left">52 (34.2%)</td>
+<td align="left">26 (17.1%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open science values transparency in research</td>
-<td align="left">5 (3%)</td>
-<td align="left">2 (1%)</td>
-<td align="left">12 (8%)</td>
-<td align="left">46 (29%)</td>
-<td align="left">92 (59%)</td>
+<td align="left">5 (3.2%)</td>
+<td align="left">2 (1.3%)</td>
+<td align="left">12 (7.6%)</td>
+<td align="left">46 (29.3%)</td>
+<td align="left">92 (58.6%)</td>
 </tr>
 </tbody>
 </table>
@@ -657,12 +633,12 @@ a2_df_rec %&gt;%
   plot_likert(legend_rows = 1)</code></pre>
 <table>
 <colgroup>
-<col width="57%" />
-<col width="8%" />
-<col width="8%" />
+<col width="52%" />
 <col width="9%" />
-<col width="8%" />
-<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -677,43 +653,43 @@ a2_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I deposit my preprints in a disciplinary preprint repository</td>
-<td align="left">30 (20%)</td>
-<td align="left">30 (20%)</td>
-<td align="left">32 (21%)</td>
-<td align="left">22 (15%)</td>
-<td align="left">35 (23%)</td>
+<td align="left">30 (20.1%)</td>
+<td align="left">30 (20.1%)</td>
+<td align="left">32 (21.5%)</td>
+<td align="left">22 (14.8%)</td>
+<td align="left">35 (23.5%)</td>
 </tr>
 <tr class="even">
 <td align="left">I deposit my publications in a repository</td>
-<td align="left">2 (1%)</td>
-<td align="left">10 (6%)</td>
-<td align="left">20 (12%)</td>
-<td align="left">43 (27%)</td>
-<td align="left">87 (54%)</td>
+<td align="left">2 (1.2%)</td>
+<td align="left">10 (6.2%)</td>
+<td align="left">20 (12.3%)</td>
+<td align="left">43 (26.5%)</td>
+<td align="left">87 (53.7%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I know how to get funding for open access publication fees</td>
-<td align="left">21 (14%)</td>
-<td align="left">29 (20%)</td>
-<td align="left">38 (26%)</td>
-<td align="left">36 (25%)</td>
-<td align="left">21 (14%)</td>
+<td align="left">21 (14.5%)</td>
+<td align="left">29 (20.0%)</td>
+<td align="left">38 (26.2%)</td>
+<td align="left">36 (24.8%)</td>
+<td align="left">21 (14.5%)</td>
 </tr>
 <tr class="even">
 <td align="left">I publish in open-access journals</td>
-<td align="left">8 (5%)</td>
-<td align="left">22 (13%)</td>
-<td align="left">60 (37%)</td>
-<td align="left">64 (39%)</td>
-<td align="left">9 (6%)</td>
+<td align="left">8 (4.9%)</td>
+<td align="left">22 (13.5%)</td>
+<td align="left">60 (36.8%)</td>
+<td align="left">64 (39.3%)</td>
+<td align="left">9 (5.5%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I publish my publications under an open license</td>
-<td align="left">7 (5%)</td>
-<td align="left">21 (14%)</td>
-<td align="left">47 (32%)</td>
-<td align="left">54 (36%)</td>
-<td align="left">20 (13%)</td>
+<td align="left">7 (4.7%)</td>
+<td align="left">21 (14.1%)</td>
+<td align="left">47 (31.5%)</td>
+<td align="left">54 (36.2%)</td>
+<td align="left">20 (13.4%)</td>
 </tr>
 </tbody>
 </table>
@@ -732,12 +708,12 @@ a3_df_rec %&gt;%
   plot_likert(legend_rows = 1)</code></pre>
 <table style="width:100%;">
 <colgroup>
-<col width="63%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
+<col width="59%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -752,43 +728,43 @@ a3_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I develop a data management plan</td>
-<td align="left">17 (12%)</td>
-<td align="left">30 (21%)</td>
-<td align="left">41 (29%)</td>
-<td align="left">32 (22%)</td>
-<td align="left">23 (16%)</td>
+<td align="left">17 (11.9%)</td>
+<td align="left">30 (21.0%)</td>
+<td align="left">41 (28.7%)</td>
+<td align="left">32 (22.4%)</td>
+<td align="left">23 (16.1%)</td>
 </tr>
 <tr class="even">
 <td align="left">I publish my data under a license</td>
-<td align="left">58 (49%)</td>
-<td align="left">23 (19%)</td>
-<td align="left">16 (14%)</td>
-<td align="left">14 (12%)</td>
-<td align="left">7 (6%)</td>
+<td align="left">58 (49.2%)</td>
+<td align="left">23 (19.5%)</td>
+<td align="left">16 (13.6%)</td>
+<td align="left">14 (11.9%)</td>
+<td align="left">7 (5.9%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I publish my data’s description along with its identifier (DOI, handle ,…)</td>
-<td align="left">33 (24%)</td>
-<td align="left">21 (15%)</td>
-<td align="left">22 (16%)</td>
-<td align="left">38 (27%)</td>
-<td align="left">25 (18%)</td>
+<td align="left">33 (23.7%)</td>
+<td align="left">21 (15.1%)</td>
+<td align="left">22 (15.8%)</td>
+<td align="left">38 (27.3%)</td>
+<td align="left">25 (18.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">I share my data in a data repository</td>
-<td align="left">35 (25%)</td>
-<td align="left">31 (22%)</td>
-<td align="left">28 (20%)</td>
-<td align="left">28 (20%)</td>
-<td align="left">19 (13%)</td>
+<td align="left">35 (24.8%)</td>
+<td align="left">31 (22.0%)</td>
+<td align="left">28 (19.9%)</td>
+<td align="left">28 (19.9%)</td>
+<td align="left">19 (13.5%)</td>
 </tr>
 <tr class="odd">
 <td align="left">When submitting an article, I make sure my data can be accessed by the reviewers</td>
-<td align="left">29 (21%)</td>
-<td align="left">26 (18%)</td>
-<td align="left">35 (25%)</td>
-<td align="left">23 (16%)</td>
-<td align="left">28 (20%)</td>
+<td align="left">29 (20.6%)</td>
+<td align="left">26 (18.4%)</td>
+<td align="left">35 (24.8%)</td>
+<td align="left">23 (16.3%)</td>
+<td align="left">28 (19.9%)</td>
 </tr>
 </tbody>
 </table>
@@ -805,14 +781,14 @@ a4_df_rec &lt;- a4_df %&gt;%
 
 a4_df_rec %&gt;% 
   plot_likert(legend_rows = 1)</code></pre>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="63%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
+<col width="59%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -827,43 +803,43 @@ a4_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I extensively document and give access to the methodology used for each finding</td>
-<td align="left">5 (3%)</td>
-<td align="left">8 (6%)</td>
-<td align="left">25 (17%)</td>
-<td align="left">49 (34%)</td>
-<td align="left">58 (40%)</td>
+<td align="left">5 (3.4%)</td>
+<td align="left">8 (5.5%)</td>
+<td align="left">25 (17.2%)</td>
+<td align="left">49 (33.8%)</td>
+<td align="left">58 (40.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">I foster results reproducibility</td>
-<td align="left">6 (5%)</td>
-<td align="left">4 (3%)</td>
-<td align="left">23 (18%)</td>
-<td align="left">44 (34%)</td>
-<td align="left">51 (40%)</td>
+<td align="left">6 (4.7%)</td>
+<td align="left">4 (3.1%)</td>
+<td align="left">23 (18.0%)</td>
+<td align="left">44 (34.4%)</td>
+<td align="left">51 (39.8%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I pre-register my hypothesis</td>
-<td align="left">67 (61%)</td>
-<td align="left">20 (18%)</td>
-<td align="left">14 (13%)</td>
-<td align="left">5 (5%)</td>
-<td align="left">4 (4%)</td>
+<td align="left">67 (60.9%)</td>
+<td align="left">20 (18.2%)</td>
+<td align="left">14 (12.7%)</td>
+<td align="left">5 (4.5%)</td>
+<td align="left">4 (3.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">I share my electronic laboratory notebooks</td>
-<td align="left">59 (69%)</td>
-<td align="left">10 (12%)</td>
-<td align="left">9 (10%)</td>
-<td align="left">3 (3%)</td>
-<td align="left">5 (6%)</td>
+<td align="left">59 (68.6%)</td>
+<td align="left">10 (11.6%)</td>
+<td align="left">9 (10.5%)</td>
+<td align="left">3 (3.5%)</td>
+<td align="left">5 (5.8%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I use platforms like open science framework or GitHub to share my research</td>
-<td align="left">58 (44%)</td>
-<td align="left">25 (19%)</td>
-<td align="left">25 (19%)</td>
-<td align="left">17 (13%)</td>
-<td align="left">7 (5%)</td>
+<td align="left">58 (43.9%)</td>
+<td align="left">25 (18.9%)</td>
+<td align="left">25 (18.9%)</td>
+<td align="left">17 (12.9%)</td>
+<td align="left">7 (5.3%)</td>
 </tr>
 </tbody>
 </table>
@@ -888,11 +864,11 @@ a5_df_rec %&gt;%
   plot_likert()</code></pre>
 <table style="width:100%;">
 <colgroup>
-<col width="45%" />
+<col width="44%" />
 <col width="12%" />
-<col width="6%" />
+<col width="7%" />
 <col width="18%" />
-<col width="6%" />
+<col width="7%" />
 <col width="10%" />
 </colgroup>
 <thead>
@@ -908,43 +884,43 @@ a5_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I opt for journals that offer the open peer review option</td>
-<td align="left">18 (14%)</td>
-<td align="left">38 (29%)</td>
-<td align="left">48 (37%)</td>
-<td align="left">17 (13%)</td>
-<td align="left">8 (6%)</td>
+<td align="left">18 (14.0%)</td>
+<td align="left">38 (29.5%)</td>
+<td align="left">48 (37.2%)</td>
+<td align="left">17 (13.2%)</td>
+<td align="left">8 (6.2%)</td>
 </tr>
 <tr class="even">
 <td align="left">I sign my reviews</td>
-<td align="left">36 (26%)</td>
-<td align="left">39 (29%)</td>
-<td align="left">27 (20%)</td>
-<td align="left">26 (19%)</td>
-<td align="left">8 (6%)</td>
+<td align="left">36 (26.5%)</td>
+<td align="left">39 (28.7%)</td>
+<td align="left">27 (19.9%)</td>
+<td align="left">26 (19.1%)</td>
+<td align="left">8 (5.9%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open peer review improves the transparency of the review process</td>
-<td align="left">7 (5%)</td>
-<td align="left">13 (9%)</td>
-<td align="left">37 (26%)</td>
-<td align="left">47 (33%)</td>
-<td align="left">38 (27%)</td>
+<td align="left">7 (4.9%)</td>
+<td align="left">13 (9.2%)</td>
+<td align="left">37 (26.1%)</td>
+<td align="left">47 (33.1%)</td>
+<td align="left">38 (26.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">Platforms that allow open peer review are easy to use</td>
-<td align="left">2 (2%)</td>
-<td align="left">8 (9%)</td>
-<td align="left">42 (46%)</td>
-<td align="left">28 (30%)</td>
-<td align="left">12 (13%)</td>
+<td align="left">2 (2.2%)</td>
+<td align="left">8 (8.7%)</td>
+<td align="left">42 (45.7%)</td>
+<td align="left">28 (30.4%)</td>
+<td align="left">12 (13.0%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Reviewers’ comments are attentive in open peer-review</td>
-<td align="left">6 (5%)</td>
-<td align="left">4 (4%)</td>
-<td align="left">55 (48%)</td>
-<td align="left">32 (28%)</td>
-<td align="left">17 (15%)</td>
+<td align="left">6 (5.3%)</td>
+<td align="left">4 (3.5%)</td>
+<td align="left">55 (48.2%)</td>
+<td align="left">32 (28.1%)</td>
+<td align="left">17 (14.9%)</td>
 </tr>
 </tbody>
 </table>
@@ -963,12 +939,12 @@ a6_df_rec %&gt;%
   plot_likert(legend_rows = 1)</code></pre>
 <table>
 <colgroup>
-<col width="64%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
+<col width="59%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -983,43 +959,43 @@ a6_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I develop software collaboratively</td>
-<td align="left">11 (16%)</td>
-<td align="left">15 (21%)</td>
-<td align="left">15 (21%)</td>
-<td align="left">15 (21%)</td>
-<td align="left">14 (20%)</td>
+<td align="left">11 (15.7%)</td>
+<td align="left">15 (21.4%)</td>
+<td align="left">15 (21.4%)</td>
+<td align="left">15 (21.4%)</td>
+<td align="left">14 (20.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">I extensively document my software development methodology</td>
-<td align="left">12 (16%)</td>
-<td align="left">13 (17%)</td>
-<td align="left">23 (31%)</td>
-<td align="left">15 (20%)</td>
-<td align="left">12 (16%)</td>
+<td align="left">12 (16.0%)</td>
+<td align="left">13 (17.3%)</td>
+<td align="left">23 (30.7%)</td>
+<td align="left">15 (20.0%)</td>
+<td align="left">12 (16.0%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I license my software to inform about the conditions under which it can be reused</td>
-<td align="left">28 (38%)</td>
-<td align="left">11 (15%)</td>
-<td align="left">10 (14%)</td>
-<td align="left">9 (12%)</td>
-<td align="left">15 (21%)</td>
+<td align="left">28 (38.4%)</td>
+<td align="left">11 (15.1%)</td>
+<td align="left">10 (13.7%)</td>
+<td align="left">9 (12.3%)</td>
+<td align="left">15 (20.5%)</td>
 </tr>
 <tr class="even">
 <td align="left">I reuse and build upon open-source software</td>
-<td align="left">14 (17%)</td>
-<td align="left">12 (14%)</td>
-<td align="left">23 (28%)</td>
-<td align="left">23 (28%)</td>
-<td align="left">11 (13%)</td>
+<td align="left">14 (16.9%)</td>
+<td align="left">12 (14.5%)</td>
+<td align="left">23 (27.7%)</td>
+<td align="left">23 (27.7%)</td>
+<td align="left">11 (13.3%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I share my software code (e.g. via GitHub, Figshare or Zenodo)</td>
-<td align="left">21 (26%)</td>
-<td align="left">14 (17%)</td>
-<td align="left">13 (16%)</td>
-<td align="left">21 (26%)</td>
-<td align="left">12 (15%)</td>
+<td align="left">21 (25.9%)</td>
+<td align="left">14 (17.3%)</td>
+<td align="left">13 (16.0%)</td>
+<td align="left">21 (25.9%)</td>
+<td align="left">12 (14.8%)</td>
 </tr>
 </tbody>
 </table>
@@ -1038,11 +1014,11 @@ a7_df_rec %&gt;%
   plot_likert()</code></pre>
 <table>
 <colgroup>
-<col width="58%" />
+<col width="57%" />
 <col width="9%" />
-<col width="4%" />
-<col width="14%" />
-<col width="4%" />
+<col width="5%" />
+<col width="13%" />
+<col width="5%" />
 <col width="7%" />
 </colgroup>
 <thead>
@@ -1058,43 +1034,43 @@ a7_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I feel confident that when some scientific output is licensed, people using it will respect the licensing terms</td>
-<td align="left">5 (4%)</td>
-<td align="left">12 (11%)</td>
-<td align="left">32 (29%)</td>
-<td align="left">43 (38%)</td>
-<td align="left">20 (18%)</td>
+<td align="left">5 (4.5%)</td>
+<td align="left">12 (10.7%)</td>
+<td align="left">32 (28.6%)</td>
+<td align="left">43 (38.4%)</td>
+<td align="left">20 (17.9%)</td>
 </tr>
 <tr class="even">
 <td align="left">I license my publications</td>
-<td align="left">16 (16%)</td>
-<td align="left">11 (11%)</td>
-<td align="left">26 (25%)</td>
-<td align="left">36 (35%)</td>
-<td align="left">14 (14%)</td>
+<td align="left">16 (15.5%)</td>
+<td align="left">11 (10.7%)</td>
+<td align="left">26 (25.2%)</td>
+<td align="left">36 (35.0%)</td>
+<td align="left">14 (13.6%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I tend to use licenses that enable some kind of reuse</td>
-<td align="left">8 (8%)</td>
-<td align="left">10 (9%)</td>
-<td align="left">12 (11%)</td>
-<td align="left">55 (52%)</td>
-<td align="left">21 (20%)</td>
+<td align="left">8 (7.5%)</td>
+<td align="left">10 (9.4%)</td>
+<td align="left">12 (11.3%)</td>
+<td align="left">55 (51.9%)</td>
+<td align="left">21 (19.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">I use Creative Commons licenses</td>
-<td align="left">11 (10%)</td>
-<td align="left">13 (12%)</td>
-<td align="left">17 (15%)</td>
-<td align="left">46 (41%)</td>
-<td align="left">25 (22%)</td>
+<td align="left">11 (9.8%)</td>
+<td align="left">13 (11.6%)</td>
+<td align="left">17 (15.2%)</td>
+<td align="left">46 (41.1%)</td>
+<td align="left">25 (22.3%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Using a license will prevent unauthorised uses of my work</td>
-<td align="left">6 (5%)</td>
-<td align="left">30 (26%)</td>
-<td align="left">31 (27%)</td>
-<td align="left">32 (28%)</td>
-<td align="left">15 (13%)</td>
+<td align="left">6 (5.3%)</td>
+<td align="left">30 (26.3%)</td>
+<td align="left">31 (27.2%)</td>
+<td align="left">32 (28.1%)</td>
+<td align="left">15 (13.2%)</td>
 </tr>
 </tbody>
 </table>
@@ -1111,14 +1087,14 @@ a8_df_rec &lt;- a8_df %&gt;%
 
 a8_df_rec %&gt;% 
   plot_likert(legend_rows = 1)</code></pre>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="70%" />
+<col width="66%" />
 <col width="6%" />
-<col width="6%" />
-<col width="6%" />
-<col width="4%" />
-<col width="4%" />
+<col width="7%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1133,43 +1109,43 @@ a8_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I acknowledge all intellectual contributions and cite related work correctly in my publications</td>
-<td align="left">1 (1%)</td>
-<td align="left">12 (8%)</td>
-<td align="left">147 (92%)</td>
+<td align="left">1 (0.6%)</td>
+<td align="left">12 (7.5%)</td>
+<td align="left">147 (91.9%)</td>
 <td align="left">NA</td>
 <td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left">I comply with codes and regulations relevant to my discipline</td>
-<td align="left">3 (2%)</td>
-<td align="left">13 (9%)</td>
-<td align="left">133 (88%)</td>
-<td align="left">1 (1%)</td>
-<td align="left">1 (1%)</td>
+<td align="left">3 (2.0%)</td>
+<td align="left">13 (8.6%)</td>
+<td align="left">133 (88.1%)</td>
+<td align="left">1 (0.7%)</td>
+<td align="left">1 (0.7%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I inform subjects and ask for their consent prior to disseminating my research</td>
-<td align="left">2 (2%)</td>
-<td align="left">13 (13%)</td>
-<td align="left">84 (82%)</td>
-<td align="left">2 (2%)</td>
-<td align="left">2 (2%)</td>
+<td align="left">2 (1.9%)</td>
+<td align="left">13 (12.6%)</td>
+<td align="left">84 (81.6%)</td>
+<td align="left">2 (1.9%)</td>
+<td align="left">2 (1.9%)</td>
 </tr>
 <tr class="even">
 <td align="left">I review publications without biases or influences</td>
-<td align="left">4 (3%)</td>
-<td align="left">22 (14%)</td>
-<td align="left">123 (80%)</td>
-<td align="left">4 (3%)</td>
+<td align="left">4 (2.6%)</td>
+<td align="left">22 (14.4%)</td>
+<td align="left">123 (80.4%)</td>
+<td align="left">4 (2.6%)</td>
 <td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">I thoroughly inform my human subjects of all the details concerning their participation in my research</td>
-<td align="left">2 (2%)</td>
-<td align="left">11 (12%)</td>
-<td align="left">81 (85%)</td>
+<td align="left">2 (2.1%)</td>
+<td align="left">11 (11.6%)</td>
+<td align="left">81 (85.3%)</td>
 <td align="left">NA</td>
-<td align="left">1 (1%)</td>
+<td align="left">1 (1.1%)</td>
 </tr>
 </tbody>
 </table>
@@ -1188,11 +1164,11 @@ a9_df_rec %&gt;%
   plot_likert()</code></pre>
 <table style="width:100%;">
 <colgroup>
-<col width="49%" />
+<col width="48%" />
 <col width="11%" />
-<col width="5%" />
-<col width="17%" />
-<col width="5%" />
+<col width="6%" />
+<col width="16%" />
+<col width="6%" />
 <col width="9%" />
 </colgroup>
 <thead>
@@ -1208,43 +1184,43 @@ a9_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I align my research with challenges relevant for society</td>
-<td align="left">4 (3%)</td>
-<td align="left">5 (3%)</td>
-<td align="left">21 (14%)</td>
-<td align="left">52 (34%)</td>
-<td align="left">72 (47%)</td>
+<td align="left">4 (2.6%)</td>
+<td align="left">5 (3.2%)</td>
+<td align="left">21 (13.6%)</td>
+<td align="left">52 (33.8%)</td>
+<td align="left">72 (46.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">I ask for the citizen scientist’s feedback during the research process</td>
-<td align="left">22 (19%)</td>
-<td align="left">20 (17%)</td>
-<td align="left">24 (21%)</td>
-<td align="left">31 (27%)</td>
-<td align="left">18 (16%)</td>
+<td align="left">22 (19.1%)</td>
+<td align="left">20 (17.4%)</td>
+<td align="left">24 (20.9%)</td>
+<td align="left">31 (27.0%)</td>
+<td align="left">18 (15.7%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I involve citizens in data gathering for my research</td>
-<td align="left">23 (20%)</td>
-<td align="left">19 (17%)</td>
-<td align="left">23 (20%)</td>
-<td align="left">38 (33%)</td>
-<td align="left">11 (10%)</td>
+<td align="left">23 (20.2%)</td>
+<td align="left">19 (16.7%)</td>
+<td align="left">23 (20.2%)</td>
+<td align="left">38 (33.3%)</td>
+<td align="left">11 (9.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">I provide the public with the information they need to understand my research</td>
-<td align="left">4 (3%)</td>
-<td align="left">4 (3%)</td>
-<td align="left">28 (18%)</td>
-<td align="left">67 (43%)</td>
-<td align="left">53 (34%)</td>
+<td align="left">4 (2.6%)</td>
+<td align="left">4 (2.6%)</td>
+<td align="left">28 (17.9%)</td>
+<td align="left">67 (42.9%)</td>
+<td align="left">53 (34.0%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I regularly publish news about my research</td>
-<td align="left">12 (8%)</td>
-<td align="left">29 (19%)</td>
-<td align="left">41 (26%)</td>
-<td align="left">47 (30%)</td>
-<td align="left">26 (17%)</td>
+<td align="left">12 (7.7%)</td>
+<td align="left">29 (18.7%)</td>
+<td align="left">41 (26.5%)</td>
+<td align="left">47 (30.3%)</td>
+<td align="left">26 (16.8%)</td>
 </tr>
 </tbody>
 </table>
@@ -1263,11 +1239,11 @@ a10_df_rec %&gt;%
   plot_likert()</code></pre>
 <table style="width:100%;">
 <colgroup>
-<col width="56%" />
+<col width="55%" />
 <col width="9%" />
-<col width="4%" />
+<col width="5%" />
 <col width="14%" />
-<col width="4%" />
+<col width="5%" />
 <col width="8%" />
 </colgroup>
 <thead>
@@ -1283,43 +1259,43 @@ a10_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">Gender equality is a concern in the constitution of my research team</td>
-<td align="left">7 (5%)</td>
-<td align="left">9 (7%)</td>
-<td align="left">32 (23%)</td>
-<td align="left">46 (33%)</td>
-<td align="left">44 (32%)</td>
+<td align="left">7 (5.1%)</td>
+<td align="left">9 (6.5%)</td>
+<td align="left">32 (23.2%)</td>
+<td align="left">46 (33.3%)</td>
+<td align="left">44 (31.9%)</td>
 </tr>
 <tr class="even">
 <td align="left">I conduct a gender-blind research</td>
-<td align="left">8 (8%)</td>
-<td align="left">14 (14%)</td>
-<td align="left">24 (23%)</td>
-<td align="left">32 (31%)</td>
-<td align="left">25 (24%)</td>
+<td align="left">8 (7.8%)</td>
+<td align="left">14 (13.6%)</td>
+<td align="left">24 (23.3%)</td>
+<td align="left">32 (31.1%)</td>
+<td align="left">25 (24.3%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I guarantee that the groups involved in the project (e.g. samples, testing groups) are gender-balanced</td>
-<td align="left">8 (7%)</td>
-<td align="left">13 (12%)</td>
-<td align="left">34 (31%)</td>
-<td align="left">34 (31%)</td>
-<td align="left">22 (20%)</td>
+<td align="left">8 (7.2%)</td>
+<td align="left">13 (11.7%)</td>
+<td align="left">34 (30.6%)</td>
+<td align="left">34 (30.6%)</td>
+<td align="left">22 (19.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">I look for gender equality when looking for project partners</td>
-<td align="left">9 (6%)</td>
-<td align="left">15 (10%)</td>
-<td align="left">37 (26%)</td>
-<td align="left">50 (35%)</td>
-<td align="left">32 (22%)</td>
+<td align="left">9 (6.3%)</td>
+<td align="left">15 (10.5%)</td>
+<td align="left">37 (25.9%)</td>
+<td align="left">50 (35.0%)</td>
+<td align="left">32 (22.4%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I seek not to have imbalances in the decision-making process</td>
-<td align="left">2 (1%)</td>
-<td align="left">2 (1%)</td>
-<td align="left">25 (17%)</td>
-<td align="left">73 (50%)</td>
-<td align="left">45 (31%)</td>
+<td align="left">2 (1.4%)</td>
+<td align="left">2 (1.4%)</td>
+<td align="left">25 (17.0%)</td>
+<td align="left">73 (49.7%)</td>
+<td align="left">45 (30.6%)</td>
 </tr>
 </tbody>
 </table>
@@ -1356,73 +1332,73 @@ b1_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">Citizen science</td>
-<td align="left">141 (86%)</td>
-<td align="left">12 (7%)</td>
-<td align="left">5 (3%)</td>
-<td align="left">6 (4%)</td>
+<td align="left">141 (86.0%)</td>
+<td align="left">12 (7.3%)</td>
+<td align="left">5 (3.0%)</td>
+<td align="left">6 (3.7%)</td>
 </tr>
 <tr class="even">
 <td align="left">Gender</td>
-<td align="left">105 (66%)</td>
-<td align="left">23 (14%)</td>
-<td align="left">17 (11%)</td>
-<td align="left">14 (9%)</td>
+<td align="left">105 (66.0%)</td>
+<td align="left">23 (14.5%)</td>
+<td align="left">17 (10.7%)</td>
+<td align="left">14 (8.8%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Licensing</td>
-<td align="left">135 (82%)</td>
-<td align="left">23 (14%)</td>
-<td align="left">5 (3%)</td>
-<td align="left">1 (1%)</td>
+<td align="left">135 (82.3%)</td>
+<td align="left">23 (14.0%)</td>
+<td align="left">5 (3.0%)</td>
+<td align="left">1 (0.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open-Source Software</td>
-<td align="left">137 (83%)</td>
-<td align="left">14 (8%)</td>
-<td align="left">7 (4%)</td>
-<td align="left">7 (4%)</td>
+<td align="left">137 (83.0%)</td>
+<td align="left">14 (8.5%)</td>
+<td align="left">7 (4.2%)</td>
+<td align="left">7 (4.2%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open Access</td>
-<td align="left">87 (54%)</td>
-<td align="left">48 (30%)</td>
-<td align="left">17 (11%)</td>
-<td align="left">9 (6%)</td>
+<td align="left">87 (54.0%)</td>
+<td align="left">48 (29.8%)</td>
+<td align="left">17 (10.6%)</td>
+<td align="left">9 (5.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open Data</td>
-<td align="left">108 (66%)</td>
-<td align="left">37 (23%)</td>
-<td align="left">13 (8%)</td>
-<td align="left">5 (3%)</td>
+<td align="left">108 (66.3%)</td>
+<td align="left">37 (22.7%)</td>
+<td align="left">13 (8.0%)</td>
+<td align="left">5 (3.1%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open Peer Review</td>
-<td align="left">139 (84%)</td>
-<td align="left">18 (11%)</td>
-<td align="left">3 (2%)</td>
-<td align="left">5 (3%)</td>
+<td align="left">139 (84.2%)</td>
+<td align="left">18 (10.9%)</td>
+<td align="left">3 (1.8%)</td>
+<td align="left">5 (3.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open Science</td>
-<td align="left">121 (75%)</td>
-<td align="left">27 (17%)</td>
-<td align="left">9 (6%)</td>
-<td align="left">4 (2%)</td>
+<td align="left">121 (75.2%)</td>
+<td align="left">27 (16.8%)</td>
+<td align="left">9 (5.6%)</td>
+<td align="left">4 (2.5%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Reproducible Research</td>
-<td align="left">125 (76%)</td>
-<td align="left">23 (14%)</td>
-<td align="left">8 (5%)</td>
-<td align="left">9 (5%)</td>
+<td align="left">125 (75.8%)</td>
+<td align="left">23 (13.9%)</td>
+<td align="left">8 (4.8%)</td>
+<td align="left">9 (5.5%)</td>
 </tr>
 <tr class="even">
 <td align="left">Research integrity</td>
-<td align="left">89 (56%)</td>
-<td align="left">37 (23%)</td>
-<td align="left">16 (10%)</td>
-<td align="left">18 (11%)</td>
+<td align="left">89 (55.6%)</td>
+<td align="left">37 (23.1%)</td>
+<td align="left">16 (10.0%)</td>
+<td align="left">18 (11.2%)</td>
 </tr>
 </tbody>
 </table>
@@ -1454,57 +1430,57 @@ b3_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">Blended learning course</td>
-<td align="left">145 (87%)</td>
-<td align="left">11 (7%)</td>
-<td align="left">11 (7%)</td>
+<td align="left">145 (86.8%)</td>
+<td align="left">11 (6.6%)</td>
+<td align="left">11 (6.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">Full day workshop</td>
-<td align="left">101 (60%)</td>
-<td align="left">23 (14%)</td>
-<td align="left">43 (26%)</td>
+<td align="left">101 (60.5%)</td>
+<td align="left">23 (13.8%)</td>
+<td align="left">43 (25.7%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Half day workshop</td>
-<td align="left">85 (51%)</td>
-<td align="left">23 (14%)</td>
-<td align="left">59 (35%)</td>
+<td align="left">85 (50.9%)</td>
+<td align="left">23 (13.8%)</td>
+<td align="left">59 (35.3%)</td>
 </tr>
 <tr class="even">
 <td align="left">MOOC (Massive Open Online Course)</td>
-<td align="left">131 (78%)</td>
-<td align="left">19 (11%)</td>
-<td align="left">17 (10%)</td>
+<td align="left">131 (78.4%)</td>
+<td align="left">19 (11.4%)</td>
+<td align="left">17 (10.2%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Online course</td>
-<td align="left">100 (60%)</td>
-<td align="left">27 (16%)</td>
-<td align="left">40 (24%)</td>
+<td align="left">100 (59.9%)</td>
+<td align="left">27 (16.2%)</td>
+<td align="left">40 (24.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">Seminar</td>
-<td align="left">80 (48%)</td>
-<td align="left">27 (16%)</td>
-<td align="left">60 (36%)</td>
+<td align="left">80 (47.9%)</td>
+<td align="left">27 (16.2%)</td>
+<td align="left">60 (35.9%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Several days workshop</td>
-<td align="left">127 (76%)</td>
-<td align="left">12 (7%)</td>
-<td align="left">28 (17%)</td>
+<td align="left">127 (76.0%)</td>
+<td align="left">12 (7.2%)</td>
+<td align="left">28 (16.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">Summer/ Winter School</td>
-<td align="left">142 (85%)</td>
-<td align="left">8 (5%)</td>
-<td align="left">17 (10%)</td>
+<td align="left">142 (85.0%)</td>
+<td align="left">8 (4.8%)</td>
+<td align="left">17 (10.2%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Webinar</td>
-<td align="left">73 (44%)</td>
-<td align="left">22 (13%)</td>
-<td align="left">72 (43%)</td>
+<td align="left">73 (43.7%)</td>
+<td align="left">22 (13.2%)</td>
+<td align="left">72 (43.1%)</td>
 </tr>
 </tbody>
 </table>
@@ -1563,63 +1539,63 @@ b6_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">Citizen science</td>
-<td align="left">112 (72%)</td>
-<td align="left">21 (14%)</td>
-<td align="left">22 (14%)</td>
+<td align="left">112 (72.3%)</td>
+<td align="left">21 (13.5%)</td>
+<td align="left">22 (14.2%)</td>
 </tr>
 <tr class="even">
 <td align="left">Gender</td>
-<td align="left">91 (56%)</td>
-<td align="left">48 (30%)</td>
-<td align="left">23 (14%)</td>
+<td align="left">91 (56.2%)</td>
+<td align="left">48 (29.6%)</td>
+<td align="left">23 (14.2%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Licensing</td>
-<td align="left">103 (67%)</td>
-<td align="left">20 (13%)</td>
-<td align="left">31 (20%)</td>
+<td align="left">103 (66.9%)</td>
+<td align="left">20 (13.0%)</td>
+<td align="left">31 (20.1%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open-Source Software</td>
-<td align="left">105 (70%)</td>
-<td align="left">18 (12%)</td>
-<td align="left">27 (18%)</td>
+<td align="left">105 (70.0%)</td>
+<td align="left">18 (12.0%)</td>
+<td align="left">27 (18.0%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open Access</td>
-<td align="left">76 (46%)</td>
-<td align="left">51 (31%)</td>
-<td align="left">37 (23%)</td>
+<td align="left">76 (46.3%)</td>
+<td align="left">51 (31.1%)</td>
+<td align="left">37 (22.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open Data</td>
-<td align="left">90 (57%)</td>
-<td align="left">32 (20%)</td>
-<td align="left">35 (22%)</td>
+<td align="left">90 (57.3%)</td>
+<td align="left">32 (20.4%)</td>
+<td align="left">35 (22.3%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Open Peer Review</td>
-<td align="left">116 (71%)</td>
-<td align="left">21 (13%)</td>
-<td align="left">26 (16%)</td>
+<td align="left">116 (71.2%)</td>
+<td align="left">21 (12.9%)</td>
+<td align="left">26 (16.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">Open Science</td>
-<td align="left">99 (61%)</td>
-<td align="left">30 (19%)</td>
-<td align="left">33 (20%)</td>
+<td align="left">99 (61.1%)</td>
+<td align="left">30 (18.5%)</td>
+<td align="left">33 (20.4%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Reproducible Research</td>
-<td align="left">100 (63%)</td>
-<td align="left">37 (23%)</td>
-<td align="left">22 (14%)</td>
+<td align="left">100 (62.9%)</td>
+<td align="left">37 (23.3%)</td>
+<td align="left">22 (13.8%)</td>
 </tr>
 <tr class="even">
 <td align="left">Research integrity</td>
-<td align="left">88 (54%)</td>
-<td align="left">60 (37%)</td>
-<td align="left">16 (10%)</td>
+<td align="left">88 (53.7%)</td>
+<td align="left">60 (36.6%)</td>
+<td align="left">16 (9.8%)</td>
 </tr>
 </tbody>
 </table>
@@ -1666,38 +1642,38 @@ b9_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">An external organisation</td>
-<td align="left">135 (81%)</td>
-<td align="left">32 (19%)</td>
+<td align="left">135 (80.8%)</td>
+<td align="left">32 (19.2%)</td>
 </tr>
 <tr class="even">
 <td align="left">Library</td>
-<td align="left">139 (83%)</td>
-<td align="left">28 (17%)</td>
+<td align="left">139 (83.2%)</td>
+<td align="left">28 (16.8%)</td>
 </tr>
 <tr class="odd">
 <td align="left">My institution</td>
-<td align="left">74 (44%)</td>
-<td align="left">93 (56%)</td>
+<td align="left">74 (44.3%)</td>
+<td align="left">93 (55.7%)</td>
 </tr>
 <tr class="even">
 <td align="left">My professional association</td>
-<td align="left">144 (86%)</td>
-<td align="left">23 (14%)</td>
+<td align="left">144 (86.2%)</td>
+<td align="left">23 (13.8%)</td>
 </tr>
 <tr class="odd">
 <td align="left">My supervisor</td>
-<td align="left">162 (97%)</td>
-<td align="left">5 (3%)</td>
+<td align="left">162 (97.0%)</td>
+<td align="left">5 (3.0%)</td>
 </tr>
 <tr class="even">
 <td align="left">Research school</td>
-<td align="left">156 (93%)</td>
-<td align="left">11 (7%)</td>
+<td align="left">156 (93.4%)</td>
+<td align="left">11 (6.6%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Session at a conference</td>
-<td align="left">137 (82%)</td>
-<td align="left">30 (18%)</td>
+<td align="left">137 (82.0%)</td>
+<td align="left">30 (18.0%)</td>
 </tr>
 </tbody>
 </table>
@@ -1725,28 +1701,28 @@ b10_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">Discussions with peers</td>
-<td align="left">87 (52%)</td>
-<td align="left">80 (48%)</td>
+<td align="left">87 (52.1%)</td>
+<td align="left">80 (47.9%)</td>
 </tr>
 <tr class="even">
 <td align="left">I haven’t learnt about Open Science topics</td>
-<td align="left">139 (83%)</td>
-<td align="left">28 (17%)</td>
+<td align="left">139 (83.2%)</td>
+<td align="left">28 (16.8%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Mandatory training</td>
-<td align="left">145 (87%)</td>
-<td align="left">22 (13%)</td>
+<td align="left">145 (86.8%)</td>
+<td align="left">22 (13.2%)</td>
 </tr>
 <tr class="even">
 <td align="left">Optional training</td>
-<td align="left">83 (50%)</td>
-<td align="left">84 (50%)</td>
+<td align="left">83 (49.7%)</td>
+<td align="left">84 (50.3%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Personal reading</td>
-<td align="left">105 (63%)</td>
-<td align="left">62 (37%)</td>
+<td align="left">105 (62.9%)</td>
+<td align="left">62 (37.1%)</td>
 </tr>
 </tbody>
 </table>
@@ -1772,11 +1748,11 @@ recode_successful(b11_df, b11_df_rec)</code></pre>
   plot_likert()</code></pre>
 <table>
 <colgroup>
-<col width="49%" />
+<col width="48%" />
 <col width="10%" />
-<col width="6%" />
+<col width="7%" />
 <col width="18%" />
-<col width="6%" />
+<col width="7%" />
 <col width="8%" />
 </colgroup>
 <thead>
@@ -1792,35 +1768,35 @@ recode_successful(b11_df, b11_df_rec)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left">I am aware of the benefits, but I don’t really practice open science</td>
-<td align="left">14 (11%)</td>
-<td align="left">36 (30%)</td>
-<td align="left">36 (30%)</td>
-<td align="left">33 (27%)</td>
-<td align="left">3 (2%)</td>
+<td align="left">14 (11.5%)</td>
+<td align="left">36 (29.5%)</td>
+<td align="left">36 (29.5%)</td>
+<td align="left">33 (27.0%)</td>
+<td align="left">3 (2.5%)</td>
 </tr>
 <tr class="even">
 <td align="left">I am more aware of the opportunities offered by practicing open science</td>
-<td align="left">5 (4%)</td>
-<td align="left">7 (6%)</td>
-<td align="left">30 (26%)</td>
-<td align="left">61 (53%)</td>
-<td align="left">12 (10%)</td>
+<td align="left">5 (4.3%)</td>
+<td align="left">7 (6.1%)</td>
+<td align="left">30 (26.1%)</td>
+<td align="left">61 (53.0%)</td>
+<td align="left">12 (10.4%)</td>
 </tr>
 <tr class="odd">
 <td align="left">I incorporated some open science practices in my daily research work</td>
-<td align="left">4 (3%)</td>
-<td align="left">8 (7%)</td>
-<td align="left">32 (26%)</td>
-<td align="left">63 (52%)</td>
-<td align="left">14 (12%)</td>
+<td align="left">4 (3.3%)</td>
+<td align="left">8 (6.6%)</td>
+<td align="left">32 (26.4%)</td>
+<td align="left">63 (52.1%)</td>
+<td align="left">14 (11.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">I still don’t understand why I should make an extra effort</td>
-<td align="left">32 (26%)</td>
-<td align="left">48 (39%)</td>
-<td align="left">29 (24%)</td>
-<td align="left">10 (8%)</td>
-<td align="left">3 (2%)</td>
+<td align="left">32 (26.2%)</td>
+<td align="left">48 (39.3%)</td>
+<td align="left">29 (23.8%)</td>
+<td align="left">10 (8.2%)</td>
+<td align="left">3 (2.5%)</td>
 </tr>
 </tbody>
 </table>
@@ -1839,11 +1815,11 @@ b12_df_rec %&gt;%
   plot_likert()</code></pre>
 <table>
 <colgroup>
-<col width="56%" />
+<col width="55%" />
 <col width="9%" />
-<col width="5%" />
+<col width="6%" />
 <col width="15%" />
-<col width="5%" />
+<col width="6%" />
 <col width="7%" />
 </colgroup>
 <thead>
@@ -1859,35 +1835,35 @@ b12_df_rec %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left">I would recommend my colleagues some of the practices I am using</td>
-<td align="left">2 (1%)</td>
-<td align="left">7 (5%)</td>
-<td align="left">30 (22%)</td>
-<td align="left">73 (54%)</td>
-<td align="left">24 (18%)</td>
+<td align="left">2 (1.5%)</td>
+<td align="left">7 (5.1%)</td>
+<td align="left">30 (22.1%)</td>
+<td align="left">73 (53.7%)</td>
+<td align="left">24 (17.6%)</td>
 </tr>
 <tr class="even">
 <td align="left">My colleagues wouldn’t make the effort</td>
-<td align="left">10 (8%)</td>
-<td align="left">54 (44%)</td>
-<td align="left">38 (31%)</td>
-<td align="left">15 (12%)</td>
-<td align="left">6 (5%)</td>
+<td align="left">10 (8.1%)</td>
+<td align="left">54 (43.9%)</td>
+<td align="left">38 (30.9%)</td>
+<td align="left">15 (12.2%)</td>
+<td align="left">6 (4.9%)</td>
 </tr>
 <tr class="odd">
 <td align="left">My research community already has established open science practices</td>
-<td align="left">9 (7%)</td>
-<td align="left">24 (19%)</td>
-<td align="left">35 (27%)</td>
-<td align="left">50 (39%)</td>
-<td align="left">11 (9%)</td>
+<td align="left">9 (7.0%)</td>
+<td align="left">24 (18.6%)</td>
+<td align="left">35 (27.1%)</td>
+<td align="left">50 (38.8%)</td>
+<td align="left">11 (8.5%)</td>
 </tr>
 <tr class="even">
 <td align="left">My research community already has established tools and practices that don’t foresee open science</td>
-<td align="left">12 (10%)</td>
-<td align="left">34 (28%)</td>
-<td align="left">43 (36%)</td>
-<td align="left">29 (24%)</td>
-<td align="left">2 (2%)</td>
+<td align="left">12 (10.0%)</td>
+<td align="left">34 (28.3%)</td>
+<td align="left">43 (35.8%)</td>
+<td align="left">29 (24.2%)</td>
+<td align="left">2 (1.7%)</td>
 </tr>
 </tbody>
 </table>
@@ -1927,7 +1903,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
