@@ -44,11 +44,6 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2,
     pivot_longer(everything()) %>% 
     mutate(label = glue::glue("n = {value}"))
   
-  p2 <- labels_df %>% 
-    ggplot(aes(x = 1, y = name, label = label)) +
-    geom_text(size = 3.15) +
-    theme_void() 
-  
   plot_it <- if (!is.null(center_for_likert)) {
     function(x, center, ...) plot(x, center = center_for_likert, ...)
   } else {
@@ -60,6 +55,17 @@ plot_likert <- function(df, center_for_likert = NULL, legend_rows = 2,
     likert::likert() %>% 
     plot_it(centered = centered) +
     guides(fill = guide_legend(title = NULL, nrow = legend_rows))
+  
+  # grab the order of the likert plot to align the n's
+  likert_order <- levels(p1$data$Item)
+  
+  # plot the labels for "n = XXX" and align the output order
+  p2 <- labels_df %>% 
+    ggplot(aes(x = 1,
+               y = factor(name, levels = fct_rev(likert_order)), 
+               label = label)) +
+    geom_text(size = 3.15) +
+    theme_void() 
   
   p1 + p2 +
     plot_layout(widths = c(6, 1))
