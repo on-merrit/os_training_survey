@@ -92,12 +92,14 @@ plot_bar <- function(df, var, title = NULL, reorder = TRUE, nudge_y = .04,
   if (reorder) {
     plot_data <- df %>%
       count({{var}}) %>%
+      drop_na() %>% 
       mutate(prop = n/sum(n),
              label = glue::glue("{n} ({scales::percent(prop, accuracy = .1)})"),
              xvar = fct_reorder({{var}}, n, .fun = "max"))
   } else {
     plot_data <- df %>%
       count({{var}}) %>%
+      drop_na() %>% 
       mutate(prop = n/sum(n),
              label = glue::glue("{n} ({scales::percent(prop, accuracy = .1)})"),
              xvar = {{var}})
