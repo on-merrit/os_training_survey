@@ -683,7 +683,7 @@ recode_successful(b5_df, b5_df_rec)
 
 ```r
 b5_df_rec %>% 
-  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .065)
+  plot_bar(B5, title = "Hours of training", reorder = FALSE, nudge_y = .09)
 ```
 
 ![](01_descriptives_parts_a_b_files/figure-html/b5-1.png)<!-- -->
